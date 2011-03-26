@@ -1,0 +1,350 @@
+/* 
+CSS Document
+Template name: Free blog template
+Author: Mr.Frenzi
+*/
+
+body {
+background: #deedf7 url(img/background.png) 0 0 repeat-x;
+margin: 0px;
+padding: 0px;
+text-align: left;
+font-family: arial, verdana;
+font-size: 15px;
+color: #666666;
+}
+
+#header {
+width: 953px;
+height: 169px;
+margin: 0 auto;
+margin-top: 88px;
+}
+
+#logo {
+float: left;
+margin-left: 28px;
+}
+
+#menu {
+position: relative;
+width: 953px;
+height: 54px;
+background: url(img/menu.png) 0 0 no-repeat;
+overflow: hidden;
+margin: 0 auto;
+left: 0px;
+top: -89px;
+}
+
+#menu ul {
+margin: 0 -10px;
+list-style-type: none;
+}
+
+#menu li {
+display: inline;
+}
+
+#menu li a {
+display: block;
+float: left;
+padding: 17px 20px 17px 18px;
+color: #646464;
+font-size: 20px;
+text-decoration: none;
+font-weight: bold;
+}
+
+#menu li a:hover, #menu ul li:hover a, #menu li#active a {
+background: url(img/hover.gif) top center no-repeat;
+}
+
+#menu li#active a {
+background: url(img/hover.gif) top center no-repeat;
+color: #494C4D;
+}
+
+#wrap {
+width: 953px;
+margin: 0 auto;
+margin-top: -80px;
+}
+
+#content {
+float: left;
+}
+
+#content h2 {
+padding-left: 5px;
+padding-bottom: 5px;
+color: #333333;
+font-size: 30px;
+}
+
+#content-top, #content-bottom, #lista {
+background-color: #F4F4F1;
+}
+
+#content-top {
+width: 570px;
+height: 4px;
+margin-top: 15px;
+background: url(img/contenttop.gif) 0 0 no-repeat;
+font-size: 0;
+line-height: 0;
+overflow: hidden;
+}
+
+#content-bottom {
+width: 570px;
+height: 6px;
+margin-bottom: 15px;
+background: url(img/contentbottom.gif) 0 0 no-repeat;
+font-size: 0;
+line-height: 0;
+overflow: hidden;
+}
+
+#lista {
+position: relative;
+padding: 5px 30px 15px 30px;
+background: url(img/lista.gif) 0 0 repeat-y;
+}
+
+#content-text {
+width: 520px;
+padding-top: 5px;
+line-height: 1.7;
+position: relative;
+left: 0px;
+top: -25px;
+}
+
+#title {
+width: 520px;
+}
+
+#title h2 {
+width: 300px;
+border-bottom: #f2f2f2 solid 1px;
+float: left;
+}
+
+#title span {
+float: right;
+position: relative;
+top: 22px;
+left: 0px;
+font-size: 14px;
+color: #7b7b7b;
+}
+
+#title a:link {
+color: #1f83ac;
+text-decoration: underline;
+}
+
+#title a:visited {
+color: #1f83ac;
+text-decoration: underline;
+}
+
+#title a:hover {
+color: #1f83ac;
+text-decoration: none;
+}
+
+#content p {
+clear: both;
+position: relative;
+top: -15px;
+left: 0px;
+}
+
+#sidebutton {
+position: relative;
+top: -25px;
+left: 185px;
+}
+
+#sidebar1 {
+float: right;
+position: relative;
+top: 0px;
+left: 10px;
+}
+
+#sidebar1-top, #sidebar1-bottom, #listasidebar1 {
+background-color: #F4F4F1;
+}
+
+#sidebar1-top {
+width: 360px;
+height: 4px;
+margin-top: 15px;
+background: url(img/sidebartop.gif) 0 0 no-repeat;
+font-size: 0;
+line-height: 0;
+overflow: hidden;
+}
+
+#sidebar1-bottom {
+width: 360px;
+height: 7px;
+margin-bottom: 15px;
+background: url(img/sidebarbottom.gif) 0 0 no-repeat;
+font-size: 0;
+line-height: 0;
+overflow: hidden;
+}
+
+#listasidebar1 {
+position: relative;
+padding: 0px 30px 15px 20px;
+background: url(img/listasidebar.gif) 0 0 repeat-y;
+}
+
+#sidebar1 h2 {
+background: url(img/zarovka.gif) no-repeat left;
+padding-left: 40px;
+padding-bottom: 5px;
+color: #333333;
+font-size: 30px;
+border-bottom: #f2f2f2 solid 1px;
+}
+
+#sidebar1-text {
+width: 320px;
+padding-top: 15px;
+line-height: 1.7;
+position: relative;
+left: 0px;
+top: -25px;
+margin-bottom: -55px;
+}
+
+#sidebar1 p {
+position: relative;
+top: -15px;
+left: 0px;
+}
+
+#sidebar2 {
+float: right;
+position: relative;
+top: 0px;
+left: 10px;
+}
+
+#sidebar2-top, #sidebar2-bottom, #listasidebar2 {
+background-color: #F4F4F1;
+}
+
+#sidebar2-top {
+width: 360px;
+height: 4px;
+margin-top: 15px;
+background: url(img/sidebartop.gif) 0 0 no-repeat;
+font-size: 0;
+line-height: 0;
+overflow: hidden;
+}
+
+#sidebar2-bottom {
+width: 360px;
+height: 7px;
+margin-bottom: 15px;
+background: url(img/sidebarbottom.gif) 0 0 no-repeat;
+font-size: 0;
+line-height: 0;
+overflow: hidden;
+}
+
+#listasidebar2 {
+position: relative;
+padding: 0px 30px 15px 20px;
+background: url(img/listasidebar.gif) 0 0 repeat-y;
+}
+
+#sidebar2 h2 {
+background: url(img/forum.png) no-repeat left;
+padding-left: 40px;
+padding-bottom: 5px;
+color: #333333;
+font-size: 30px;
+border-bottom: #f2f2f2 solid 1px;
+}
+
+#sidebar2-text {
+width: 320px;
+padding-top: 15px;
+line-height: 1.7;
+position: relative;
+left: 0px;
+top: -25px;
+margin-bottom: -55px;
+}
+
+#sidebar2 p {
+position: relative;
+top: -15px;
+left: 0px;
+}
+
+#footer {
+width: 953px;
+color: #858e94;
+}
+
+#footer ul li {
+list-style-type: none;
+display: inline;
+}
+
+.footerlogo {
+float: left;
+width: 161px;
+padding-bottom: 20px
+}
+
+#footertext {
+width: 780px;
+float: right;
+padding-bottom: 20px
+}
+
+#footer a:link {
+color: #adb6bc;
+text-decoration: none;
+}
+
+#footer a:visited {
+color: #adb6bc;
+text-decoration: none;
+}
+
+#footer a:hover {
+color: #a2adb3;
+text-decoration: underline;
+}
+
+#footeractive {
+color: #a2adb3;
+}
+
+#footer span {
+color: #adb6bc;
+}
+
+#footertext span a:link {
+color: #666666;
+}
+
+#footertext span a:visited {
+color: #666666;
+}
+
+#footertext span a:hover {
+color: #666666;
+}
