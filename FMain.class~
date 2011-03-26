@@ -1,0 +1,445 @@
+' Gambas class file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+'-- feed
+PUBLIC P AS HttpClient
+PUBLIC items AS NEW Items
+PUBLIC feed AS String
+'-- /feed
+
+PUBLIC SUB _new()
+
+  IF Konnection.ExistConnection() = FALSE THEN 
+    PRINT Application.Name & " " & Application.Version
+    PRINT "No valid connection"
+    PRINT "Connect you system with the network to use all meganalotto's features."
+  END IF
+
+END
+
+PUBLIC SUB Form_Open()
+  
+  '-- feed
+  items = NEW Items
+  P = NEW HttpClient AS "P"
+  feed = "http://txt.io/opencode/rss"
+  '-- /feed
+
+  ME.Center
+  ME.Maximized = TRUE
+  ValueBox1.value = 1
+  lotto.Checked = TRUE
+  menu_extract.Checked = TRUE
+  btSave.Enabled = FALSE
+  Label2.Text = "Meganalotto : versione " & Application.Version
+    '-- se non c'è rete disabilita i servizi che ne usufruiscono
+  WAIT 
+  IF Konnection.vKonnection = FALSE THEN 
+    extrax.Enabled = FALSE
+    Menu1.Enabled = FALSE
+    Menu2.Enabled = FALSE
+    Menu3.Enabled = FALSE
+    ritardatari.Enabled = FALSE
+    picNet.Picture = Picture["icon:/16/disconnect"]
+    picNet.ToolTip = ("Nessuna connessione alla rete")
+  ELSE
+    picNet.Picture = Picture["icon:/16/connect"]
+    picNet.ToolTip = ("Connessione OK")
+  END IF
+
+  '-- controlla versione disponibile
+  picVersion.Picture = SoftVersion.VersionColor()
+  picVersion.ToolTip = SoftVersion.RelativeToolTip()
+
+END
+
+PUBLIC SUB Button1_Click()
+
+'  Label1.Alignment = Align.left
+  IF lotto.Checked THEN
+    IF menu_extract.Checked THEN 
+      extract.lotto()
+    ELSE IF menu_extract_only_pair.Checked THEN 
+      extractOnlyPair.lotto()
+    ELSE IF menu_extract_only_uneven.Checked THEN 
+      extractOnlyUneven.lotto()
+    END IF
+  ELSE IF superenal.Checked THEN 
+    IF menu_extract.Checked THEN 
+      extract.enalotto()
+    ELSE IF menu_extract_only_pair.Checked THEN 
+      extractOnlyPair.enalotto()
+    ELSE IF menu_extract_only_uneven.Checked THEN 
+      extractOnlyUneven.enalotto()
+    END IF
+  ELSE IF win.Checked THEN 
+    IF menu_extract.Checked THEN 
+      extract.win()
+    ELSE IF menu_extract_only_pair.Checked THEN 
+      extractOnlyPair.win()
+    ELSE IF menu_extract_only_uneven.Checked THEN 
+      extractOnlyUneven.win()
+    END IF
+  ELSE IF dieci.Checked THEN 
+    IF menu_extract.Checked THEN 
+      extract.dieci()
+    ELSE IF menu_extract_only_pair.Checked THEN 
+      extractOnlyPair.dieci()
+    ELSE IF menu_extract_only_uneven.Checked THEN 
+      extractOnlyUneven.dieci()
+    END IF
+  END IF
+
+END
+
+PUBLIC SUB Button2_Click()
+
+  TextArea1.Text = ""
+
+END
+
+PUBLIC SUB btSave_Click()
+
+  DIM percorso AS String
+
+  IF Dialog.SaveFile() THEN RETURN
+
+  percorso = Dialog.Path
+  File.Save(percorso, TextArea1.Text)
+
+END
+
+PUBLIC SUB TextArea1_Change()
+
+  TextArea1.EnsureVisible()
+  IF TextArea1.Text = "" THEN 
+    btSave.Enabled = FALSE
+  ELSE 
+    btSave.Enabled = TRUE
+  END IF
+
+END
+
+PUBLIC SUB ValueBox1_Change()
+
+  IF ValueBox1.Value < 1 THEN ValueBox1.Value = 1
+  IF ValueBox1.Value > 45 THEN ValueBox1.Value = 45
+
+END
+
+PUBLIC SUB extrax_Click()
+
+  '-- se trova la rete visualizza estrazioni del lotto
+  Label2.Text = "Apertura visualizzatore estrazioni del lotto in corso..."
+  WAIT 0.1
+  IF Konnection.vKonnection = TRUE THEN 
+    FLotto.Show()
+  ELSE 
+    Label2.Text = ("Impossibile connettersi alla rete")
+  END IF
+
+END
+
+PUBLIC SUB Menu1_Click()
+
+  '-- se trova la rete visualizza estrazioni del lotto
+  Label2.Text = "Apertura visualizzatore estrazioni del superenalotto in corso..."
+  WAIT 0.1
+  IF Konnection.vKonnection = TRUE THEN 
+    FSuper.Show()
+  ELSE 
+    Label2.Text = "Impossibile connettersi alla rete"
+  END IF
+
+END
+
+PUBLIC SUB Menu3_Click()
+
+  '-- se trova la rete visualizza estrazioni del lotto
+  Label2.Text = "Apertura visualizzatore estrazioni di 10&Lotto in corso..."
+  WAIT 0.1
+  IF Konnection.vKonnection = TRUE THEN 
+    F10eLotto.Show()
+  ELSE 
+    Label2.Text = "Impossibile connettersi alla rete"
+  END IF
+
+END
+
+PUBLIC SUB Menu2_Click()
+
+  '-- se trova la rete visualizza estrazioni del lotto
+  Label2.Text = "Apertura visualizzatore estrazioni di Win4Life in corso..."
+  WAIT 0.1
+  IF Konnection.vKonnection = TRUE THEN 
+    FWin4Life.Show()
+  ELSE 
+    Label2.Text = "Impossibile connettersi alla rete"
+  END IF
+
+END
+
+PUBLIC SUB Menu4_Click()
+
+  FAbout.ShowModal
+
+END
+
+PUBLIC SUB blog_Click()
+
+  TRY Desktop.Open("http://code.google.com/p/meganalotto/")
+  IF ERROR THEN Message.Warning("Impostare un browser predefinito per completare l'operazione", "Ok")
+
+END
+
+PUBLIC SUB Button4_Click()
+
+  ME.close
+
+END
+
+PUBLIC SUB smorfia_Click()
+
+  FSmorfia.ShowModal()
+
+END
+
+PUBLIC SUB Menu12_Click()
+
+  FAbout.ShowModal
+
+END
+
+PUBLIC SUB ritardatari_Click()
+
+  Label2.Text = ("Apertura visualizzatore ritardatari in corso") & "........."
+  WAIT 0.1
+  IF Konnection.vKonnection = TRUE THEN 
+    FRitardatari.ShowDialog()
+  ELSE 
+    Label2.Text = ("Impossibile accedere alla rete")
+  END IF
+
+END
+
+PUBLIC SUB note_Click()
+
+  FNote.Show
+
+END
+
+PUBLIC SUB numb_by_name_Click()
+
+  FNumByName.ShowModal
+
+END
+
+'---------------------------------------
+' GAME MENU MANAGEMENT
+PUBLIC SUB lotto_Click()
+
+  lotto.Checked = TRUE
+  superenal.Checked = FALSE
+  win.Checked = FALSE
+  dieci.Checked = FALSE
+  
+  menu_extract_only_pair.Enabled = TRUE
+  menu_extract_only_uneven.Enabled = TRUE
+
+END
+PUBLIC SUB superenal_Click()
+
+  lotto.Checked = FALSE
+  superenal.Checked = TRUE
+  win.Checked = FALSE
+  dieci.Checked = FALSE
+  
+  menu_extract_only_pair.Enabled = TRUE
+  menu_extract_only_uneven.Enabled = TRUE
+
+END
+PUBLIC SUB win_Click()
+
+  lotto.Checked = FALSE
+  superenal.Checked = FALSE
+  win.Checked = TRUE
+  dieci.Checked = FALSE
+
+  menu_extract_Click()
+  menu_extract_only_pair.Enabled = FALSE
+  menu_extract_only_uneven.Enabled = FALSE
+
+END
+PUBLIC SUB dieci_Click()
+
+  lotto.Checked = FALSE
+  superenal.Checked = FALSE
+  win.Checked = FALSE
+  dieci.Checked = TRUE
+
+  menu_extract_only_pair.Enabled = TRUE
+  menu_extract_only_uneven.Enabled = TRUE
+
+END
+'------------------------------------------
+
+'------------------------------------------
+' SYSTEM MENU MANAGEMENT
+PUBLIC SUB menu_extract_Click()
+
+  menu_extract.Checked = TRUE
+  menu_extract_only_pair.Checked = FALSE
+  menu_extract_only_uneven.Checked = FALSE
+
+END
+PUBLIC SUB menu_extract_only_pair_Click()
+
+  menu_extract.Checked = FALSE
+  menu_extract_only_pair.Checked = TRUE
+  menu_extract_only_uneven.Checked = FALSE
+
+END
+PUBLIC SUB menu_extract_only_uneven_Click()
+
+  menu_extract.Checked = FALSE
+  menu_extract_only_pair.Checked = FALSE
+  menu_extract_only_uneven.Checked = TRUE
+
+END
+'------------------------------------------
+
+PUBLIC SUB btMinus_Click()
+
+  DEC ValueBox1.Value
+  IF ValueBox1.Value < 1 THEN ValueBox1.Value = 1
+
+END
+
+PUBLIC SUB btPlus_Click()
+
+  INC ValueBox1.Value
+  IF ValueBox1.Value > 45 THEN ValueBox1.Value = 45
+
+END
+
+PUBLIC SUB P_finished()
+  DIM buffer AS String   
+  
+  IF Lof(P) THEN READ #P, buffer, Lof(P)
+  parseFeed(buffer)
+  fillList()
+
+END 
+
+PUBLIC SUB ListView1_Select()
+  DIM key AS Integer
+  key = listview1.Current.Key
+  items.seek(key)
+  textview1.Text = items.getDescription() & "\n" & items.getLink() 
+END
+
+PUBLIC SUB btFeed_Click()
+
+    '-- se trova la rete visualizza estrazioni del lotto
+  Label2.Text = "Aggiornamento Feed!"
+  WAIT 0.1
+  IF Konnection.vKonnection = TRUE THEN 
+    P.URL = feed
+    P.Get
+  ELSE 
+    Label2.Text = ("Impossibile connettersi alla rete")
+  END IF
+
+END 
+
+SUB parseFeed(data AS String)
+  DIM xml AS NEW XmlDocument
+  DIM node AS XmlNode
+  xml.FromString(data)
+  node = xml.Root
+  items.clear
+  parseNode(node)    
+  
+END
+
+SUB parseNode(node AS XmlNode)
+  DIM t, t1 AS Integer
+  DIM node1 AS XmlNode
+  DIM buf AS String
+  DIM title, description, item_link AS String
+  FOR t = 0 TO node.Children.Count - 1
+    node1 = node.Children[t]
+    IF node1.name = "item" THEN
+      FOR t1 = 0 TO node1.Children.Count - 1
+        buf = node1.Children[t1].name
+        IF buf = "title" THEN
+          title = node1.Children[t1].value
+        ELSE IF buf = "description" THEN
+          description = node1.Children[t1].value
+        ELSE IF buf = "link" THEN
+          item_link = node1.Children[t1].value
+        END IF
+      NEXT
+      items.addItem(title, description, item_link)
+    ELSE
+      IF node1.Children.Count > 0 THEN parseNode(node1)
+    END IF
+  NEXT
+END 
+
+SUB fillList()
+  listview1.Clear
+  items.reset
+  WHILE items.next()
+    IF Left(items.getTitle(), 11) = "Meganalotto" THEN 
+      listview1.Add(items.getCurrentIndex(), items.getTitle()) 
+    END IF
+  WEND
+  
+END
+
+PUBLIC SUB menu_tools_guide_Click()
+
+  FGuide.ShowModal()
+
+END
+
+PUBLIC SUB support_Click()
+
+  FSupport.ShowModal()
+
+END
+
+PUBLIC SUB partnership_Click()
+
+  FPartner.ShowDialog()
+
+END
+
+PUBLIC SUB menu_winning_Click()
+
+  FWinning.ShowDialog()
+
+END
+
+PUBLIC SUB menu_personal_system_Click()
+
+  DIM $String AS String
+  DIM i AS Integer
+
+  FPersonalSystem.ShowDialog()
+  $String = Replace(Other.NumbersString, ",", "\t")
+  FOR i = 0 TO 10 - Split(Other.NumbersString, ",").Count
+    $String &= "\t"
+  NEXT 
+  $String &= "# " & ("Sistema personalizzato dall'utente") & "\n"
+  TextArea1.Text &= $String
+
+END

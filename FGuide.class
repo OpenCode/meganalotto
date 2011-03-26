@@ -1,0 +1,37 @@
+' Gambas class file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+PUBLIC SUB Form_Open()
+
+  ComboBox1.Add("Italiano", 0)
+  ComboBox1.Add("Inglese", 1)
+
+  TreeView1.Add("system", ("Sistemi"), Picture["icons/icon_system.png"])
+    TreeView1.Add("sys-complete", ("Sistema Completo"), Picture["icons/icon_system.png"], "system")
+    TreeView1.Add("sys-only-even", ("Sistema di Parità"), Picture["icons/icon_system_only_pair.png"], "system")
+    TreeView1.Add("sys-only-uneven", ("Sistema di Disparità"), Picture["icons/icon_system_only_pair.png"], "system")
+  TreeView1.Add("tools", ("Strumenti"), Picture["icon:/16/tools"])
+    TreeView1.Add("tools-top10", ("Top 10 Ritardatari"), Picture["icon:/16/watch"], "tools")
+    TreeView1.Add("tools-smorfia", ("Consulta la smorfia"), Picture["icon:/16/font"], "tools")
+    TreeView1.Add("tools-name2num", ("estrai numero da nome"), Picture["icons/icon_name_to_number.png"], "tools")
+
+END
+
+PUBLIC SUB Form_Resize()
+
+  TreeView1.W = (ME.W / 10) * 3
+
+END
+
+PUBLIC SUB TreeView1_Click()
+
+  TRY TextArea1.Text = File.Load(Application.path &/ "guide" &/ Str(ComboBox1.Index) &/ TreeView1.Item.Key)
+
+END

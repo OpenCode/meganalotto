@@ -1,0 +1,27 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,45,21)
+  Text = ("")
+  Border = Window.Fixed
+  { TextBox1 TextBox
+    MoveScaled(1,5,43,3)
+    Text = ("")
+  }
+  { Button1 Button
+    MoveScaled(16,9,13,4)
+    Text = ("Estrai")
+    Default = True
+  }
+  { Label1 Label
+    MoveScaled(1,1,43,3)
+    Text = ("Inserire un nome:")
+  }
+  { Label2 Label
+    MoveScaled(18,14,9,6)
+    Font = Font["28"]
+    Text = ("??")
+    Alignment = Align.Center
+    Border = Border.Plain
+  }
+}

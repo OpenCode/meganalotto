@@ -1,0 +1,33 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,42,24)
+  Text = ("Meganalotto - Partnership")
+  { TextLabel1 TextLabel
+    MoveScaled(1,1,40,5)
+    Text = ("\"Non chiederti cosa Meganalotto pu\xC3\xB2 fare per te ma chiediti cosa puoi fare tu per Meganalotto\"")
+    Alignment = Align.Center
+  }
+  { Separator1 Separator
+    MoveScaled(2,6,38,1)
+  }
+  { TextLabel2 TextLabel
+    MoveScaled(1,7,40,5)
+    Text = ("Scopri come diventare partner del software ottenenedo visibilit\xC3\xA0 grazie alla continua diffusione del software.")
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(4,13,11,10)
+    Picture = Picture["icon:/128/people"]
+    Stretch = True
+  }
+  { Button1 Button
+    MoveScaled(16,14,23,3)
+    Text = ("Visita pagina web")
+    Picture = Picture["icon:/16/earth"]
+  }
+  { Button2 Button
+    MoveScaled(16,18,23,3)
+    Text = ("Copia link")
+    Picture = Picture["icon:/16/copy"]
+  }
+}

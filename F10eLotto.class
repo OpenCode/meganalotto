@@ -1,0 +1,47 @@
+' Gambas class file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+PUBLIC SUB Form_Open()
+
+  DIM i, j, index AS Integer
+  DIM $rep AS String
+  
+  ME.Center
+  ME.Title = "Meganalotto - " & ("Estrazione 10&Lotto")
+
+  GridView1.Columns.Count = 5
+  GridView1.Rows.Count = 4
+  
+  FOR i = 0 TO 4
+    GridView1.Columns[i].W = GridView1.w / 5
+  NEXT 
+  
+  FOR i = 0 TO 3
+    GridView1.rows[i].h = GridView1.h / 4
+  NEXT
+  
+    '-- if file exists the software didn't download it again.
+  IF Exist("/tmp/estrazioni_ultime.do") = FALSE THEN
+      SHELL "wget --directory-prefix=/tmp " & "http://www.lottomaticaitalia.it/lotto/estrazioni/estrazioni_ultime.do" WAIT
+  END IF
+  
+  index = 196
+  
+  FOR i = 0 TO 3
+    FOR j = 0 TO 4
+      $rep = Split(File.Load("/tmp/estrazioni_ultime.do"), "\n")[index]
+      $rep = Replace($rep, "<td>", "")
+      $rep = Trim(Replace($rep, "</td>", ""))
+      GridView1[i, j].Text = $rep
+      index += 3
+    NEXT
+  NEXT 
+
+END

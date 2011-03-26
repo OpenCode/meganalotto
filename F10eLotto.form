@@ -1,0 +1,13 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,47,20)
+  Text = ("")
+  Border = Window.Fixed
+  Arrangement = Arrange.Fill
+  { GridView1 GridView
+    MoveScaled(1,1,45,18)
+    Expand = True
+    Scrollbar = Scroll.None
+  }
+}

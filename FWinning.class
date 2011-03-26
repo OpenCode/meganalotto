@@ -1,0 +1,140 @@
+' Gambas class file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+PUBLIC SUB Form_Open()
+
+  ME.Center
+  
+  ComboBox1.Add("Estratto", 0)
+  ComboBox1.Add("Ambo", 1)
+  ComboBox1.Add("Terno", 2)
+  ComboBox1.Add("Quaterna", 3)
+  ComboBox1.Add("Cinquina", 4)
+  
+  ComboBox2.Add("1", 0)
+
+END
+
+PUBLIC SUB ComboBox1_Click()
+
+  IF ComboBox1.Index = 0 THEN 
+    ComboBox2.Clear()
+    ComboBox2.Add("1", 0)
+  ELSE IF ComboBox1.Index = 1 THEN 
+    PopolateCombobox(2)
+  ELSE IF ComboBox1.Index = 2 THEN 
+    PopolateCombobox(3)
+  ELSE IF ComboBox1.Index = 3 THEN 
+    PopolateCombobox(4)
+  ELSE IF ComboBox1.Index = 4 THEN 
+    PopolateCombobox(5)
+  END IF
+
+END
+
+PRIVATE FUNCTION PopolateCombobox(intero AS Integer)
+
+  DIM i AS Integer
+  
+  ComboBox2.Clear()
+  FOR i = intero TO 10
+    ComboBox2.Add(Str(i))
+  NEXT
+
+END
+
+PUBLIC SUB Button1_Click()
+
+  DIM $key AS String
+  DIM costant, win_lordo, win_netto AS Float
+  
+  $Key = Str(ComboBox1.Index) & "-" & Str(ComboBox2.Index)
+  PRINT $key
+
+  IF ComboBox1.Index = 0 THEN 
+    costant = 55
+  ELSE IF ComboBox1.Index = 1 THEN 
+    IF ComboBox2.Index = 0 THEN 
+      costant = 255
+    ELSE IF ComboBox2.Index = 1 THEN 
+      costant = 83.30
+    ELSE IF ComboBox2.Index = 2 THEN 
+      costant = 41.60
+    ELSE IF ComboBox2.Index = 3 THEN 
+      costant = 25
+    ELSE IF ComboBox2.Index = 4 THEN 
+      costant = 16.60
+    ELSE IF ComboBox2.Index = 5 THEN 
+      costant = 11.90
+    ELSE IF ComboBox2.Index = 6 THEN 
+      costant = 8.90
+    ELSE IF ComboBox2.Index = 7 THEN 
+      costant = 6.90
+    ELSE IF ComboBox2.Index = 8 THEN 
+      costant = 5.50
+    END IF
+  ELSE IF ComboBox1.Index = 2 THEN 
+    IF ComboBox2.Index = 0 THEN 
+      costant = 4500
+    ELSE IF ComboBox2.Index = 1 THEN 
+      costant = 1125
+    ELSE IF ComboBox2.Index = 2 THEN 
+      costant = 450
+    ELSE IF ComboBox2.Index = 3 THEN 
+      costant = 225
+    ELSE IF ComboBox2.Index = 4 THEN 
+      costant = 128.5
+    ELSE IF ComboBox2.Index = 5 THEN 
+      costant = 80.30
+    ELSE IF ComboBox2.Index = 6 THEN 
+      costant = 53.5
+    ELSE IF ComboBox2.Index = 7 THEN 
+      costant = 37.5
+    END IF
+  ELSE IF ComboBox1.Index = 3 THEN 
+    IF ComboBox2.Index = 0 THEN 
+      costant = 120000
+    ELSE IF ComboBox2.Index = 1 THEN 
+      costant = 24000
+    ELSE IF ComboBox2.Index = 2 THEN 
+      costant = 8000
+    ELSE IF ComboBox2.Index = 3 THEN 
+      costant = 3428.5
+    ELSE IF ComboBox2.Index = 4 THEN 
+      costant = 1714.2
+    ELSE IF ComboBox2.Index = 5 THEN 
+      costant = 952.3
+    ELSE IF ComboBox2.Index = 6 THEN 
+      costant = 571.4
+    END IF
+  ELSE IF ComboBox1.Index = 4 THEN 
+    IF ComboBox2.Index = 0 THEN 
+      costant = 6000000
+    ELSE IF ComboBox2.Index = 1 THEN 
+      costant = 1000000
+    ELSE IF ComboBox2.Index = 2 THEN 
+      costant = 285714.20
+    ELSE IF ComboBox2.Index = 3 THEN 
+      costant = 107142.80
+    ELSE IF ComboBox2.Index = 4 THEN 
+      costant = 47619
+    ELSE IF ComboBox2.Index = 5 THEN 
+      costant = 23809.50
+    END IF
+  END IF
+
+  PRINT Str(costant)
+  
+  win_lordo = costant * ValueBox1.Value
+  win_netto = win_lordo - ((win_lordo * 6) / 100)
+  
+  Message.Info(("Vincita lorda di ") & Str(win_lordo) & "€" & "\n" & ("Vincita con trattenuta di ") & Str(win_netto) & "€")
+
+END

@@ -1,0 +1,31 @@
+' Gambas module file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+'-- variabile di test connessione post inizializzazione
+PUBLIC vKonnection AS Boolean = FALSE
+
+'-- controlla che esista la connessione alla rete
+PUBLIC FUNCTION ExistConnection() AS Boolean
+  
+  DIM sControllo AS String
+  
+  SHELL "netstat -s" TO sControllo
+  WAIT
+  
+  '-- se ci sono errori avvisa l'utente
+  IF LTrim(Left(Split(sControllo, "\n")[1])) = "0" THEN 
+    vKonnection = FALSE
+    RETURN FALSE
+  ELSE 
+    vKonnection = TRUE
+    RETURN TRUE
+  END IF
+
+END

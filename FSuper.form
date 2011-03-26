@@ -1,0 +1,68 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,31,22)
+  Text = ("")
+  Border = Window.Fixed
+  { BtClose Button
+    MoveScaled(10,17,11,4)
+    Text = ("Chiudi")
+    Picture = Picture["icon:/24/close"]
+  }
+  { ex1 Label
+    MoveScaled(1,1,4,4)
+    Text = ("0")
+    Alignment = Align.Center
+    Border = Border.Plain
+  }
+  { ex2 Label
+    MoveScaled(6,1,4,4)
+    Text = ("0")
+    Alignment = Align.Center
+    Border = Border.Plain
+  }
+  { ex3 Label
+    MoveScaled(11,1,4,4)
+    Text = ("0")
+    Alignment = Align.Center
+    Border = Border.Plain
+  }
+  { ex4 Label
+    MoveScaled(16,1,4,4)
+    Text = ("0")
+    Alignment = Align.Center
+    Border = Border.Plain
+  }
+  { ex5 Label
+    MoveScaled(21,1,4,4)
+    Text = ("0")
+    Alignment = Align.Center
+    Border = Border.Plain
+  }
+  { ex6 Label
+    MoveScaled(26,1,4,4)
+    Text = ("0")
+    Alignment = Align.Center
+    Border = Border.Plain
+  }
+  { num_jolly Label
+    MoveScaled(26,6,4,4)
+    Text = ("0")
+    Alignment = Align.Center
+    Border = Border.Plain
+  }
+  { num_super Label
+    MoveScaled(26,11,4,4)
+    Text = ("0")
+    Alignment = Align.Center
+    Border = Border.Plain
+  }
+  { Label9 Label
+    MoveScaled(2,6,23,4)
+    Text = ("Label9")
+  }
+  { Label10 Label
+    MoveScaled(2,11,23,4)
+    Text = ("Label9")
+  }
+}

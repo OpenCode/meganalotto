@@ -1,0 +1,129 @@
+' Gambas module file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+'array delle estrazioni
+ estrazione AS Integer[1]
+'-- array numero estratto
+ n AS Integer[1]
+'-- indice estrazione
+ indice AS Integer
+
+PUBLIC FUNCTION lotto() AS String[]
+  
+  DIM i AS Integer    '-- contatore per estrazioni
+  DIM j AS Integer    '-- ""  ""     ""   ""
+
+  DIM ritorno AS String[2]
+
+  n.resize(5)
+
+FOR i = 1 TO FMain.ValueBox1.value
+
+  nuova_estrazione(45, TRUE)
+
+  FOR j = 0 TO 4
+    indice = Int(Rnd(0, estrazione.count))
+    n[j] = Int(estrazione[indice])
+    estrazione.remove(indice)
+    estrazione.resize(estrazione.count)
+  NEXT 
+
+  n.sort(gb.Ascent)
+
+  FOR j = 0 TO 4
+    FMain.TextArea1.Text &= Str(n[j]) & "\t"
+  NEXT 
+
+  FMain.TextArea1.Text &= "\t\t\t\t\t# " & ("Lotto con sistema di parità")
+  FMain.TextArea1.Text &= gb.NewLine
+    
+NEXT
+
+END
+
+PUBLIC FUNCTION enalotto()
+  
+  DIM i AS Integer    '-- contatore per estrazioni
+  DIM j AS Integer    '-- ""  ""     ""   ""
+
+  n.resize(8)
+
+FOR i = 1 TO FMain.ValueBox1.value
+
+  nuova_estrazione(45, TRUE)
+
+  FOR j = 0 TO 7
+    indice = Int(Rnd(0, estrazione.count))
+    n[j] = estrazione[indice]
+    estrazione.remove(indice)
+    estrazione.resize(estrazione.count)
+  NEXT 
+
+  n.sort(gb.Ascent)
+
+  FOR j = 0 TO 7
+    FMain.TextArea1.Text &= Str(n[j]) & "\t"
+  NEXT 
+
+  FMain.TextArea1.Text &= "\t\t# " & ("Superenalotto con sistema di parità")
+  FMain.TextArea1.Text &= gb.NewLine
+
+NEXT
+
+END
+
+PUBLIC FUNCTION dieci()
+  
+  DIM i AS Integer    '-- contatore per estrazioni
+  DIM j AS Integer    '-- ""  ""     ""   ""
+
+  n.resize(10)
+
+FOR i = 1 TO FMain.ValueBox1.value
+
+  nuova_estrazione(45, TRUE)
+
+  FOR j = 0 TO 9
+      indice = Int(Rnd(0, estrazione.count))
+      n[j] = estrazione[indice]
+      estrazione.remove(indice)
+      estrazione.resize(estrazione.count)
+  NEXT 
+
+  n.sort(gb.Ascent)
+
+  FOR j = 0 TO 9
+    FMain.TextArea1.Text &= Str(n[j]) & "\t"
+  NEXT 
+
+  FMain.TextArea1.Text &= "# " & ("10&Lotto con sistema di parità")
+  FMain.TextArea1.Text &= gb.NewLine
+
+NEXT
+
+END
+
+PUBLIC FUNCTION nuova_estrazione(size AS Integer, secondarray AS Boolean)
+
+    '-- variabile di gestione del ciclo for,
+  DIM i AS Integer
+
+  '-- se si effettua una nuova estrazione ristabilizza la lunghezza degli array iniziale 
+  estrazione.resize(size)
+
+  '-- popola le due array
+  '-- array da 1 a 45
+  FOR i = 1 TO size STEP 1
+    estrazione[i - 1] = i * 2 
+  NEXT 
+
+  RANDOMIZE 
+
+END

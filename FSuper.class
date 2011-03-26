@@ -1,0 +1,65 @@
+' Gambas class file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+PUBLIC SUB Form_Open()
+
+    '-- counter
+  DIM i AS Integer
+  DIM $num AS String[6]
+
+    '-- set the form and other object
+  ME.Center
+  ME.Title = "Meganalotto - " & ("Ultima estrazione supernalotto.")
+  Label9.Text = ("Numero Jolly")
+  Label10.Text = ("Numero Superstar")
+
+    '-- download the file if it not exist
+  IF Exist("/tmp/UltimoConcorso") = FALSE THEN
+      SHELL "wget --directory-prefix=/tmp " & "http://giochinumerici.sisal.it/portal/page/portal/SitoGioco_DocLib/Contenuti/BoxInformativo/UltimoConcorso" WAIT
+  END IF
+  
+    '-- finf the number
+  FOR i = 0 TO 5
+    $num[i] = Split(File.Load("/tmp/UltimoConcorso"), "\n")[134 + i]
+    '-- delete the html tag
+    $num[i] = Replace($num[i], "<div id=\"infoVinc_boxNum" & Str(i + 1) & "\" class=\"infoVinc_boxNum\">", "")
+    $num[i] = Replace($num[i], "</div>", "")
+    $num[i] = Trim($num[i])
+  NEXT
+
+    '-- fill the textlabel
+  ex1.Text = $num[0]
+  ex2.Text = $num[1]
+  ex3.Text = $num[2]
+  ex4.Text = $num[3]
+  ex5.Text = $num[4]
+  ex6.Text = $num[5]
+
+    '-- find the jolly and superstar numbers
+  FOR i = 0 TO 1
+    $num[i] = Split(File.Load("/tmp/UltimoConcorso"), "\n")[140 + i]
+    '-- delete the html tag
+    $num[i] = Replace($num[i], "<div id=\"infoVinc_boxJolly\" class=\"infoVinc_boxJolly\">", "")
+    $num[i] = Replace($num[i], "<div id=\"infoVinc_boxSuperStar\" class=\"infoVinc_boxSuperStar\">", "")
+    $num[i] = Replace($num[i], "</div>", "")
+    $num[i] = Trim($num[i])
+  NEXT
+
+    '-- fill the textlabel
+  num_jolly.Text = $num[0]
+  num_super.Text = $num[1]
+
+END
+
+PUBLIC SUB BtClose_Click()
+
+  ME.Close
+
+END

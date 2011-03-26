@@ -1,0 +1,146 @@
+' Gambas class file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+'-- page ritardatari
+'-- http://www.lottomaticaitalia.it/lotto/statistiche/numeriRitardatariTop10.html
+
+PUBLIC SUB Form_Open()
+
+  DIM i AS Integer
+
+  ME.Center
+
+  GridView1.Columns.Count = 6
+  GridView1.Rows.Count = 11
+  GridView1.Columns[0].Title = "Ruota"
+  GridView1.Columns[1].Title = "1° estr"
+  GridView1.Columns[2].Title = "2° estr"
+  GridView1.Columns[3].Title = "3° estr"
+  GridView1.Columns[4].Title = "4° estr"
+  GridView1.Columns[5].Title = "5° estr"
+  GridView1[0, 0].Text = "Bari"
+  GridView1[1, 0].Text = "Cagliari"
+  GridView1[1, 0].Background = Color.LightGray
+  GridView1[2, 0].Text = "Firenze"
+  GridView1[3, 0].Text = "Genova"
+  GridView1[3, 0].Background = Color.LightGray
+  GridView1[4, 0].Text = "Milano"
+  GridView1[5, 0].Text = "Napoli"
+  GridView1[5, 0].Background = Color.LightGray
+  GridView1[6, 0].Text = "Palermo"
+  GridView1[7, 0].Text = "Roma"
+  GridView1[7, 0].Background = Color.LightGray
+  GridView1[8, 0].Text = "Torino"
+  GridView1[9, 0].Text = "Venezia"
+  GridView1[9, 0].Background = Color.LightGray
+  GridView1[10, 0].Text = "Nazionale"
+  '-- if file exists the software didn't download it again.
+  IF Exist("/tmp/estrazioni_ultime.do") = FALSE THEN
+      SHELL "wget --directory-prefix=/tmp " & "http://www.lottomaticaitalia.it/lotto/estrazioni/estrazioni_ultime.do" WAIT
+  END IF
+  FOR i = 0 TO 10
+      extract_number(45 + (13 * i))
+  NEXT
+
+  FMain.Label2.Text = "Visualizzatore caricato"
+
+END
+
+PRIVATE FUNCTION extract_number(ruota AS Integer)
+
+  DIM numeri AS String[5]
+
+  '-- QUI STRANAMENTE IL CICLO FOR NON FUNZIONA: POPOLA LA PRIMA RIGA
+  '-- CON I NUMERI RELATIVI ALL'ULTIMA
+  '-- CONTROLLARE
+
+  numeri[0] = Split(File.Load("/tmp/estrazioni_ultime.do"), "\n")[ruota]
+  INC ruota
+  numeri[1] = Split(File.Load("/tmp/estrazioni_ultime.do"), "\n")[ruota]
+  INC ruota
+  numeri[2] = Split(File.Load("/tmp/estrazioni_ultime.do"), "\n")[ruota]
+  INC ruota
+  numeri[3] = Split(File.Load("/tmp/estrazioni_ultime.do"), "\n")[ruota]
+  INC ruota
+  numeri[4] = Split(File.Load("/tmp/estrazioni_ultime.do"), "\n")[ruota]
+  WAIT
+  PopolaGridView((ruota - 4), numeri)
+  Label1.Visible = FALSE
+
+END
+
+PRIVATE FUNCTION Ripulisci(pulire AS String) AS String
+
+  DIM restituisci AS String
+
+  restituisci = Replace(pulire, "<td class=\"center\">", "")
+  restituisci = Replace(restituisci, "</td>", "")
+
+  RETURN Trim(restituisci)
+
+END
+
+PRIVATE FUNCTION PopolaGridView($ruota AS Integer, $numero AS String[])
+
+  DIM i, j AS Integer
+  
+  IF $ruota = 45 THEN 
+      j = 0
+  ELSE IF $ruota = 58
+      j = 1
+  ELSE IF $ruota = 71
+      j = 2
+  ELSE IF $ruota = 84
+      j = 3
+  ELSE IF $ruota = 97
+      j = 4
+  ELSE IF $ruota = 110
+      j = 5
+  ELSE IF $ruota = 123
+      j = 6
+  ELSE IF $ruota = 136
+      j = 7
+  ELSE IF $ruota = 149
+      j = 8
+  ELSE IF $ruota = 162
+      j = 9
+  ELSE IF $ruota = 175
+      j = 10
+  END IF
+
+  FOR i = 1 TO 5
+      GridView1[j, i].Text = Ripulisci($numero[i - 1])
+      IF ((j MOD 2) = 1) THEN GridView1[j, i].Background = Color.LightGray
+  NEXT
+
+END
+
+PUBLIC SUB Form_Resize()
+
+  DIM i AS Integer
+
+  '-- ridimensiona righe e coonne per renderle omogenee
+  FOR i = 0 TO 10
+      GridView1.Rows[i].Height = GridView1.h / 11
+  NEXT
+  FOR i = 0 TO 5
+      GridView1.Columns[i].Width = GridView1.w / 6
+  NEXT
+
+  Label1.x = (ME.w / 2) - (Label1.w / 2)
+  Label1.y = (ME.h / 2) - (Label1.h / 2)
+
+END
+
+PUBLIC SUB Label6_MouseDown()
+
+  
+
+END

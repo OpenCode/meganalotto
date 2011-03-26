@@ -1,0 +1,33 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,64,54)
+  Text = ("Meganalotto - Noi diamo i numeri!!!")
+  Icon = Picture["icona.png"]
+  Arrangement = Arrange.Fill
+  { VBox1 VBox
+    MoveScaled(0,1,63,52)
+    Spacing = 5
+    Padding = 5
+    { HBox1 HBox
+      MoveScaled(0,1,62,4)
+      Spacing = 5
+      { txtcerca TextBox
+        MoveScaled(0,0,44,4)
+        Expand = True
+        Text = ("")
+      }
+      { cerca Button
+        MoveScaled(45,0,17,4)
+        Text = ("Cerca vocabolo")
+        Picture = Picture["icon:/16/watch"]
+        Default = True
+      }
+    }
+    { GridView1 GridView
+      MoveScaled(0,6,62,47)
+      Expand = True
+      Header = GridView.Horizontal
+    }
+  }
+}

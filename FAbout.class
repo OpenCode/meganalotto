@@ -1,0 +1,63 @@
+' Gambas class file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+PUBLIC SUB Form_Open()
+
+  ME.Center
+
+  TextArea1.Text = "\n Un ringraziamento speciale va a:\n\n" 
+  TextArea1.Text &= "\t- Antonio (detto Papà) che ha espressamente richiesto questo software per i suoi scopi;  \n\n"
+  TextArea1.Text &= "\t- La comunità italiana di Gambas per il semplice fatto di esistere;  \n\n"
+  TextArea1.Text &= "\t- Voi utenti che scaricate ed usate il programma rendendomi fiero del mio \"lavoro\";  \n\n"
+  TextArea1.Text &= "\t- Tangoku (http://gaetanolonigro.wordpress.com/) per la magnifica icona;  \n\n"
+  TextArea1.Text &= "\t- Wikipedia da cui ho tratto i termini de La Smorfia;  \n\n"
+  TextArea1.Text &= "\t- Google Code per l'hosting gratuito del progetto;  \n\n"
+  TextArea1.Text &= "\t- Google Traslate per la traduzione in inglese e francese;  \n\n"
+  TextArea1.Text &= "\t- Txt.io per il servizio di microblogging con cui gestisco i feed;  \n\n"
+
+END
+
+PUBLIC SUB Button2_Click()
+
+  FGame.ShowModal()
+
+END
+
+PUBLIC SUB Button3_Click()
+
+  ME.Close
+
+END
+
+PUBLIC SUB Button1_Click()
+
+  FGpl.ShowDialog()
+
+END
+
+PUBLIC SUB btLinkedin_Click()
+
+  TRY Desktop.Open("http://www.linkedin.com/in/francescoapruzzese")
+  IF ERROR THEN 
+    Clipboard.Copy("http://www.linkedin.com/in/francescoapruzzese")
+    Message.Info(("Nessun Browser trovato") & "\n" & ("Il link è stato copiato in memoria. Incollarlo nel proprio browser."), ("Chiudi"))
+  END IF
+
+END
+
+PUBLIC SUB btBlog_Click()
+
+  TRY Desktop.Open("http://www.soluzionisoftware.blogspot.com")
+  IF ERROR THEN 
+    Clipboard.Copy("http://www.soluzionisoftware.blogspot.com")
+    Message.Info(("Nessun Browser trovato") & "\n" & ("Il link è stato copiato in memoria. Incollarlo nel proprio browser."), ("Chiudi"))
+  END IF
+
+END

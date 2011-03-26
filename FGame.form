@@ -1,0 +1,36 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,53,28)
+  Text = ("Meganalotto - Giochi supportati")
+  Border = Window.Fixed
+  { TextLabel1 TextLabel
+    MoveScaled(1,1,51,5)
+    Text = ("Il software non \xC3\xA8 il alcun modo supportato e/o ricondubile ai gestori dei vari giochi.")
+    Alignment = Align.Center
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(1,7,25,8)
+    Picture = Picture["images/lotto.jpg"]
+    Stretch = True
+    Alignment = Align.Center
+  }
+  { PictureBox2 PictureBox
+    MoveScaled(27,7,25,8)
+    Picture = Picture["images/supernalotto.jpg"]
+    Stretch = True
+    Alignment = Align.Center
+  }
+  { PictureBox3 PictureBox
+    MoveScaled(1,16,25,11)
+    Picture = Picture["images/10eLotto.jpg"]
+    Stretch = True
+    Alignment = Align.Center
+  }
+  { PictureBox4 PictureBox
+    MoveScaled(27,16,25,11)
+    Picture = Picture["images/win4life.jpg"]
+    Stretch = True
+    Alignment = Align.Center
+  }
+}

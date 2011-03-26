@@ -1,0 +1,43 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,34,36)
+  Text = ("Meganalotto - Top 10 ritardatari lotto")
+  Icon = Picture["icona.png"]
+  Arrangement = Arrange.Fill
+  { Label1 Label
+    MoveScaled(3,11,29,4)
+    Text = ("Aggiornamento componenti...attendere")
+    Alignment = Align.Center
+  }
+  { VBox1 VBox
+    MoveScaled(1,0,32,35)
+    Spacing = 2
+    { HBox1 HBox
+      MoveScaled(0,1,32,4)
+      { Label2 Label
+        MoveScaled(0,1,8,3)
+        Expand = True
+        Text = ("Ruota")
+        Alignment = Align.Center
+      }
+      { Label3 Label
+        MoveScaled(12,1,7,3)
+        Expand = True
+        Text = ("Numero")
+        Alignment = Align.Center
+      }
+      { Label4 Label
+        MoveScaled(24,1,7,3)
+        Expand = True
+        Text = ("Ritardo")
+        Alignment = Align.Center
+      }
+    }
+    { GridView1 GridView
+      MoveScaled(0,5,28,30)
+      Expand = True
+      Scrollbar = Scroll.None
+    }
+  }
+}

@@ -1,0 +1,59 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,64,42)
+  Text = ("Meganalotto - About")
+  Icon = Picture["icona.png"]
+  Border = Window.Fixed
+  { Label1 Label
+    MoveScaled(1,1,62,8)
+    Font = Font["Bitstream Charter,+10"]
+    Text = ("Meganalotto")
+    Alignment = Align.Center
+  }
+  { Frame1 Frame
+    MoveScaled(1,16,62,21)
+    Text = ("Ringraziamenti")
+    { TextArea1 TextArea
+      MoveScaled(1,2,60,18)
+      Mouse = Mouse.Text
+      Text = ("")
+      ReadOnly = True
+      Border = False
+    }
+  }
+  { Button1 Button
+    MoveScaled(2,38,18,2)
+    Text = ("Licenza")
+    Picture = Picture["icon:/16/text"]
+  }
+  { Button2 Button
+    MoveScaled(23,38,18,2)
+    Text = ("Giochi supportati")
+    Picture = Picture["icon:/16/info"]
+  }
+  { Button3 Button
+    MoveScaled(44,38,18,2)
+    Text = ("Chiudi")
+    Picture = Picture["icon:/16/close"]
+  }
+  { Frame2 Frame
+    MoveScaled(1,9,62,6)
+    Text = ("Autore")
+    { Label2 Label
+      MoveScaled(1,2,34,3)
+      Text = ("Francesco \"Ceskho OpenCode\" Apruzzese")
+      Alignment = Align.Center
+    }
+    { btLinkedin Button
+      MoveScaled(54,2,3,3)
+      Text = ("")
+      Picture = Picture["icons/linkedin.png"]
+    }
+    { btBlog Button
+      MoveScaled(58,2,3,3)
+      Text = ("")
+      Picture = Picture["icons/blogger.png"]
+    }
+  }
+}

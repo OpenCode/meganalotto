@@ -1,0 +1,13 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,28,27)
+  Text = ("Meganalotto")
+  Icon = Picture["icona.png"]
+  Arrangement = Arrange.Fill
+  { txtNote TextArea
+    MoveScaled(1,1,25,25)
+    Text = ("")
+    Wrap = True
+  }
+}

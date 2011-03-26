@@ -1,0 +1,21 @@
+' Gambas class file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+PUBLIC SUB Form_Open()
+
+  ME.Center
+
+END
+
+PUBLIC SUB Button1_Click()
+
+  Label2.Text = Str(Other.Name2Num(TextBox1.Text))
+
+END

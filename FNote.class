@@ -1,0 +1,53 @@
+' Gambas class file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+changed AS Boolean = FALSE
+
+PUBLIC SUB Form_Open()
+
+  ME.center
+
+  IF Exist(User.Home &/ ".meganalotto/note") THEN 
+    DEBUG "Apertura note automatica..."
+    txtNote.Text = File.Load(User.Home &/ ".meganalotto/note")
+    DEBUG "Caricato file " & User.Home & "/.meganalotto/note"
+  ELSE IF NOT Exist(User.Home &/ ".meganalotto") THEN 
+    MKDIR User.Home &/ ".meganalotto"
+    DEBUG "Creazione directory di sistema..."
+    DEBUG "Cartella meganalotto creata in " & User.Home
+  END IF
+
+END
+
+PUBLIC SUB Form_Close()
+
+  DIM returned AS Integer
+
+  IF changed = TRUE THEN 
+    returned = Message.Question("Il testo è cambiato. Vuoi salvare le modifiche?", "Chiudi senza salvare", "Annulla", "Chiudi")
+    PRINT returned
+    IF returned = 1 THEN 
+        DEBUG "Chiuso senza salvataggio."
+    ELSE IF returned = 2 THEN
+        DEBUG "Annullata chiusura"
+        STOP EVENT
+    ELSE IF returned = 3 THEN 
+        DEBUG "Chiuso con salvataggio."
+        File.Save(User.Home &/ ".meganalotto/note", txtNote.Text)
+    END IF
+  END IF
+
+END
+
+PUBLIC SUB txtNote_KeyRelease()
+
+  changed = TRUE
+
+END

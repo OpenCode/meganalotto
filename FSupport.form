@@ -1,0 +1,44 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,44,35)
+  Text = ("Meganalotto - Sostini il progetto")
+  Border = Window.Fixed
+  { TextLabel1 TextLabel
+    MoveScaled(1,1,42,14)
+    Text = ("Meganalotto \xC3\xA8 un progetto amatoriale che conta solo sul lavoro di gente appassionata per supportare la passione di altra gente. Non possiamo contare su grandi aziende o nomi celebri per continuare lo sviluppo e pertanto chiediamo a chiunque ne avesse voglia di sostenere il nostro lavoro con piccolissime donazione se ci\xC3\xB2 viene ritenuto giusto.")
+  }
+  { btflattr Button
+    MoveScaled(15,16,18,3)
+    Text = ("Visita pagina web")
+    Picture = Picture["icon:/16/earth"]
+  }
+  { btpaypal Button
+    MoveScaled(15,26,18,3)
+    Text = ("Visita pagina web")
+    Picture = Picture["icon:/16/earth"]
+  }
+  { Button1 Button
+    MoveScaled(15,20,18,3)
+    Text = ("Copia link")
+    Picture = Picture["icon:/16/copy"]
+  }
+  { Button2 Button
+    MoveScaled(15,30,18,3)
+    Text = ("Copia link")
+    Picture = Picture["icon:/16/copy"]
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(7,16,7,7)
+    Picture = Picture["images/flattr.jpg"]
+    Stretch = True
+  }
+  { PictureBox2 PictureBox
+    MoveScaled(7,26,7,7)
+    Picture = Picture["images/paypal.jpg"]
+    Stretch = True
+  }
+  { Separator1 Separator
+    MoveScaled(7,24,26,1)
+  }
+}

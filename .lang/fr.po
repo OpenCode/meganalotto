@@ -1,0 +1,180 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2002-11-01 04:27+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: FSuper.class:98
+msgid "0"
+msgstr "0"
+
+#: FMain.class:351
+msgid "10&lotto"
+msgstr "10&lotto"
+
+#: FMain.class:372
+msgid "10&Lotto"
+msgstr "10&Lotto"
+
+#: FMain.class:418
+msgid "About"
+msgstr "About"
+
+#: FRitardatari.class:127
+msgid "Aggiornamento componenti...attendere"
+msgstr "Mise à jour des composants...attendre"
+
+#: FLotto.class:164
+msgid "Aggiornamento dei dati in corso...attendere...."
+msgstr "Mise à jour des données...patienter ...."
+
+#: FMain.class:247
+msgid "Apertura visualizzatore ritardatari in corso"
+msgstr "Visionneuse d'ouverture retardataires étant"
+
+#: FMain.class:333
+msgid "Archivio Estrazioni"
+msgstr "J'archive des extractions"
+
+#: FMain.class:388
+msgid "Cadenza"
+msgstr "Cadence"
+
+#: FSmorfia.class:85
+msgid "Cerca vocabolo"
+msgstr "Le terme de recherche"
+
+#: FMain.class:494 FSuper.class:92
+msgid "Chiudi"
+msgstr "Fermes"
+
+#: FMain.class:402
+msgid "Consulta la smorfia"
+msgstr "Vérifier smorfia"
+
+#: FAbout.class:56
+msgid "Francesco \"Ceskho OpenCode\" Apruzzese"
+msgstr "Francesco \"Ceskho OpenCode\" Apruzzese"
+
+#: FMain.class:384
+msgid "Gemelli"
+msgstr "Gémeaux"
+
+#: FMain.class:475
+msgid "Genera"
+msgstr "Extrais"
+
+#: FMain.class:252
+msgid "Impossibile accedere alla rete"
+msgstr "Impossible de se connecter au réseau"
+
+#: FMain.class:109
+msgid "Impossibile connettersi alla rete"
+msgstr "Impossible de se connecter au réseau"
+
+#: FSuper.class:154
+msgid "Label9"
+msgstr "Label9"
+
+#: FAbout.class:68
+msgid "Licenza: GPL versione 3 o superiore"
+msgstr "Licence: GPL version 3 ou supérieure"
+
+#: FMain.class:336
+msgid "Lotto"
+msgstr "Lotto"
+
+#: .project:1
+msgid "meganalotto"
+msgstr "meganalotto"
+
+#: FAbout.class:50 FNote.class:57
+msgid "Meganalotto"
+msgstr "Meganalotto"
+
+#: FLotto.class:153
+msgid "Meganalotto - Estrazioni del lotto"
+msgstr "Megnalotto - Extractions lotto"
+
+#: FAbout.class:43 FMain.class:326 FSmorfia.class:64
+msgid "Meganalotto - Noi diamo i numeri!!!"
+msgstr "Meganalotto"
+
+#: FRitardatari.class:116
+msgid "Meganalotto - Top 10 ritardatari lotto"
+msgstr "Meganalotto - Top 10 retardataires lotto"
+
+#: FMain.class:265
+msgid "Non ancora implementato"
+msgstr "Pas encore implémenté"
+
+#: FMain.class:412
+msgid "Note"
+msgstr "Notes"
+
+#: FSuper.class:20
+msgid "Numero Jolly"
+msgstr "Numéro Jolly"
+
+#: FSuper.class:21
+msgid "Numero Superstar"
+msgstr "Numéro Superstar"
+
+#: .project:2
+msgid "Programma per calcolare diverse combinazioni di numeri dei diversi giochi italiani. Lotto, SuperEnalotto Win4Life e 10eLotto."
+msgstr "Programme pour le calcul de différentes combinaisons de numéros différents jeux de société italienne. Lotto, Lotto chaude et 10eLotto Win4Life."
+
+#: FMain.class:482
+msgid "Pulisci"
+msgstr "Nettoies"
+
+#: FAbout.class:74 FMain.class:421
+msgid "Ringraziamenti"
+msgstr "Remerciements"
+
+#: FMain.class:488
+msgid "Salva"
+msgstr "Sauve"
+
+#: FMain.class:377
+msgid "Sistemi"
+msgstr "Systèmes"
+
+#: FMain.class:399
+msgid "Strumenti"
+msgstr "Outils"
+
+#: FMain.class:341
+msgid "SuperEnalotto"
+msgstr "SuperEnalotto"
+
+#: FMain.class:357
+msgid "Tipo estrazione"
+msgstr "Type d'extraction"
+
+#: FMain.class:407
+msgid "Top 10 ritardatari"
+msgstr "Top 10 retardataires"
+
+#: FSuper.class:19
+msgid "Ultima estrazione supernalotto."
+msgstr "Dernière supernalotto extraction."
+
+#: FMain.class:431
+msgid "Visita il sito del progetto"
+msgstr "Visite le situé de projette"
+
+#: FMain.class:426
+msgid "Visita il sito del programmatore"
+msgstr "Visite le situé de réalisateur"
+
+#: FMain.class:346
+msgid "Win4Life"
+msgstr "Win4Life"
+

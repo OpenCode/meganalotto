@@ -1,0 +1,30 @@
+# Gambas Project File 2.0
+# Compiled with Gambas 2.21.0
+Title=meganalotto
+Startup=FMain
+Icon=icona.png
+Version=0.3.9
+Library=gb.gui
+Library=gb.form
+Library=gb.desktop
+Library=gb.net
+Library=gb.net.curl
+Library=gb.xml
+Description=Programma per calcolare diverse combinazioni di numeri dei diversi giochi italiani. Lotto, SuperEnalotto Win4Life e 10eLotto.
+Authors=Francesco "Ceskho OpenCode" Apruzzese
+TabSize=2
+Translate=1
+Language=it
+ControlPublic=1
+ExecPath=/home/interrupt/Desktop/meganalotto.gambas
+SourcePath=/home/interrupt/Meganalotto
+Maintainer=Francesco Ceskho OpenCode Apruzzese
+Address=cescoap@gmail.com
+Url=http://soluzionisoftware.blogspot.com
+License=General Public Licence
+UseRelease=1
+CreateEachDirectory=1
+Systems=debian,fedora,mandriva,suse,ubuntu
+Menus=Games/Tools,Game/Simulation,More Applications/Games/Other,Game/Simulation,Games/Tools
+Categories=,Game;Simulation,Game,Game;Simulation,
+Groups=games,Amusements/Games,Games/Other,Amusements/Games/Other,games

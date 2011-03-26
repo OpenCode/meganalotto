@@ -1,0 +1,57 @@
+' Gambas class file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+PUBLIC SUB Form_Open()
+
+  ME.center
+
+END
+
+PUBLIC SUB btAdd_Click()
+
+  DIM i AS Integer
+  DIM NumberTooBig AS Boolean
+
+  NumberTooBig = FALSE
+
+  IF Split(TextBox1.text, ",").Count > 10 THEN 
+    Message.Error(("Inserire al massimo 10 valori"), ("Chiudi"))
+    RETURN 
+  END IF
+  
+  FOR i = 0 TO Split(TextBox1.text, ",").Count - 1
+    IF CInt(Split(TextBox1.text, ",")[i]) > 90 THEN NumberTooBig = TRUE
+    IF CInt(Split(TextBox1.text, ",")[i]) = 0 THEN NumberTooBig = TRUE
+  NEXT 
+
+  IF NumberTooBig THEN 
+    Message.Error(("Inserire solo valori da 1 a 90"), ("Chiudi"))
+    RETURN 
+  END IF
+
+  Other.NumbersString = TextBox1.Text
+  ME.Close
+
+END
+
+PUBLIC SUB TextBox1_KeyPress()
+
+  SELECT Key.code 
+    CASE Key.BackSpace, Key.Delete, Key.Left, Key.Right
+      RETURN 
+  END SELECT 
+  
+  IF (Key.Text LIKE "[0-9]" OR Key.Text = ",") THEN
+    RETURN
+  ELSE 
+    STOP EVENT 
+  ENDIF 
+    
+END

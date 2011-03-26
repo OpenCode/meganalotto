@@ -1,0 +1,15 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,62,62)
+  Text = ("Meganalotto - Licenza")
+  Maximized = True
+  Arrangement = Arrange.Fill
+  Padding = 5
+  { TextArea1 TextArea
+    MoveScaled(1,1,49,33)
+    Text = ("TextArea1")
+    ReadOnly = True
+    Wrap = True
+  }
+}

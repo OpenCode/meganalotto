@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/54/trunk/guide/0
+END
+sys-complete
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/58/trunk/guide/0/sys-complete
+END
+sys-only-even
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/58/trunk/guide/0/sys-only-even
+END
+sys-only-uneven
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/58/trunk/guide/0/sys-only-uneven
+END

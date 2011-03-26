@@ -1,0 +1,67 @@
+' Gambas class file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+PUBLIC SUB Form_Open()
+
+    '-- counter
+  DIM i, j, index AS Integer
+    '-- values array
+  DIM $num AS String[13]
+
+  ME.Center
+
+    '-- management of the gridview
+  GridView1.columns.Count = 13
+  GridView1.Columns[0].Title = ("Concorso")
+  GridView1.Columns[1].Title = ("Ora")
+  FOR i = 1 TO 10
+    GridView1.Columns[i + 1].Title = Str(i)
+  NEXT 
+  GridView1.Columns[12].Title = "Numerone"
+    '-- create a row for each exctraction in the day
+  GridView1.Rows.Count = Hour(Now) - 7
+  IF ((GridView1.Rows.Count < 0) OR (GridView1.Rows.Count < 0)) THEN 
+    GridView1.Rows.Count = 13
+  ELSE IF GridView1.Rows.Count > 13 THEN 
+    GridView1.Rows.Count = 13
+  END IF
+
+    '-- if file exists the software didn't download it again.
+  IF Exist("/tmp/Estrazioni-del-Giorno" & Str(Hour(Now))) = FALSE THEN
+      SHELL "wget --directory-prefix=/tmp " & "http://www.sisal.it/online/Win-For-Life/Estrazioni-del-Giorno" WAIT
+      MOVE "/tmp/Estrazioni-del-Giorno" TO "/tmp/Estrazioni-del-Giorno" & Str(Hour(Now))
+  END IF
+
+  index = 520
+
+  FOR i = 0 TO GridView1.Rows.Count - 1
+    FOR j = 0 TO 12
+      PRINT Split(File.Load("/tmp/Estrazioni-del-Giorno" & Str(Hour(Now))), "\n")[index]
+      GridView1[i, j].Text = Trim(Replace(Split(File.Load("/tmp/Estrazioni-del-Giorno" & Str(Hour(Now))), "\n")[index], "&nbsp;", ""))
+      index += 3
+    NEXT
+    index += 15
+  NEXT 
+
+END
+
+PUBLIC SUB Form_Resize()
+
+  DIM i AS Integer
+
+  FOR i = 0 TO 12
+    GridView1.Columns[i].Width = GridView1.w / 13
+  NEXT 
+  
+  FOR i = 0 TO GridView1.Rows.Count - 1
+    GridView1.Rows[i].H = GridView1.H / GridView1.Rows.Count - 1
+  NEXT 
+
+END

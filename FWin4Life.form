@@ -1,0 +1,93 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,65,41)
+  Text = ("")
+  Arrangement = Arrange.Vertical
+  { HBox1 HBox
+    MoveScaled(1,2,63,4)
+    { Label1 Label
+      MoveScaled(1,0,8,4)
+      Expand = True
+      Text = ("Estrazione")
+      Alignment = Align.Center
+    }
+    { Label2 Label
+      MoveScaled(10,0,8,4)
+      Expand = True
+      Text = ("Ora")
+      Alignment = Align.Center
+    }
+    { Label3 Label
+      MoveScaled(19,0,2,4)
+      Expand = True
+      Text = ("1\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label4 Label
+      MoveScaled(22,0,2,4)
+      Expand = True
+      Text = ("2\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label5 Label
+      MoveScaled(25,0,2,4)
+      Expand = True
+      Text = ("3\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label6 Label
+      MoveScaled(28,0,2,4)
+      Expand = True
+      Text = ("4\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label7 Label
+      MoveScaled(31,0,2,4)
+      Expand = True
+      Text = ("5\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label8 Label
+      MoveScaled(34,0,2,4)
+      Expand = True
+      Text = ("6\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label9 Label
+      MoveScaled(37,0,2,4)
+      Expand = True
+      Text = ("7\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label10 Label
+      MoveScaled(40,0,2,4)
+      Expand = True
+      Text = ("8\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label11 Label
+      MoveScaled(43,0,2,4)
+      Expand = True
+      Text = ("9\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label12 Label
+      MoveScaled(46,0,3,4)
+      Expand = True
+      Text = ("10\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label13 Label
+      MoveScaled(51,0,9,4)
+      Expand = True
+      Text = ("Numerone")
+      Alignment = Align.Center
+    }
+  }
+  { GridView1 GridView
+    MoveScaled(1,8,52,26)
+    Expand = True
+    Scrollbar = Scroll.None
+  }
+}

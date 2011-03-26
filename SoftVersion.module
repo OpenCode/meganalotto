@@ -1,0 +1,53 @@
+' Gambas module file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+IsNew AS Boolean = FALSE
+$NewVersion AS String = ""
+
+PUBLIC FUNCTION VersionColor() AS Picture
+  
+  DIM $vers, $actual AS String
+  
+  IF Konnection.vKonnection = FALSE THEN 
+    IsNew = FALSE
+    RETURN Picture[Application.path &/ "icons/circle_red.png"]
+  ELSE 
+    IF NOT Exist("/tmp/new-version") THEN
+      SHELL "wget --directory-prefix=/tmp " & "http://meganalotto.googlecode.com/files/new-version" WAIT
+    END IF
+  END IF                                                                                                                  
+  
+  $vers = File.Load("/tmp/new-version")
+  $NewVersion = Replace($vers, "\n", "")
+  $vers = Replace($vers, ".", "")
+  $actual = Str(Application.Version)
+  $actual = Replace($actual, ".", "")
+  
+  IF CInt($actual) < CInt($vers) THEN 
+    IsNew = TRUE
+    RETURN Picture[Application.path &/ "icons/circle_green.png"]
+  ELSE 
+    IsNew = FALSE
+    RETURN Picture[Application.path &/ "icons/circle_red.png"]
+  END IF
+  
+END
+
+PUBLIC FUNCTION RelativeToolTip() AS String
+  
+  IF Konnection.vKonnection = FALSE THEN RETURN ("Non ci sono nuove versioni")
+  
+  IF IsNew THEN 
+    RETURN ("È disponibile la versione") & " " & $NewVersion
+  ELSE 
+    RETURN ("Non ci sono nuove versioni")
+  END IF
+  
+END

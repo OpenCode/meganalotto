@@ -1,0 +1,57 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,58,36)
+  Text = ("Meganalotto - Estrazioni del lotto")
+  Icon = Picture["icona.png"]
+  Arrangement = Arrange.Vertical
+  { HBox1 HBox
+    MoveScaled(1,1,54,3)
+    { Label2 Label
+      MoveScaled(0,0,11,3)
+      Expand = True
+      Text = ("Ruota")
+      Alignment = Align.Center
+    }
+    { Label3 Label
+      MoveScaled(12,0,3,3)
+      Expand = True
+      Text = ("1\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label4 Label
+      MoveScaled(16,0,3,3)
+      Expand = True
+      Text = ("2\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label5 Label
+      MoveScaled(20,0,3,3)
+      Expand = True
+      Text = ("3\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label6 Label
+      MoveScaled(24,0,3,3)
+      Expand = True
+      Text = ("4\xC2\xB0")
+      Alignment = Align.Center
+    }
+    { Label7 Label
+      MoveScaled(28,0,3,3)
+      Expand = True
+      Text = ("5\xC2\xB0")
+      Alignment = Align.Center
+    }
+  }
+  { GridView1 GridView
+    MoveScaled(1,8,42,26)
+    Expand = True
+    Scrollbar = Scroll.None
+  }
+  { Label1 Label
+    MoveScaled(9,15,38,2)
+    Text = ("Aggiornamento dei dati in corso...attendere....")
+    Alignment = Align.Center
+  }
+}

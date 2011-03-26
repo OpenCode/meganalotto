@@ -1,0 +1,102 @@
+' Gambas class file
+
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
+PRIVATE CONST riga_partenza AS Integer = 978
+
+PUBLIC SUB Form_Open()
+
+  ME.Center
+
+  GridView1.Columns.Count = 3
+  GridView1.Rows.Count = 10
+  GridView1.Columns[0].Title = "Ruota"
+  GridView1.Columns[1].Title = "Numero"
+  GridView1.Columns[2].Title = "Estrazioni di ritardo"
+  '-- if then file exists the software don't download it again.
+  IF Exist("/tmp/numeriRitardatariTop10.html") = FALSE THEN
+      SHELL "wget --directory-prefix=/tmp " & "http://www.lottomaticaitalia.it/lotto/statistiche/numeriRitardatariTop10.html" WAIT
+  END IF
+  extract_number()
+  FMain.Label2.Text = "Visualizzatore caricato"
+
+END
+
+PRIVATE FUNCTION extract_number()
+  
+  DIM ritardatari AS String
+  DIM ruote AS String[10]
+  DIM numeri AS String[10]
+  DIM estrazioni AS String[10]
+  DIM i AS Integer
+
+  FOR i = 0 TO 9
+      ruote[i] = Split(File.Load("/tmp/numeriRitardatariTop10.html"), "\n")[riga_partenza + (6 * i)]
+      numeri[i] = Split(File.Load("/tmp/numeriRitardatariTop10.html"), "\n")[riga_partenza + (6 * i) + 1]
+      estrazioni[i] = Split(File.Load("/tmp/numeriRitardatariTop10.html"), "\n")[riga_partenza + (6 * i) + 2]
+  NEXT
+
+  PopolaGridView(ruote, numeri, estrazioni)
+  Label1.Visible = FALSE
+
+END
+
+PRIVATE FUNCTION Ripulisci(pulire AS String, tipo AS Integer) AS String
+
+  DIM restituisci AS String
+
+  IF tipo = 0 THEN
+      restituisci = Replace(pulire, "<th scope=\"row\" class=\"bgThOriz\">", "")
+      restituisci = Replace(restituisci, "</th>", "")
+  ELSE IF tipo = 1 THEN 
+      restituisci = Replace(pulire, "<td class=\"trGreyLt padLeft7\"><div class=\"bgTdOrangeLong\">", "")
+      restituisci = Replace(restituisci, "</div></td>", "")
+  ELSE IF tipo = 2 THEN 
+      restituisci = Replace(pulire, "<td class=\"trGreyLt col78\"><div class=\"bgBrdGreyLong\">", "")
+      restituisci = Replace(restituisci, "</div></td>", "")
+  END IF
+
+  RETURN Trim(restituisci)
+
+END
+
+PRIVATE FUNCTION PopolaGridView($ruota AS String[], $numero AS String[], $estrazione AS String[])
+
+  DIM i, j AS Integer
+
+  FOR i = 0 TO 9
+      j = 0
+      GridView1[i, j].Text = Ripulisci($ruota[i], 0)
+      IF ((i MOD 2) = 1) THEN GridView1[i, j].Background = Color.LightGray
+      INC j
+      GridView1[i, j].Text = Ripulisci($numero[i], 1)
+      IF ((i MOD 2) = 1) THEN GridView1[i, j].Background = Color.LightGray
+      INC j
+      GridView1[i, j].Text = Ripulisci($estrazione[i], 2)
+      IF ((i MOD 2) = 1) THEN GridView1[i, j].Background = Color.LightGray
+  NEXT
+
+END
+
+PUBLIC SUB Form_Resize()
+
+  DIM i AS Integer
+
+  '-- ridimensiona righe e coonne per renderle omogenee
+  FOR i = 0 TO 9
+      GridView1.Rows[i].Height = GridView1.h / 10
+  NEXT
+  FOR i = 0 TO 2
+      GridView1.Columns[i].Width = GridView1.w / 3
+  NEXT
+
+  Label1.x = (ME.w / 2) - (Label1.w / 2)
+  Label1.y = (ME.h / 2) - (Label1.h / 2)
+
+END

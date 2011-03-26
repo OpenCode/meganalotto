@@ -1,0 +1,209 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,89,63)
+  Text = ("Meganalotto - Noi diamo i numeri!!!")
+  Icon = Picture["icona.png"]
+  Arrangement = Arrange.Vertical
+  Spacing = 5
+  Padding = 5
+  { estraz Menu
+    Text = ("Archivio Estrazioni")
+    { extrax Menu
+      Text = ("Lotto")
+      Picture = Picture["icona_menu.png"]
+    }
+    { Menu1 Menu
+      Text = ("SuperEnalotto")
+      Picture = Picture["icona_menu.png"]
+    }
+    { Menu2 Menu
+      Text = ("Win4Life")
+      Picture = Picture["icona_menu.png"]
+    }
+    { Menu3 Menu
+      Text = ("10elotto")
+      Picture = Picture["icona_menu.png"]
+    }
+  }
+  { menu_extraction_type Menu
+    Text = ("Tipo estrazione")
+    { lotto Menu
+      Text = ("Lotto")
+    }
+    { superenal Menu
+      Text = ("SuperEnalotto")
+    }
+    { win Menu
+      Text = ("Win4Life")
+    }
+    { dieci Menu
+      Text = ("10eLotto")
+    }
+  }
+  { system_game Menu
+    Text = ("Sistemi")
+    { menu_extract Menu
+      Text = ("Completo")
+    }
+    { menu_extract_only_pair Menu
+      Text = ("Sistema di Parit\xC3\xA0")
+    }
+    { menu_extract_only_uneven Menu
+      Text = ("Sistema di Disparit\xC3\xA0")
+    }
+  }
+  { tools Menu
+    Text = ("Strumenti")
+    { ritardatari Menu
+      Text = ("Top 10 ritardatari")
+    }
+    { Menu4 Menu
+      Text = ("")
+    }
+    { smorfia Menu
+      Text = ("Consulta la smorfia")
+      Picture = Picture["icon:/16/font"]
+    }
+    { numb_by_name Menu
+      Text = ("Estrai numero da nome")
+    }
+    { menu_winning Menu
+      Text = ("Calcola quota vittoria")
+    }
+    { menu_personal_system Menu
+      Text = ("Inserisci valori personali")
+    }
+    { Menu11 Menu
+      Text = ("")
+    }
+    { note Menu
+      Text = ("Note")
+      Picture = Picture["icon:/16/file"]
+    }
+    { menu_tools_guide Menu
+      Text = ("Guida")
+      Picture = Picture["icon:/16/book"]
+    }
+  }
+  { circa Menu
+    Text = ("About")
+    { Menu12 Menu
+      Text = ("Ringraziamenti")
+      Picture = Picture["icona_menu.png"]
+    }
+    { blog Menu
+      Text = ("Visita il sito del progetto")
+      Picture = Picture["icon:/16/earth"]
+    }
+    { Menu5 Menu
+      Text = ("")
+    }
+    { support Menu
+      Text = ("Sostieni il progetto")
+    }
+    { partnership Menu
+      Text = ("Diventa partner")
+      Picture = Picture["icon:/16/people"]
+    }
+  }
+  { HBox2 HBox
+    MoveScaled(1,1,87,4)
+    Spacing = 5
+    { btMinus Button
+      MoveScaled(0,0,4,4)
+      Text = ("")
+      Picture = Picture["icon:/24/remove"]
+    }
+    { ValueBox1 ValueBox
+      MoveScaled(4,0,8,4)
+    }
+    { btPlus Button
+      MoveScaled(12,0,4,4)
+      Text = ("")
+      Picture = Picture["icon:/24/add"]
+    }
+    { Button1 Button
+      MoveScaled(17,0,14,4)
+      Text = ("Genera")
+      Picture = Picture["icon:/24/exec"]
+    }
+    { Button2 Button
+      MoveScaled(34,0,11,4)
+      Text = ("Pulisci")
+      Picture = Picture["icon:/16/clear"]
+    }
+    { btSave Button
+      MoveScaled(48,0,11,4)
+      Text = ("Salva")
+      Picture = Picture["icon:/16/save"]
+    }
+    { Button4 Button
+      MoveScaled(63,0,11,4)
+      Text = ("Chiudi")
+      Picture = Picture["icon:/16/quit"]
+    }
+    { Panel1 Panel
+      MoveScaled(78,0,6,5)
+      Expand = True
+    }
+  }
+  { HBox3 HBox
+    MoveScaled(1,6,79,49)
+    Expand = True
+    Spacing = 5
+    { VBox1 VBox
+      MoveScaled(1,1,51,49)
+      Expand = True
+      { TextArea1 TextArea
+        MoveScaled(0,3,47,45)
+        Expand = True
+        Text = ("")
+        ReadOnly = True
+      }
+    }
+    { VBox2 VBox
+      MoveScaled(58,1,21,47)
+      Spacing = 5
+      { HBox1 HBox
+        MoveScaled(1,3,18,3)
+        { btFeed Button
+          MoveScaled(1,0,17,3)
+          Expand = True
+          Text = ("Aggiorna Feed")
+          Picture = Picture["icon:/24/refresh"]
+        }
+      }
+      { ListView1 ListView
+        MoveScaled(1,7,19,14)
+        Expand = True
+      }
+      { Panel2 Panel
+        MoveScaled(1,22,18,24)
+        Expand = True
+        Arrangement = Arrange.Fill
+        Padding = 5
+        Border = Border.Plain
+        { TextView1 TextLabel
+          MoveScaled(1,1,16,22)
+          Expand = True
+          Text = ("Aggiorna i feed per rimanere aggiornato sulle novit\xC3\xA0 del software.")
+        }
+      }
+    }
+  }
+  { HBox5 HBox
+    MoveScaled(1,56,82,2)
+    Spacing = 5
+    { Label2 Label
+      MoveScaled(0,0,46,2)
+      Expand = True
+      Text = ("")
+    }
+    { picNet PictureBox
+      MoveScaled(75,0,2,2)
+      Picture = Picture["icon:/24/disconnect"]
+      Alignment = Align.Center
+    }
+  }
+}
