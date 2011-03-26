@@ -12,7 +12,11 @@ SearchComment=False
 SearchString=True
 
 [OpenFile]
-Count=0
+File[1]="FMoneyManager.form"
+Active=1
+File[2]="FMoneyManager.class:71.8"
+File[3]="linegraf.class:57.0"
+Count=3
 
 [Watches]
 Count=0
