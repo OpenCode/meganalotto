@@ -334,6 +334,22 @@ msgstr ""
 msgid "Nessun dato trovato!"
 msgstr ""
 
+#: FMoneyManager.class:85
+msgid "Guadagno"
+msgstr ""
+
+#: FMoneyManager.class:169
+msgid "Mostra importo giocato"
+msgstr ""
+
+#: FMoneyManager.class:175
+msgid "Mostra importo vinto"
+msgstr ""
+
+#: FMoneyManager.class:181
+msgid "Mostra guadagno"
+msgstr ""
+
 #: FNumByName.class:46
 msgid "Estrai"
 msgstr ""

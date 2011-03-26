@@ -67,9 +67,9 @@ PUBLIC SUB bRefresh_Click()
         GridView1[i, 1].Text = hres!used & Management.$value
         GridView1[i, 2].Text = hres!win & Management.$value
         GridView1[i, 3].Text = hres!note
-        datiused.Add(CFloat(Replace(hres!used, ",", ".")))
-        datiwin.Add(CFloat(Replace(hres!win, ",", ".")))
-        datitot.Add(CFloat(Replace(hres!used, ",", ".")) - CFloat(Replace(hres!win, ",", ".")))
+        IF tbUsed.Value THEN datiused.Add(CFloat(Replace(hres!used, ",", ".")))
+        IF tbWin.Value THEN datiwin.Add(CFloat(Replace(hres!win, ",", ".")))
+        IF tbEarn.Value THEN datitot.Add(CFloat(Replace(hres!win, ",", ".")) - CFloat(Replace(hres!used, ",", ".")))
         'dates.Add(hres!data)
         INC i
       NEXT
@@ -80,9 +80,9 @@ PUBLIC SUB bRefresh_Click()
         GridView1[0, 0].Alignment = Align.Center
   END IF
 
-  graf.put(datiused, Color.Red, ("Importo giocato"))
-  graf.put(datiwin, Color.Green, ("Importo vinto"))
+  IF tbUsed.Value THEN graf.put(datiused, Color.Red, ("Importo giocato"))
+  IF tbWin.Value THEN graf.put(datiwin, Color.Green, ("Importo vinto"))
+  IF tbEarn.Value THEN graf.put(datitot, Color.DarkCyan, ("Guadagno"))
   pbUsed.Picture = graf.WRITE("", pbUsed.w, pbUsed.h, Color.white, FALSE,,, FALSE)
-  pbTotal.Picture = graf.WRITE("", pbTotal.w, pbTotal.h, Color.white, FALSE,,, FALSE)
 
 END
