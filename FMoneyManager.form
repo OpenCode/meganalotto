@@ -1,7 +1,7 @@
 # Gambas Form File 2.0
 
 { Form Form
-  MoveScaled(0,0,74,63)
+  MoveScaled(0,0,74,56)
   Text = ("")
   Maximized = True
   Arrangement = Arrange.Vertical
@@ -50,23 +50,14 @@
   }
   { GridView1 GridView
     MoveScaled(1,26,72,14)
+    Expand = True
     Mode = Select.Single
     Header = GridView.Horizontal
     Resizable = False
   }
-  { HBox3 HBox
-    MoveScaled(1,41,72,15)
+  { pbUsed PictureBox
+    MoveScaled(1,35,72,20)
     Expand = True
-    Spacing = 5
-    { pbUsed PictureBox
-      MoveScaled(0,0,32,14)
-      Expand = True
-      Border = Border.Plain
-    }
-    { pbWin PictureBox
-      MoveScaled(40,0,32,14)
-      Expand = True
-      Border = Border.Plain
-    }
+    Border = Border.Plain
   }
 }

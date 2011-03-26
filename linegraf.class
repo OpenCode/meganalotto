@@ -22,66 +22,123 @@ PRIVATE pic AS Picture
 PRIVATE $titolo AS String
 PRIVATE $w AS Integer
 PRIVATE $h AS Integer
-PRIVATE $datix AS NEW Float[]
-PRIVATE $datiy AS NEW Float[]
+PRIVATE $textsize AS Integer
 PRIVATE $coloresfondo AS Integer
 PRIVATE $colorelinea AS Integer
 PRIVATE $ombra AS Boolean
+PRIVATE $datiy AS NEW String[]
+PRIVATE obj1 AS NEW Object[]
+PRIVATE $Zero_origine AS Boolean = FALSE
+PRIVATE valoriTorta AS NEW Float[]
+PRIVATE $valori AS NEW Float[]
 
-PUBLIC SUB WRITE(titolo AS String, w AS Integer, h AS Integer, datix AS Float[], coloresfondo AS Integer, colorelinea AS Integer, ombra AS Boolean, OPTIONAL datiy AS String[]) AS Picture
+PUBLIC SUB __new() 
+  
+   
+ 
+  
+END
+PUBLIC SUB WRITE(titolo AS String, w AS Integer, h AS Integer, coloresfondo AS Integer, ombra AS Boolean, OPTIONAL datiy AS String[], OPTIONAL textsize AS Integer, OPTIONAL BeginFromZero AS Boolean) AS Picture
 
-DIM bl, ba, n, i, c, h1, i1 AS Integer
-DIM dx, dy, dato, x1, y1 AS Float
+DIM bl, ba, n, i, c, i5, h1, i1, passi, n_l, passoy, ba1 AS Integer
+DIM dx, dy, dato, x1, y1, dys AS Float
 DIM minimo, massimo AS Float
 DIM variazione AS Integer
+DIM testo1 AS String
+    
+    
+$Zero_origine = BeginFromZero
 
-
+    IF textsize = NULL OR textsize = 0 THEN 
+      $textsize = 10
+    ELSE 
+      $textsize = textsize
+    ENDIF 
+    
+    IF datiy = NULL THEN 
+      $datiy = NEW String[]
+    ELSE 
+      $datiy = datiy
+    ENDIF 
 
 $w = w
 $h = h
-$datix = datix
-$datiy = datiy
+' $datix = datix
+' $datiy = datiy
 $coloresfondo = coloresfondo
-$colorelinea = colorelinea
+'
 $ombra = ombra
 $titolo = titolo
-
-
-n = datix.Count
+n = 0
+i = 0
+    FOR EACH obj1
+        IF n < obj1[i].$dati.count THEN 
+            n = obj1[i].$dati.count
+        ENDIF 
+        INC i
+    NEXT 
+i = 0
+IF n = 0 THEN n = 1
 
 pic = NEW Picture($w, $h, TRUE)
-
-    massimo = 0
     
-    bl = $w / 10  'dimensione bordo laterale
-    ba = bl / 2 'dimensione bordi sup inf
-    dx = ($w - (2 * bl)) / n 'moltiplicatore asse x
+    
+    
+    
+    
+    
+          massimo = 0
+          
+          bl = $w / 10  'dimensione bordo laterale
+          ba = bl / 2 'dimensione bordi sup inf
+          dx = ($w - (2 * bl)) / n 'moltiplicatore asse x
+          
     'cerco il malore max  assoluti
           i = 0
-          FOR EACH datix
-             IF datix[i] > massimo THEN massimo = datix[i]
-             INC i
-          NEXT 
+         FOR EACH obj1 
+          i = 0
+                FOR EACH obj1[i1].$dati
+                   IF obj1[i1].$dati[i] > massimo THEN massimo = obj1[i1].$dati[i]
+                   INC i
+                NEXT 
+                INC i1
+         NEXT
      'cerco il valore minimo
           minimo = massimo
           i = 0
-          FOR EACH datix
-             IF datix[i] < minimo THEN minimo = datix[i]
-             INC i
-          NEXT
+          i1 = 0
+          FOR EACH obj1 
+                i = 0
+                FOR EACH obj1[i1].$dati
+                   IF obj1[i1].$dati[i] < minimo THEN minimo = obj1[i1].$dati[i]
+                   INC i
+                NEXT    
+                INC i1
+          NEXT     
+    
+          
           massimo = Int(massimo) + 1
-          minimo = Int(minimo) 
+          
+          IF NOT $Zero_origine THEN 
+              minimo = Int(minimo) 
+          ELSE 
+              minimo = 0
+          ENDIF 
+          
+         
           
           IF massimo = minimo THEN 'imposta di DEFAULT dei limiti nel caso ci siano valori tutti uguali
-              massimo = 30
-              minimo = 0
+              massimo = massimo + 1
+              minimo = minimo
           ENDIF
           
           variazione = massimo - minimo
           
           dy = ($h - ba * 2) / variazione 'moltiplicatore asse y
     
-          Draw.Begin(pic)
+   
+        
+        
      'disegno sfondo
           Draw.Begin(pic)
               Draw.LineStyle = 1
@@ -89,70 +146,970 @@ pic = NEW Picture($w, $h, TRUE)
               Draw.FillColor = $coloresfondo
               Draw.FillStyle = 1
               Draw.Rect(0, 0, $w, $h)
+ 
+        
      'disegno linea x 
-     Draw.Foreground = Color.Black
-     ' Draw.Line(bl, h - ba, w - bl, h - ba)
-     'disegno linea y
-     Draw.LineWidth = 1
-     Draw.Line(bl, ba, bl, h - ba)
-     Draw.Font.Bold = FALSE
-     Draw.LineStyle = 1
-    'disegno linee y
-        IF dy / 2 < dx / 2 THEN Draw.Font.Size = dy / 2 
-        IF dx / 2 < dy / 2 THEN Draw.Font.Size = dx / 2
-
-        IF dy > (h - (4 * ba)) / 2 THEN Draw.Font.Size = dx / 5
-        IF n > 50 AND n < 100 THEN Draw.Font.Size = dx / 6
-        IF n >= 100 THEN Draw.Font.Size = $w / 200
-        IF dy / 2 > $h / 20 THEN Draw.Font.Size = dx / 4
+        
+        Draw.Foreground = Color.Black
+      ' Draw.Line(bl, h - ba, w - bl, h - ba)
+        
+    'disegno linea y
+        
+        Draw.LineWidth = 1
+        Draw.Line(bl, ba, bl, h - ba)
+        Draw.Font.Bold = FALSE
+        Draw.LineStyle = 1
+        
+    'selezione font e intervallo testo y
+    
+        Draw.Font.size = $textsize
+        passi = ($H \ Draw.TextHeight(H)) * 0.6
+        
+        passi = variazione \ passi
+        IF passi = 0 THEN passi = 1
+     
+     'disegno linee y   
+        
+        'calcolo massima larghezza testo
+        i = 0
+        n_l = 0
+        FOR EACH $datiy
+           IF n_l < Len($datiy[i]) THEN 
+            n_l = Len($datiy[i])
+           ENDIF 
+           INC i
+        NEXT 
+        
+        FOR i = 0 TO n_l
+        
+            testo1 = testo1 & "H"
+        NEXT 
+            
+        passoy = Draw.TextWidth(testo1)
+        
+        passoy = ($W \ passoy) 
+        
+        passoy = $datiy.Count \ passoy
+        IF passoy = 0 THEN passoy = 1
+        
+         FOR i = 0 TO $datiy.count - 1 STEP passoy
+            Draw.LineStyle = 3
+            Draw.Foreground = Color.LightGray
+            Draw.Line(bl + dx * i, ba, bl + dx * i, h - ba + ba / 5)
+            Draw.LineStyle = 1
+            Draw.Foreground = Color.Black
+            Draw.Text($datiy[i], bl + dx * i - (Draw.TextWidth($datiy[i]) / 2), h - ba, dx, ba, 1)
+         NEXT 
+            
         'disegno linee x
         Draw.LineStyle = 3
-        FOR i = 1 TO variazione STEP $h / 100
-            Draw.Line(bl, $h - ba - (dy * i), $w - bl, $h - ba - (dy * i))
+        FOR i = 0 TO variazione STEP passi 
+            Draw.Foreground = Color.LightGray
+            Draw.Line(bl - bl / 10, $h - ba - (dy * i), $w - bl, $h - ba - (dy * i))
             
             Draw.Foreground = Color.Black
             
-            Draw.Text(minimo + i, bl / 6, h - ba - (Draw.TextHeight(minimo + i) / 2) - (i * dy))
-            Draw.Foreground = Color.LightGray
+            Draw.Text(minimo + i, bl / 6, h - ba - (Draw.TextHeight(minimo + i) / 2) - (i * dy), bl - bl / 3, Draw.TextHeight(minimo + i), 2)
+           'Draw.Text(minimo + i, bl / 6, h - ba - (i * dy), Draw.TextHeight(minimo + i), bl, 3)
         NEXT 
+        
         Draw.LineStyle = 1
         'disegno linea dello zero
         
         Draw.Foreground = Color.Black
         Draw.LineStyle = 1
-        Draw.Line(bl, $h + (minimo * dy) - ba, $w - bl, $h + (minimo * dy) - ba)  
+        IF ($h + (minimo * dy) - ba) < ($h - ba) THEN 
+            Draw.Line(bl, $h + (minimo * dy) - ba, $w - bl, $h + (minimo * dy) - ba)  
+        ENDIF 
         Draw.Foreground = Color.DarkGray
-        Draw.Font.Size = ba / 4
-        
+       ' Draw.Font.Size = ba / 4
+        Draw.Font.size = $textsize
          c = 2 'dimensione ombra
-  h1 = minimo * dy 'offset dello 0
+        h1 = minimo * dy 'offset dello 0
+  
+ 
         'disegno dati
-            FOR i = 0 TO datix.Count - 1
-                    dato = datix[i]
-
-                    IF i1 = 0 THEN 'se sto disegnando il primo valore del grafico disegna solo un punto
-                        x1 = i * dx
-                        y1 = dato * dy
-                    ENDIF 
-                    INC i1
-                    IF ombra = TRUE THEN
-                        Draw.Foreground = Color.Gray
-                        Draw.LineWidth = 4
-
-                        Draw.Line(x1 + bl + c + dx, $h + h1 - y1 - ba + c, (i * dx) + bl + c + dx, $h + h1 - (dato * dy) - ba + c) 'disegno ombra
-                    ENDIF 
-                    Draw.Foreground = $colorelinea
-                    Draw.LineWidth = 2
-                    Draw.Line(x1 + bl + dx, $h + h1 - y1 - ba, (i * dx) + bl + dx, $h + h1 - (dato * dy) - ba) 'disegno linea relativa al valore odierno partendo dal valore precedente
-                    x1 = i * dx
-                    y1 = dato * dy
-
-              NEXT 
+        i5 = 0
+          FOR i5 = 0 TO obj1.Max
+            i1 = 0
+            x1 = 0
+            y1 = 0
+                  FOR i = 0 TO obj1[i5].$dati.max
+                          
+                      
+                          dato = obj1[i5].$dati[i]
+                    
+                          IF i1 = 0 THEN 'se sto disegnando il primo valore del grafico disegna solo un punto
+                              'x1 = i * dx
+                              X1 = 0
+                              y1 = dato * dy
+                          ENDIF 
+                          INC i1
+                          IF ombra = TRUE THEN
+                              Draw.Foreground = Color.Gray
+                              Draw.LineWidth = 4
+                              
+                              'Draw.Line(x1 + bl + c + dx, $h + h1 - y1 - ba + c, (i * dx) + bl + c + dx, $h + h1 - (dato * dy) - ba + c) 'disegno ombra
+                              Draw.Line(x1 + bl + c, $h + h1 - y1 - ba + c, (i * dx) + bl + c, $h + h1 - (dato * dy) - ba + c) 'disegno ombra
+                          ENDIF 
+                          Draw.Foreground = obj1[i5].$colore
+                          Draw.LineWidth = 2
+                          'Draw.Line(x1 + bl + dx, $h + h1 - y1 - ba, (i * dx) + bl + dx, $h + h1 - (dato * dy) - ba) 'disegno linea relativa al valore odierno partendo dal valore precedente
+                          Draw.Line(x1 + bl, $h + h1 - y1 - ba, (i * dx) + bl, $h + h1 - (dato * dy) - ba)
+                          x1 = i * dx
+                          y1 = dato * dy
+                          
+                      
+                          
+                         
+                    NEXT 
+              
+            NEXT 
               Draw.Foreground = Color.Black
-              Draw.Font.Size = ba / 2
-              Draw.Text($titolo, 0, $h - Draw.TextHeight($titolo), $w, ba / 2, 3)
-  Draw.End
-  RETURN pic
+              'Draw.Font.Size = ba / 2
+              Draw.Text($titolo, 0, Draw.TextHeight($titolo), $w, ba / 2, 3)
+          
+            'disegno nomi linee
+            i = 0
+            i1 = 0
+            
+            ba1 = Draw.TextHeight("H") * 2
+            
+            FOR EACH obj1
+                  IF obj1[i].$titolo <> "" AND obj1[i].$titolo <> NULL THEN
+                     Draw.Foreground = obj1[i].$colore
+                      
+                      Draw.Line($w - bl / 2, (ba + ba1 * i), w - 5, (ba + ba1 * i))
+                      dx = Draw.TextWidth(obj1[i].$titolo)
+                     
+                      Draw.Text(obj1[i].$titolo, $w - 5 - dx, ba1 \ 6 + (ba + ba1 * i))
+                  ENDIF 
+            INC i
+            NEXT 
+            
 
+        
+  Draw.End
+    
+  obj1.Clear
+  RETURN pic
+ ' CATCH 
+  '    Message.Error(Error.Text & "\n" & Error.Where)
+      
+END
+PUBLIC SUB WriteBar(titolo AS String, w AS Integer, h AS Integer, coloresfondo AS Integer, ombra AS Boolean, OPTIONAL datiy AS String[], OPTIONAL textsize AS Integer, OPTIONAL BeginFromZero AS Boolean) AS Picture
+
+DIM bl, ba, n, i, c, i5, h1, i1, passi, n_l, passoy, ba1, id AS Integer
+DIM dx, dy, dato, x1, y1, dys, mx, dx1 AS Float
+DIM minimo, massimo AS Float
+DIM variazione AS Integer
+DIM testo1 AS String
+DIM dati, dati1 AS NEW Float[]
+
+$Zero_origine = BeginFromZero
+
+    IF textsize = NULL OR textsize = 0 THEN 
+      $textsize = 10
+    ELSE 
+      $textsize = textsize
+    ENDIF 
+    
+    IF datiy = NULL THEN 
+      $datiy = NEW String[]
+    ELSE 
+      $datiy = datiy
+    ENDIF 
+
+$w = w
+$h = h
+' $datix = datix
+' $datiy = datiy
+$coloresfondo = coloresfondo
+'
+$ombra = ombra
+$titolo = titolo
+n = 0
+i = 0
+    FOR EACH obj1
+        IF n < obj1[i].$dati.count THEN 
+            n = obj1[i].$dati.count
+        ENDIF 
+        INC i
+    NEXT 
+i = 0
+IF n = 0 THEN n = 1
+pic = NEW Picture($w, $h, TRUE)
+    
+    
+    
+    
+    
+    
+          massimo = 0
+          
+          bl = $w / 10  'dimensione bordo laterale
+          ba = bl / 2 'dimensione bordi sup inf
+          dx1 = ($w - (2 * bl)) / n 'moltiplicatore asse x
+          IF obj1.Count <> 0 THEN 
+            dx = ((dx1) / obj1.Count / 2) 
+          ELSE 
+            dx = dx1
+          ENDIF 
+          
+    'cerco il malore max  assoluti
+          i = 0
+         FOR EACH obj1 
+          i = 0
+                FOR EACH obj1[i1].$dati
+                   IF obj1[i1].$dati[i] > massimo THEN massimo = obj1[i1].$dati[i]
+                   INC i
+                NEXT 
+                INC i1
+         NEXT
+     'cerco il valore minimo
+          minimo = massimo
+          i = 0
+          i1 = 0
+          FOR EACH obj1 
+                i = 0
+                FOR EACH obj1[i1].$dati
+                   IF obj1[i1].$dati[i] < minimo THEN minimo = obj1[i1].$dati[i]
+                   INC i
+                NEXT    
+                INC i1
+          NEXT     
+    
+    
+          massimo = Int(massimo) + 1
+          
+          
+          IF NOT $Zero_origine THEN 
+              minimo = Int(minimo) 
+          ELSE 
+              minimo = 0
+          ENDIF 
+          
+          
+          IF massimo = minimo THEN 'imposta di DEFAULT dei limiti nel caso ci siano valori tutti uguali
+              massimo = massimo + 1
+              minimo = minimo
+          ENDIF
+          
+          variazione = massimo - minimo
+          
+          dy = ($h - ba * 2) / variazione 'moltiplicatore asse y
+    
+          Draw.Begin(pic)
+        
+        
+     'disegno sfondo
+          Draw.Begin(pic)
+              Draw.LineStyle = 1
+              Draw.Foreground = $coloresfondo
+              Draw.FillColor = $coloresfondo
+              Draw.FillStyle = 1
+              Draw.Rect(0, 0, $w, $h)
+ 
+        
+     'disegno linea x 
+        
+        Draw.Foreground = Color.Black
+      ' Draw.Line(bl, h - ba, w - bl, h - ba)
+        
+    'disegno linea y
+        
+        Draw.LineWidth = 1
+        Draw.Line(bl, ba, bl, h - ba)
+        Draw.Font.Bold = FALSE
+        Draw.LineStyle = 1
+        
+    'selezione font e intervallo testo y
+    
+        Draw.Font.size = $textsize
+        passi = ($H \ Draw.TextHeight(H)) * 0.6
+        
+        passi = variazione \ passi
+        IF passi = 0 THEN passi = 1
+     
+     'disegno linee y   
+        
+        'calcolo massima larghezza testo
+        i = 0
+        n_l = 0
+        FOR EACH $datiy
+           IF n_l < Len($datiy[i]) THEN 
+            n_l = Len($datiy[i])
+           ENDIF 
+           INC i
+        NEXT 
+        
+        FOR i = 0 TO n_l
+        
+            testo1 = testo1 & "H"
+        NEXT 
+            
+        passoy = Draw.TextWidth(testo1)
+        
+        passoy = ($W \ passoy) 
+        
+        passoy = $datiy.Count \ passoy
+        IF passoy = 0 THEN passoy = 1
+        
+         FOR i = 1 TO $datiy.count STEP passoy
+            Draw.LineStyle = 3
+            Draw.Foreground = Color.LightGray
+            Draw.Line(bl + dx1 * i, ba, bl + dx1 * i, h - ba + ba / 5)
+            Draw.LineStyle = 1
+            Draw.Foreground = Color.Black
+            Draw.Text($datiy[i - 1], bl + dx1 * (i - 1), h - ba, dx1, ba, 3)
+         NEXT 
+            
+        'disegno linee x
+        Draw.LineStyle = 3
+        FOR i = 0 TO variazione - 1 STEP passi 
+            Draw.Foreground = Color.LightGray
+            Draw.Line(bl - bl / 10, $h - ba - (dy * i), $w - bl, $h - ba - (dy * i))
+            
+            Draw.Foreground = Color.Black
+            
+            'Draw.Text(minimo + i, bl / 6, h - ba - (Draw.TextHeight(minimo + i) / 2) - (i * dy), bl - bl / 3, Draw.TextHeight(minimo + i), 2)
+            Draw.Text(minimo + i, bl / 6, h - ba - (Draw.TextHeight(minimo + i) / 2) - (i * dy), bl - bl / 3, Draw.TextHeight(minimo + i), 2)
+           'Draw.Text(minimo + i, bl / 6, h - ba - (i * dy), Draw.TextHeight(minimo + i), bl, 3)
+        NEXT 
+        
+        Draw.LineStyle = 1
+        'disegno linea dello zero
+        
+        Draw.Foreground = Color.Black
+        Draw.LineStyle = 1
+        'IF $h + (minimo * dy) - ba < ba THEN 
+            Draw.Line(bl, $h + (minimo * dy) - ba, $w - bl, $h + (minimo * dy) - ba)  
+        'ENDIF 
+        Draw.Foreground = Color.DarkGray
+       ' Draw.Font.Size = ba / 4
+        Draw.Font.size = $textsize
+         c = 2 'dimensione ombra
+        h1 = minimo * dy 'offset dello 0
+  
+ 
+        'disegno dati
+        id = 0
+        i = 0
+        
+        FOR EACH obj1
+          IF id < obj1[i].$dati.count THEN id = obj1[i].$dati.count
+          INC i
+          
+        NEXT
+        
+        
+          FOR i = 0 TO id - 1
+                  dati = NEW Float[]
+                  i1 = 0
+                  FOR EACH obj1
+                        IF obj1[i1].$dati.max >= i THEN
+                        
+                            dati.Add(obj1[i1].$dati[i])
+                        ELSE 
+                            dati.Add(0)
+                        ENDIF 
+                        INC i1
+                  NEXT 
+                  
+                  i1 = 0
+                  
+                  
+                 
+                      mx = minimo - 1
+                      dati1 = dati.Copy()
+                      i5 = 0
+                      WHILE dati1.Count <> 0
+                          i1 = 0
+                          id = 0
+                          dato = minimo - 1
+                          FOR EACH dati1
+                              IF dati1[i1] > dato THEN 
+                                dato = dati1[i1]
+                              ENDIF 
+                              INC i1
+                          NEXT 
+                              
+                              ''''''''''''''''''''
+                              'dato = dati[id]
+                              id = dati.Find(dato)
+                          
+                          IF ombra = TRUE THEN
+                              Draw.Foreground = Color.Gray
+                              Draw.LineWidth = 1
+                              Draw.FillStyle = 1
+                              Draw.FillColor = color.Gray
+                              Draw.Rect(bl + (dx1 / 10) + (dx1 * i) + (dx * i5), $h - ba, (dx1 - dx) - (dx1 / 10 * obj1.Count), - (Dato * dy) + (dx1 / 10))
+                              
+                          ENDIF 
+                          Draw.Foreground = color.Black
+                          Draw.LineWidth = 1
+                          Draw.FillStyle = 1
+                          Draw.FillColor = obj1[id].$colore
+                          
+                          Draw.Rect(bl + (dx1 * i) + (dx * i5), $h - ba, (dx1 - dx) - (dx1 / 10 * obj1.Count), - (Dato * dy))
+                          'Draw.Rect(bl + (dx1 * i) +
+                          id = dati1.Find(dato)
+                          INC i5
+                          dati1.Remove(id)
+                          
+                     WEND  
+                      
+                  
+                          
+                      
+                   
+                      
+                          
+                   
+              
+            NEXT 
+              Draw.Foreground = Color.Black
+              'Draw.Font.Size = ba / 2
+              Draw.Text($titolo, 0, Draw.TextHeight($titolo), $w, ba / 2, 3)
+          
+            'disegno nomi linee
+            i = 0
+            i1 = 0
+            
+            ba1 = Draw.TextHeight("H") * 2
+            
+            FOR EACH obj1
+                  IF obj1[i].$titolo <> "" AND obj1[i].$titolo <> NULL THEN
+                     Draw.Foreground = obj1[i].$colore
+                      
+                      Draw.Line($w - bl / 2, (ba + ba1 * i), w - 5, (ba + ba1 * i))
+                      dx = Draw.TextWidth(obj1[i].$titolo)
+                     
+                      Draw.Text(obj1[i].$titolo, $w - 5 - dx, ba1 \ 6 + (ba + ba1 * i))
+                  ENDIF 
+            INC i
+            NEXT 
+            
+
+        
+  Draw.End
+    
+  obj1.Clear
+  RETURN pic
+ ' CATCH 
+  '    Message.Error(Error.Text & "\n" & Error.Where)
+      
+END
+
+PUBLIC SUB put(dati AS Float[], colore AS Integer, titolo AS String) 
+  
+  DIM tmpobj AS Contenitore
+  
+  tmpobj = NEW Contenitore(dati, colore, titolo)
+  obj1.Add(tmpobj)
+  
+    CATCH 
+      Message.Error(Error.Text & "\n" & Error.Where)
+END
+
+PUBLIC SUB SetMedia(colore AS Integer, titolo AS String)
+  
+  
+  DIM tmpobj AS Contenitore
+  DIM i, i1, contatore AS Integer
+  DIM somma AS Float
+  DIM datim AS NEW Float[]
+  
+  
+  IF obj1.Count > 0 THEN 
+        FOR i = 0 TO obj1[0].$dati.count - 1
+            
+            i1 = 0
+            somma = 0
+            contatore = 0
+            FOR EACH obj1
+                IF obj1[i1].$dati.max >= i THEN 
+                  somma = somma + obj1[i1].$dati[i]
+                  INC contatore
+                ENDIF 
+                INC i1
+            NEXT 
+            IF contatore > 0 THEN
+                datim.Add(somma / contatore)
+            ELSE 
+                datim.Add(0)
+            END IF
+            
+        NEXT 
+        
+        tmpobj = NEW Contenitore(datim, colore, titolo)
+        obj1.Add(tmpobj)
+  END IF
+  
+   CATCH 
+      Message.Error(Error.Text & "\n" & Error.Where)         
+          
+  
+END
+
+PUBLIC PROCEDURE PiePut(valore AS Float, colore AS Float, nome AS String)
+  
+   
+  DIM tmpobj AS Contenitore
+  DIM valore1 AS NEW Float[]
+  DIM i AS Integer
+  DIM somma AS Float
+  
+  valore1.Add(valore * 3.6)
+  
+  tmpobj = NEW Contenitore(valore1, colore, nome)
+  obj1.Add(tmpobj)
+  
+  FOR EACH obj1
+      somma += obj1[i].$dati[0]
+      INC i
+  NEXT 
+  
+  IF somma > 360 THEN 
+      Message.Error("la somma dei valori supera il 100%")
+      obj1.Delete(obj1.Max, 1)
+  ENDIF 
+    
+  CATCH 
+      Message.Error(Error.Text & "\n" & Error.Where)
+      
+END
+PUBLIC PROCEDURE MakePie(titolo AS String, w AS Integer, h AS Integer, coloresfondo AS Integer, ombra AS Boolean, OPTIONAL textsize AS Integer) AS Picture
+  
+  
+  
+  DIM bl, ba, i, x, y, i1, cx, cy AS Integer
+DIM dx, dy, somma, fine AS Float
+DIM tmpobj AS Contenitore
+
+DIM dato AS NEW Float[]
+
+
+
+    IF textsize = NULL OR textsize = 0 THEN 
+      $textsize = 10
+    ELSE 
+      $textsize = textsize
+    ENDIF 
+    
+   
+
+$w = w
+$h = h
+' $datix = datix
+' $datiy = datiy
+$coloresfondo = coloresfondo
+'
+$ombra = ombra
+$titolo = titolo
+
+  pic = NEW Picture($w, $h, TRUE)
+
+          bl = $w / 8  'dimensione bordo laterale
+          ba = bl / 2 'dimensione bordi sup inf
+          'cx = bl + (w - bl - bl) / 3
+          'cy = (h - ba - ba) / 2
+          dx = w - bl - bl
+          dy = dx / 1.5
+          cx = ba
+          cy = (h - dy) / 2
+          
+          
+          
+   'controllo dati
+   
+   FOR EACH obj1
+      somma += obj1[i].$dati[0]
+      INC i
+  NEXT 
+  
+
+    Draw.Begin(pic)      
+    
+    
+    'sfondo
+                Draw.FillStyle = 1
+                Draw.FillColor = $coloresfondo
+                Draw.Rect(0, 0, w, h)
+                
+    IF $ombra = TRUE THEN 
+    
+      Draw.Line(cx + dx / 2, cy + dy / 2, cx + dx, cy + dy / 2)
+          FOR i1 = 0 TO 20 
+                  i = 0
+                  fine = 0
+                  FOR EACH obj1
+                            
+                        
+                            Draw.FillColor = obj1[i].$colore
+                            
+                           Draw.Foreground = obj1[i].$colore
+                            
+                            Draw.Ellipse(cx, cy, dx, dy - i1, fine, (Rad(obj1[i].$dati[0]) + fine))
+                            
+                            fine = Rad(obj1[i].$dati[0]) + fine
+                            ' 
+                            ' Draw.LineWidth = 1
+                            ' 
+                            'Draw.Foreground = color.Black
+                            ' Draw.Point(Sinh(Rad(fine)) * cx, Cosh(Rad(fine)) * cy)
+                            
+                            INC i
+                   NEXT   
+                   
+          NEXT     
+          DEC i1
+          Draw.FillStyle = 0
+          Draw.LineWidth = 1
+     Draw.Foreground = color.Black
+     Draw.Ellipse(cx, cy, dx, dy, Rad(180), fine)  
+     Draw.Ellipse(cx, cy, dx, dy - i1, Rad(0), fine)  
+     Draw.Line(cx + dx / 2, cy + dy / 2 - (i1 / 2), cx + dx, cy + dy / 2 - (i1 / 2))
+     Draw.Line(cx + dx, cy + dy / 2 - (i1 / 2), cx + dx, cy + dy / 2)
+    ELSE 
+    
+      
+      
+                    i = 0
+                  fine = 0
+                  FOR EACH obj1
+                            
+                        
+                            Draw.FillColor = obj1[i].$colore
+                           Draw.Foreground = color.Black
+                            
+                            Draw.Ellipse(cx, cy, dx, dy - i1, fine, (Rad(obj1[i].$dati[0]) + fine))
+                            
+                            'Draw.Text(obj1[i].$dato,
+                            
+                            fine = Rad(obj1[i].$dati[0]) + fine
+                            
+                            
+                            
+                            INC i
+                   NEXT   
+    ENDIF 
+    
+    ' disegno legenda
+    i = 0
+    y = ba
+    x = w - 5 - (ba / 2)
+    Draw.Font.Size = $textsize
+    Draw.FillStyle = 1
+    
+        FOR EACH obj1
+            IF obj1[i].$titolo <> "" AND obj1[i].$titolo <> NULL THEN
+              Draw.FillColor = obj1[i].$colore
+              'Draw.ForeColor = obj1[i].$colore
+             Draw.Foreground = color.Black
+              Draw.Rect(x, y, ba / 2, ba / 2)
+             Draw.Foreground = color.Black
+              Draw.Text(obj1[i].$titolo, w - 5 - Draw.TextWidth(obj1[i].$titolo), y + 5 + (ba / 2))
+              y = y + Draw.TextHeight(obj1[i].$titolo) + 10 + (ba / 2)
+              
+              
+            ENDIF 
+              INC i
+        NEXT  
+    ' disegno nome grafico
+    
+    Draw.Text($titolo, 0, 0, w, ba, 3)
+    Draw.End
+ 
+      
+      
+      
+      
+      RETURN pic
+      
+      
+  
+  
+  
+END
+
+
+
+
+
+PUBLIC SUB WriteMountain(titolo AS String, valori AS Float[], w AS Integer, h AS Integer, coloresfondo AS Integer, colore AS Integer, OPTIONAL datiy AS String[], OPTIONAL textsize AS Integer, OPTIONAL BeginFromZero AS Boolean) AS Picture
+
+DIM bl, ba, n, i, c, i5, h1, i1, passi, n_l, passoy, ba1 AS Integer
+DIM dx, dy, dato, x1, y1, dys AS Float
+DIM minimo, massimo AS Float
+DIM variazione AS Integer
+DIM testo1 AS String
+DIM dati AS NEW Integer[]
+   
+ DIM $valori AS NEW Float[]   
+ 
+ $valori = valori
+ 
+$Zero_origine = BeginFromZero
+
+    IF textsize = NULL OR textsize = 0 THEN 
+      $textsize = 10
+    ELSE 
+      $textsize = textsize
+    ENDIF 
+    
+    IF datiy = NULL THEN 
+      $datiy = NEW String[]
+    ELSE 
+      $datiy = datiy
+    ENDIF 
+
+$w = w
+$h = h
+' $datix = datix
+' $datiy = datiy
+$coloresfondo = coloresfondo
+$colorelinea = colore
+
+$titolo = titolo
+
+    n = valori.Count
+    
+i = 0
+IF n = 0 THEN n = 1
+
+pic = NEW Picture($w, $h, TRUE)
+    
+    
+    
+    
+    
+    
+          massimo = 0
+          
+          bl = $w / 10  'dimensione bordo laterale
+          ba = bl / 2 'dimensione bordi sup inf
+          dx = ($w - (2 * bl)) / n 'moltiplicatore asse x
+          
+    'cerco il malore max  assoluti
+         
+          i = 0
+                FOR EACH valori
+                   IF valori[i] > massimo THEN massimo = valori[i]
+                   INC i
+                NEXT 
+                
+       
+     'cerco il valore minimo
+          minimo = massimo
+          i = 0
+          
+                FOR EACH valori
+                   IF valori[i] < minimo THEN minimo = valori[i]
+                   INC i
+                NEXT    
+                
+           
+    
+          
+          massimo = Int(massimo) + 1
+          
+          IF NOT $Zero_origine THEN 
+              minimo = Int(minimo) 
+          ELSE 
+              minimo = 0
+          ENDIF 
+          
+         
+          
+          IF massimo = minimo THEN 'imposta di DEFAULT dei limiti nel caso ci siano valori tutti uguali
+              massimo = massimo + 1
+              minimo = minimo
+          ENDIF
+          
+          variazione = massimo - minimo
+          
+          dy = ($h - ba * 2) / variazione 'moltiplicatore asse y
+    
+          Draw.Begin(pic)
+        
+        
+     'disegno sfondo
+          Draw.Begin(pic)
+              Draw.LineStyle = 1
+              Draw.Foreground = $coloresfondo
+              Draw.FillColor = $coloresfondo
+              Draw.FillStyle = 1
+              Draw.Rect(0, 0, $w, $h)
+ 
+        
+     'disegno linea x 
+        
+        Draw.Foreground = Color.Black
+      ' Draw.Line(bl, h - ba, w - bl, h - ba)
+        
+    'disegno linea y
+        
+        Draw.LineWidth = 1
+        Draw.Line(bl, ba, bl, h - ba)
+        Draw.Font.Bold = FALSE
+        Draw.LineStyle = 1
+        
+    'selezione font e intervallo testo y
+    
+        Draw.Font.size = $textsize
+        passi = ($H \ Draw.TextHeight(H)) * 0.6
+        
+        passi = variazione \ passi
+        IF passi = 0 THEN passi = 1
+     
+     'disegno linee y   
+        
+        'calcolo massima larghezza testo
+        i = 0
+        n_l = 0
+        FOR EACH $datiy
+           IF n_l < Len($datiy[i]) THEN 
+            n_l = Len($datiy[i])
+           ENDIF 
+           INC i
+        NEXT 
+        
+        FOR i = 0 TO n_l
+        
+            testo1 = testo1 & "H"
+        NEXT 
+            
+        passoy = Draw.TextWidth(testo1)
+        
+        passoy = ($W \ passoy) 
+        
+        passoy = $datiy.Count \ passoy
+        IF passoy = 0 THEN passoy = 1
+        
+         FOR i = 0 TO $datiy.count - 1 STEP passoy
+            Draw.LineStyle = 3
+            Draw.Foreground = Color.LightGray
+            Draw.Line(bl + dx * i, ba, bl + dx * i, h - ba + ba / 5)
+            Draw.LineStyle = 1
+            Draw.Foreground = Color.Black
+            Draw.Text($datiy[i], bl + dx * i - (Draw.TextWidth($datiy[i]) / 2), h - ba, dx, ba, 1)
+         NEXT 
+            
+        'disegno linee x
+        Draw.LineStyle = 3
+        FOR i = 0 TO variazione STEP passi 
+            Draw.Foreground = Color.LightGray
+            Draw.Line(bl - bl / 10, $h - ba - (dy * i), $w - bl, $h - ba - (dy * i))
+            
+            Draw.Foreground = Color.Black
+            
+            Draw.Text(minimo + i, bl / 6, h - ba - (Draw.TextHeight(minimo + i) / 2) - (i * dy), bl - bl / 3, Draw.TextHeight(minimo + i), 2)
+           'Draw.Text(minimo + i, bl / 6, h - ba - (i * dy), Draw.TextHeight(minimo + i), bl, 3)
+        NEXT 
+        
+        Draw.LineStyle = 1
+        'disegno linea dello zero
+        
+        Draw.Foreground = Color.Black
+        Draw.LineStyle = 1
+        IF ($h + (minimo * dy) - ba) < ($h - ba) THEN 
+            Draw.Line(bl, $h + (minimo * dy) - ba, $w - bl, $h + (minimo * dy) - ba)  
+        ENDIF 
+        Draw.Foreground = Color.DarkGray
+       ' Draw.Font.Size = ba / 4
+        Draw.Font.size = $textsize
+         c = 2 'dimensione ombra
+        h1 = minimo * dy 'offset dello 0
+  
+ 
+        'disegno dati
+
+          
+            i1 = 0
+            x1 = 0
+            y1 = 0
+                  i = 0
+                          
+                     FOR EACH valori 
+                          dato = valori[i]
+                    
+                          IF i1 = 0 THEN 'se sto disegnando il primo valore del grafico disegna solo un punto
+                              
+                              X1 = 0
+                              y1 = dato * dy
+                          ENDIF 
+                          INC i1
+                          
+                          Draw.Foreground = $colorelinea
+                          Draw.LineWidth = 2
+                          
+                          ' disegno linea
+                          Draw.Line(x1 + bl, $h + h1 - y1 - ba, (i * dx) + bl, $h + h1 - (dato * dy) - ba)
+                          dati.insert([CInt(x1 + bl), CInt($h + h1 - y1 - ba)])
+                          'dati.insert([CInt(x1 + bl), CInt($h + h1 - y1 - ba), (i * dx) + bl, $h + h1 - (dato * dy) - ba])
+                          
+                          x1 = i * dx
+                          y1 = dato * dy
+                          INC i
+                      NEXT 
+                      
+                      dati.insert([CInt(x1 + bl), CInt($h + h1 - y1 - ba)])
+                      'dati.insert([CInt(x1 + bl), CInt(h - ba - minimo * dy)])
+                      dati.insert([CInt(x1 + bl), CInt($h - ba)])
+                      'dati.insert([dati[0], CInt(h - ba - minimo * dy)])
+                      dati.insert([dati[0], CInt($h - ba)])
+                      dati.insert([dati[0], dati[1]])
+                     Draw.Foreground = $colorelinea * 0.99
+                      Draw.FillColor = $colorelinea * 0.99
+                     
+                      
+                   Draw.Polygon(dati)
+                   
+                   i = 0
+                   x1 = 0
+                   y1 = 0
+                   i1 = 0
+                   FOR EACH valori 
+                          dato = valori[i]
+                    
+                          IF i1 = 0 THEN 'se sto disegnando il primo valore del grafico disegna solo un punto
+                              
+                              X1 = 0
+                              y1 = dato * dy
+                          ENDIF 
+                          INC i1
+                          
+                          Draw.Foreground = $colorelinea
+                          Draw.LineWidth = 3
+                          
+                          ' disegno linea
+                          Draw.Line(x1 + bl, $h + h1 - y1 - ba, (i * dx) + bl, $h + h1 - (dato * dy) - ba)
+                         
+                          
+                          x1 = i * dx
+                          y1 = dato * dy
+                          INC i
+                      NEXT 
+                      
+                      '
+              
+     
+              Draw.Foreground = Color.Black
+              'Draw.Font.Size = ba / 2
+              Draw.Text($titolo, 0, Draw.TextHeight($titolo), $w, ba / 2, 3)
+          
+          
+           
+            
+
+        
+  Draw.End
+    
+  obj1.Clear
+  RETURN pic
+ CATCH 
+    Message.Error(Error.Text & "\n" & Error.Where)
+      
 END
 

@@ -1,0 +1,32 @@
+' Gambas class file
+' Gambas class file
+'#####################################################################################à
+    '< linegraf  classe grafica creazione grafico a linee>
+    'Copyleft< 2010 > < fsurfing@tutto-opensource.org >
+
+    'This program IS free software: you can redistribute it AND / OR modify
+    'it under the terms OF the GNU General PUBLIC License AS published by
+    'the Free Software Foundation, either version 3 OF the License, OR
+    '(at your option)any later version.
+
+    'This program IS distributed IN the hope that it will be useful,
+    'but WITHOUT ANY WARRANTY; without even the implied warranty OF
+    'MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.See the
+    'GNU General PUBLIC License FOR more details.
+
+    'You should have received a COPY OF the GNU General PUBLIC License
+    'along WITH this program.IfNOT, see < http: / / www.gnu.org / licenses / > .
+
+'###############################################################################################
+
+PUBLIC $dati AS Float[]
+PUBLIC $colore AS Integer
+PUBLIC $titolo AS String
+
+PUBLIC SUB _new(dati AS Float[], colore AS Integer, titolo AS String)
+  
+  $dati = dati.Copy()
+  $colore = colore
+  $titolo = titolo
+  
+END

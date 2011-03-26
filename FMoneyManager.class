@@ -80,8 +80,9 @@ PUBLIC SUB bRefresh_Click()
         GridView1[0, 0].Alignment = Align.Center
   END IF
 
-  pbUsed.Picture = graf.WRITE("", pbUsed.w, pbUsed.h, datiused, Color.white, Color.Red, FALSE)
-  pbWin.Picture = graf.WRITE("", pbWin.w, pbWin.h, datiwin, Color.white, Color.Green, FALSE)
-  pbTotal.Picture = graf.WRITE("", pbTotal.w, pbTotal.h, datitot, Color.white, Color.Blue, FALSE)
+  graf.put(datiused, Color.Red, ("Importo giocato"))
+  graf.put(datiwin, Color.Green, ("Importo vinto"))
+  pbUsed.Picture = graf.WRITE("", pbUsed.w, pbUsed.h, Color.white, FALSE,,, FALSE)
+  pbTotal.Picture = graf.WRITE("", pbTotal.w, pbTotal.h, Color.white, FALSE,,, FALSE)
 
 END
