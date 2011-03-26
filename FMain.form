@@ -69,6 +69,10 @@
       Text = ("Consulta la smorfia")
       Picture = Picture["icon:/16/font"]
     }
+    { mymoneymanager Menu
+      Text = ("Gestione vincite")
+      Picture = Picture["icons/hand_money.png"]
+    }
     { numb_by_name Menu
       Text = ("Estrai numero da nome")
       Picture = Picture["icons/icon_name_to_number.png"]

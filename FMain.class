@@ -21,6 +21,9 @@ PUBLIC SUB _new()
     PRINT "No valid connection"
     PRINT "Connect you system with the network to use all meganalotto's features."
   END IF
+  
+  '-- create a database if not exist
+  Management.MoveDatabase()
 
 END
 
@@ -441,5 +444,11 @@ PUBLIC SUB menu_personal_system_Click()
   NEXT 
   $String &= "# " & ("Sistema personalizzato dall'utente") & "\n"
   TextArea1.Text &= $String
+
+END
+
+PUBLIC SUB mymoneymanager_Click()
+
+  FMoneyManager.ShowDialog()
 
 END

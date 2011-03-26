@@ -1,0 +1,15 @@
+' Gambas module file
+
+PUBLIC CONST DatabaseName AS String = "moneymanager"
+PUBLIC CONST DatabaseTableName AS String = "money"
+PUBLIC DatabasePath AS String = User.Home &/ ".meganalotto"
+PUBLIC CONST DatabaseType AS String = "sqlite3"
+
+PUBLIC FUNCTION MoveDatabase()
+  
+  IF NOT Exist(DatabasePath &/ DatabaseName) THEN 
+    COPY Application.Path &/ "other/" & DatabaseName TO DatabasePath &/ DatabaseName
+    PRINT "New DataBase created in " & DatabasePath
+  END IF
+  
+END
