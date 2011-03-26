@@ -78,87 +78,87 @@ msgstr ""
 msgid "Completo"
 msgstr ""
 
-#: FMain.class:565
+#: FMain.class:566
 msgid "Sistema di Parità"
 msgstr ""
 
-#: FMain.class:569
+#: FMain.class:571
 msgid "Sistema di Disparità"
 msgstr ""
 
-#: FMain.class:574
+#: FMain.class:577
 msgid "Strumenti"
 msgstr ""
 
-#: FMain.class:577
+#: FMain.class:580
 msgid "Top 10 ritardatari"
 msgstr ""
 
-#: FMain.class:585
+#: FMain.class:589
 msgid "Consulta la smorfia"
 msgstr ""
 
-#: FMain.class:590
+#: FMain.class:594
 msgid "Estrai numero da nome"
 msgstr ""
 
-#: FMain.class:594
+#: FMain.class:599
 msgid "Calcola quota vittoria"
 msgstr ""
 
-#: FMain.class:598
+#: FMain.class:604
 msgid "Inserisci valori personali"
 msgstr ""
 
-#: FMain.class:606
+#: FMain.class:613
 msgid "Note"
 msgstr ""
 
-#: FMain.class:611
+#: FMain.class:618
 msgid "Guida"
 msgstr ""
 
-#: FMain.class:617
+#: FMain.class:624
 msgid "About"
 msgstr ""
 
-#: FMain.class:620
+#: FMain.class:627
 msgid "Ringraziamenti"
 msgstr ""
 
-#: FMain.class:625
+#: FMain.class:632
 msgid "Visita il sito del progetto"
 msgstr ""
 
-#: FMain.class:634
+#: FMain.class:641
 msgid "Sostieni il progetto"
 msgstr ""
 
-#: FMain.class:638
+#: FMain.class:646
 msgid "Diventa partner"
 msgstr ""
 
-#: FMain.class:665
+#: FMain.class:673
 msgid "Genera"
 msgstr ""
 
-#: FMain.class:671
+#: FMain.class:679
 msgid "Pulisci"
 msgstr ""
 
-#: FMain.class:677
+#: FMain.class:685
 msgid "Salva"
 msgstr ""
 
-#: FMain.class:683
+#: FMain.class:691
 msgid "Chiudi"
 msgstr ""
 
-#: FMain.class:720
+#: FMain.class:728
 msgid "Aggiorna Feed"
 msgstr ""
 
-#: FMain.class:740
+#: FMain.class:748
 msgid "Aggiorna i feed per rimanere aggiornato sulle novità del software."
 msgstr ""
 

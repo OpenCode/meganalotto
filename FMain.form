@@ -45,18 +45,22 @@
     Text = ("Sistemi")
     { menu_extract Menu
       Text = ("Completo")
+      Picture = Picture["icons/icon_system.png"]
     }
     { menu_extract_only_pair Menu
       Text = ("Sistema di Parit\xC3\xA0")
+      Picture = Picture["icons/icon_system_only_pair.png"]
     }
     { menu_extract_only_uneven Menu
       Text = ("Sistema di Disparit\xC3\xA0")
+      Picture = Picture["icons/icon_system_only_pair.png"]
     }
   }
   { tools Menu
     Text = ("Strumenti")
     { ritardatari Menu
       Text = ("Top 10 ritardatari")
+      Picture = Picture["icons/orologio.png"]
     }
     { Menu4 Menu
       Text = ("")
@@ -67,12 +71,15 @@
     }
     { numb_by_name Menu
       Text = ("Estrai numero da nome")
+      Picture = Picture["icons/icon_name_to_number.png"]
     }
     { menu_winning Menu
       Text = ("Calcola quota vittoria")
+      Picture = Picture["icons/money.png"]
     }
     { menu_personal_system Menu
       Text = ("Inserisci valori personali")
+      Picture = Picture["icons/icon_personal_system.png"]
     }
     { Menu11 Menu
       Text = ("")
@@ -101,6 +108,7 @@
     }
     { support Menu
       Text = ("Sostieni il progetto")
+      Picture = Picture["icons/support.gif"]
     }
     { partnership Menu
       Text = ("Diventa partner")
