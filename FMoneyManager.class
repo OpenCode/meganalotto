@@ -40,8 +40,14 @@ PUBLIC SUB bRefresh_Click()
   DIM sql, $data AS String
   DIM i AS Integer
 
+  IF tbUsed.Value = FALSE AND tbWin.Value = FALSE AND tbEarn.Value = FALSE THEN 
+    pbUsed.Visible = FALSE
+  ELSE 
+    pbUsed.Visible = TRUE
+  END IF
+
   GridView1.Clear()
-  
+
   '-- open the connection
   WITH $hConn
     .Type = Management.DatabaseType
@@ -70,7 +76,7 @@ PUBLIC SUB bRefresh_Click()
         IF tbUsed.Value THEN datiused.Add(CFloat(Replace(hres!used, ",", ".")))
         IF tbWin.Value THEN datiwin.Add(CFloat(Replace(hres!win, ",", ".")))
         IF tbEarn.Value THEN datitot.Add(CFloat(Replace(hres!win, ",", ".")) - CFloat(Replace(hres!used, ",", ".")))
-        'dates.Add(hres!data)
+        IF tbDate.Value THEN dates.Add($data)
         INC i
       NEXT
   ELSE
@@ -83,6 +89,26 @@ PUBLIC SUB bRefresh_Click()
   IF tbUsed.Value THEN graf.put(datiused, Color.Red, ("Importo giocato"))
   IF tbWin.Value THEN graf.put(datiwin, Color.Green, ("Importo vinto"))
   IF tbEarn.Value THEN graf.put(datitot, Color.DarkCyan, ("Guadagno"))
-  pbUsed.Picture = graf.WRITE("", pbUsed.w, pbUsed.h, Color.white, FALSE,,, FALSE)
+  
+  IF cbGraph.Index = 0 THEN
+    IF tbDate.Value THEN 
+      pbUsed.Picture = graf.WRITE("", pbUsed.w, pbUsed.h, Color.white, FALSE, dates, FALSE)
+    ELSE 
+      pbUsed.Picture = graf.WRITE("", pbUsed.w, pbUsed.h, Color.white, FALSE,,, FALSE)
+    END IF
+  ELSE IF cbGraph.Index = 1 THEN 
+    IF tbDate.Value THEN 
+      pbUsed.Picture = graf.WriteBar("", pbUsed.w, pbUsed.h, Color.white, FALSE, dates, FALSE)
+    ELSE 
+      pbUsed.Picture = graf.WriteBar("", pbUsed.w, pbUsed.h, Color.white, FALSE,,, FALSE)
+    END IF
+  END IF
+
+END
+
+PUBLIC SUB Form_Open()
+
+  cbGraph.Add(("Grafico a linea"), 0)
+  cbGraph.Add(("Grafico a barre"), 1)
 
 END

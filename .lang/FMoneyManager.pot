@@ -30,23 +30,39 @@ msgstr ""
 msgid "Note"
 msgstr ""
 
-#: FMoneyManager.class:79
+#: FMoneyManager.class:85
 msgid "Nessun dato trovato!"
 msgstr ""
 
-#: FMoneyManager.class:85
+#: FMoneyManager.class:91
 msgid "Guadagno"
 msgstr ""
 
-#: FMoneyManager.class:169
+#: FMoneyManager.class:111
+msgid "Grafico a linea"
+msgstr ""
+
+#: FMoneyManager.class:112
+msgid "Grafico a barre"
+msgstr ""
+
+#: FMoneyManager.class:197
 msgid "Mostra importo giocato"
 msgstr ""
 
-#: FMoneyManager.class:175
+#: FMoneyManager.class:203
 msgid "Mostra importo vinto"
 msgstr ""
 
-#: FMoneyManager.class:181
+#: FMoneyManager.class:209
 msgid "Mostra guadagno"
+msgstr ""
+
+#: FMoneyManager.class:215
+msgid "Mostra data sull'asse x"
+msgstr ""
+
+#: FMoneyManager.class:221
+msgid "ComboBox1"
 msgstr ""
 
