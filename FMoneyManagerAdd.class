@@ -1,0 +1,38 @@
+' Gambas class file
+
+
+PUBLIC SUB Form_Open()
+
+  ME.Center
+
+END
+
+PUBLIC SUB btSave_Click()
+
+  DIM $hConn AS NEW Connection
+  DIM sql AS String
+  DIM hres AS Result
+  
+  WITH $hConn
+  .Type = Management.DatabaseType
+  .Host = Management.DatabasePath
+  END WITH
+
+  $hConn.Name = Management.DatabaseName
+  $hConn.Open
+
+  $hconn.Begin
+
+  hres = $hconn.Create(Management.DatabaseTableName)  'collega il result hres alla tavola prova in modalità creazione record
+
+  hres!data = DateChooser1.Value
+  hres!used = Str(ValueBox1.Value)
+  hres!win = Str(ValueBox2.Value)
+  hres!note = TextArea1.Text
+
+  hres.Update
+
+  $hConn.Commit
+  $hConn.Close
+
+END

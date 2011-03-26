@@ -1,2 +1,22 @@
 ' Gambas class file
 
+
+PUBLIC SUB btAdd_Click()
+
+  FMoneyManagerAdd.ShowDialog()
+
+END
+
+PUBLIC SUB Form_Resize()
+
+  GridView1.Columns.Count = 4
+  GridView1.Columns[0].Text = ("Data")
+  GridView1.Columns[0].Width = GridView1.w / 4
+  GridView1.Columns[1].Text = ("Importo giocato")
+  GridView1.Columns[1].Width = GridView1.w / 4
+  GridView1.Columns[2].Text = ("Importo vinto")
+  GridView1.Columns[2].Width = GridView1.w / 4
+  GridView1.Columns[3].Text = ("Note")
+  GridView1.Columns[3].Width = GridView1.w / 4
+
+END

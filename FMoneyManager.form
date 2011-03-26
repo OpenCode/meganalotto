@@ -20,8 +20,13 @@
       Text = ("")
       Picture = Picture["icon:/24/remove"]
     }
-    { bRefresh Button
+    { btEdit Button
       MoveScaled(8,0,4,4)
+      Text = ("")
+      Picture = Picture["icon:/24/edit"]
+    }
+    { bRefresh Button
+      MoveScaled(12,0,4,4)
       Text = ("")
       Picture = Picture["icon:/24/refresh"]
     }
@@ -47,8 +52,10 @@
     MoveScaled(1,26,72,13)
     Border = Border.Plain
   }
-  { ColumnView1 ColumnView
-    MoveScaled(1,40,72,19)
+  { GridView1 GridView
+    MoveScaled(1,40,72,22)
     Expand = True
+    Header = GridView.Horizontal
+    Resizable = False
   }
 }
