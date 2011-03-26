@@ -1,0 +1,158 @@
+' Gambas class file
+'#####################################################################################à
+    '< linegraf  classe grafica creazione grafico a linee>
+    'Copyleft< 2010 > < fsurfing@tutto-opensource.org >
+
+    'This program IS free software: you can redistribute it AND / OR modify
+    'it under the terms OF the GNU General PUBLIC License AS published by
+    'the Free Software Foundation, either version 3 OF the License, OR
+    '(at your option)any later version.
+
+    'This program IS distributed IN the hope that it will be useful,
+    'but WITHOUT ANY WARRANTY; without even the implied warranty OF
+    'MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.See the
+    'GNU General PUBLIC License FOR more details.
+
+    'You should have received a COPY OF the GNU General PUBLIC License
+    'along WITH this program.IfNOT, see < http: / / www.gnu.org / licenses / > .
+
+'###############################################################################################
+
+PRIVATE pic AS Picture
+PRIVATE $titolo AS String
+PRIVATE $w AS Integer
+PRIVATE $h AS Integer
+PRIVATE $datix AS NEW Float[]
+PRIVATE $datiy AS NEW Float[]
+PRIVATE $coloresfondo AS Integer
+PRIVATE $colorelinea AS Integer
+PRIVATE $ombra AS Boolean
+
+PUBLIC SUB WRITE(titolo AS String, w AS Integer, h AS Integer, datix AS Float[], coloresfondo AS Integer, colorelinea AS Integer, ombra AS Boolean, OPTIONAL datiy AS String[]) AS Picture
+
+DIM bl, ba, n, i, c, h1, i1 AS Integer
+DIM dx, dy, dato, x1, y1 AS Float
+DIM minimo, massimo AS Float
+DIM variazione AS Integer
+
+
+
+$w = w
+$h = h
+$datix = datix
+$datiy = datiy
+$coloresfondo = coloresfondo
+$colorelinea = colorelinea
+$ombra = ombra
+$titolo = titolo
+
+
+n = datix.Count
+
+pic = NEW Picture($w, $h, TRUE)
+
+    massimo = 0
+    
+    bl = $w / 10  'dimensione bordo laterale
+    ba = bl / 2 'dimensione bordi sup inf
+    dx = ($w - (2 * bl)) / n 'moltiplicatore asse x
+    'cerco il malore max  assoluti
+          i = 0
+          FOR EACH datix
+             IF datix[i] > massimo THEN massimo = datix[i]
+             INC i
+          NEXT 
+     'cerco il valore minimo
+          minimo = massimo
+          i = 0
+          FOR EACH datix
+             IF datix[i] < minimo THEN minimo = datix[i]
+             INC i
+          NEXT
+          massimo = Int(massimo) + 1
+          minimo = Int(minimo) 
+          
+          IF massimo = minimo THEN 'imposta di DEFAULT dei limiti nel caso ci siano valori tutti uguali
+              massimo = 30
+              minimo = 0
+          ENDIF
+          
+          variazione = massimo - minimo
+          
+          dy = ($h - ba * 2) / variazione 'moltiplicatore asse y
+    
+          Draw.Begin(pic)
+     'disegno sfondo
+          Draw.Begin(pic)
+              Draw.LineStyle = 1
+              Draw.Foreground = $coloresfondo
+              Draw.FillColor = $coloresfondo
+              Draw.FillStyle = 1
+              Draw.Rect(0, 0, $w, $h)
+     'disegno linea x 
+     Draw.Foreground = Color.Black
+     ' Draw.Line(bl, h - ba, w - bl, h - ba)
+     'disegno linea y
+     Draw.LineWidth = 1
+     Draw.Line(bl, ba, bl, h - ba)
+     Draw.Font.Bold = FALSE
+     Draw.LineStyle = 1
+    'disegno linee y
+        IF dy / 2 < dx / 2 THEN Draw.Font.Size = dy / 2 
+        IF dx / 2 < dy / 2 THEN Draw.Font.Size = dx / 2
+
+        IF dy > (h - (4 * ba)) / 2 THEN Draw.Font.Size = dx / 5
+        IF n > 50 AND n < 100 THEN Draw.Font.Size = dx / 6
+        IF n >= 100 THEN Draw.Font.Size = $w / 200
+        IF dy / 2 > $h / 20 THEN Draw.Font.Size = dx / 4
+        'disegno linee x
+        Draw.LineStyle = 3
+        FOR i = 1 TO variazione STEP $h / 100
+            Draw.Line(bl, $h - ba - (dy * i), $w - bl, $h - ba - (dy * i))
+            
+            Draw.Foreground = Color.Black
+            
+            Draw.Text(minimo + i, bl / 6, h - ba - (Draw.TextHeight(minimo + i) / 2) - (i * dy))
+            Draw.Foreground = Color.LightGray
+        NEXT 
+        Draw.LineStyle = 1
+        'disegno linea dello zero
+        
+        Draw.Foreground = Color.Black
+        Draw.LineStyle = 1
+        Draw.Line(bl, $h + (minimo * dy) - ba, $w - bl, $h + (minimo * dy) - ba)  
+        Draw.Foreground = Color.DarkGray
+        Draw.Font.Size = ba / 4
+        
+         c = 2 'dimensione ombra
+  h1 = minimo * dy 'offset dello 0
+        'disegno dati
+            FOR i = 0 TO datix.Count - 1
+                    dato = datix[i]
+
+                    IF i1 = 0 THEN 'se sto disegnando il primo valore del grafico disegna solo un punto
+                        x1 = i * dx
+                        y1 = dato * dy
+                    ENDIF 
+                    INC i1
+                    IF ombra = TRUE THEN
+                        Draw.Foreground = Color.Gray
+                        Draw.LineWidth = 4
+
+                        Draw.Line(x1 + bl + c + dx, $h + h1 - y1 - ba + c, (i * dx) + bl + c + dx, $h + h1 - (dato * dy) - ba + c) 'disegno ombra
+                    ENDIF 
+                    Draw.Foreground = $colorelinea
+                    Draw.LineWidth = 2
+                    Draw.Line(x1 + bl + dx, $h + h1 - y1 - ba, (i * dx) + bl + dx, $h + h1 - (dato * dy) - ba) 'disegno linea relativa al valore odierno partendo dal valore precedente
+                    x1 = i * dx
+                    y1 = dato * dy
+
+              NEXT 
+              Draw.Foreground = Color.Black
+              Draw.Font.Size = ba / 2
+              Draw.Text($titolo, 0, $h - Draw.TextHeight($titolo), $w, ba / 2, 3)
+  Draw.End
+  RETURN pic
+
+END
+

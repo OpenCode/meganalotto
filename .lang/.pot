@@ -62,7 +62,7 @@ msgstr ""
 msgid "Il link è stato copiato in memoria. Incollarlo nel proprio browser."
 msgstr ""
 
-#: FAbout.class:50 FMain.class:706 FMoneyManagerAdd.class:126
+#: FAbout.class:50 FMain.class:706 FMoneyManagerAdd.class:133
 #: FPartner.class:14 FPersonalSystem.class:25 FSuper.class:92
 #: FSupport.class:20
 msgid "Chiudi"
@@ -266,7 +266,7 @@ msgstr ""
 msgid "Inserisci valori personali"
 msgstr ""
 
-#: FMain.class:628 FMoneyManagerAdd.class:132 FMoneyManager.class:19
+#: FMain.class:628 FMoneyManagerAdd.class:139 FMoneyManager.class:26
 msgid "Note"
 msgstr ""
 
@@ -298,7 +298,7 @@ msgstr ""
 msgid "Pulisci"
 msgstr ""
 
-#: FMain.class:700 FMoneyManagerAdd.class:120
+#: FMain.class:700 FMoneyManagerAdd.class:127
 msgid "Salva"
 msgstr ""
 
@@ -310,27 +310,27 @@ msgstr ""
 msgid "Aggiorna i feed per rimanere aggiornato sulle novità del software."
 msgstr ""
 
-#: FMoneyManagerAdd.class:86
+#: FMoneyManagerAdd.class:93
 msgid "€"
 msgstr ""
 
-#: FMoneyManagerAdd.class:92
+#: FMoneyManagerAdd.class:99
 msgid "Data della giocata"
 msgstr ""
 
-#: FMoneyManagerAdd.class:110 FMoneyManager.class:15
+#: FMoneyManagerAdd.class:117 FMoneyManager.class:22
 msgid "Importo giocato"
 msgstr ""
 
-#: FMoneyManagerAdd.class:115 FMoneyManager.class:17
+#: FMoneyManagerAdd.class:122 FMoneyManager.class:24
 msgid "Importo vinto"
 msgstr ""
 
-#: FMoneyManager.class:13
+#: FMoneyManager.class:20
 msgid "Data"
 msgstr ""
 
-#: FMoneyManager.class:62
+#: FMoneyManager.class:79
 msgid "Nessun dato trovato!"
 msgstr ""
 

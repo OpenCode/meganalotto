@@ -30,6 +30,11 @@ END
 
 PUBLIC SUB bRefresh_Click()
 
+  '-- graph data
+  DIM graf AS NEW linegraf
+  DIM datiused, datiwin, datitot AS NEW Float[]
+  DIM dates AS NEW String[]
+  '-- database data
   DIM $hConn AS NEW Connection
   DIM hres AS Result
   DIM sql, $data AS String
@@ -37,19 +42,20 @@ PUBLIC SUB bRefresh_Click()
 
   GridView1.Clear()
   
+  '-- open the connection
   WITH $hConn
     .Type = Management.DatabaseType
     .Host = Management.DatabasePath
   END WITH
-
   $hConn.Name = Management.DatabaseName
   $hConn.Open
 
+  '-- set and use query
   sql = "SELECT * FROM money WHERE data BETWEEN " & CInt(Replace(Str(DateChooser1.Value), "/", "")) & " AND " & CInt(Replace(Str(DateChooser2.Value), "/", ""))
   ' FUNZIONA! sql = "SELECT * FROM money WHERE data LIKE " & CInt(Replace(Str(DateChooser1.Value), "/", ""))
-
   hres = $hconn.Exec(sql)
 
+  '-- fill gridview with extracts data
   IF hres.Available = TRUE THEN
       GridView1.Columns.Count = 4
       GridView1.Rows.Count = hres.Count
@@ -61,6 +67,10 @@ PUBLIC SUB bRefresh_Click()
         GridView1[i, 1].Text = hres!used & Management.$value
         GridView1[i, 2].Text = hres!win & Management.$value
         GridView1[i, 3].Text = hres!note
+        datiused.Add(CFloat(Replace(hres!used, ",", ".")))
+        datiwin.Add(CFloat(Replace(hres!win, ",", ".")))
+        datitot.Add(CFloat(Replace(hres!used, ",", ".")) - CFloat(Replace(hres!win, ",", ".")))
+        'dates.Add(hres!data)
         INC i
       NEXT
   ELSE
@@ -69,5 +79,9 @@ PUBLIC SUB bRefresh_Click()
         GridView1[0, 0].Text = ("Nessun dato trovato!")
         GridView1[0, 0].Alignment = Align.Center
   END IF
+
+  pbUsed.Picture = graf.WRITE("", pbUsed.w, pbUsed.h, datiused, Color.white, Color.Red, FALSE)
+  pbWin.Picture = graf.WRITE("", pbWin.w, pbWin.h, datiwin, Color.white, Color.Green, FALSE)
+  pbTotal.Picture = graf.WRITE("", pbTotal.w, pbTotal.h, datitot, Color.white, Color.Blue, FALSE)
 
 END
