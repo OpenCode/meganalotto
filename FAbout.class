@@ -18,7 +18,7 @@ PUBLIC SUB Form_Open()
   TextArea1.Text &= "\t- Voi utenti che scaricate ed usate il programma rendendomi fiero del mio \"lavoro\";  \n\n"
   TextArea1.Text &= "\t- Tangoku (http://gaetanolonigro.wordpress.com/) per la magnifica icona;  \n\n"
   TextArea1.Text &= "\t- Wikipedia da cui ho tratto i termini de La Smorfia;  \n\n"
-  TextArea1.Text &= "\t- Google Code per l'hosting gratuito del progetto;  \n\n"
+  TextArea1.Text &= "\t- GitHub per il nuovo hosting gratuito del progetto;  \n\n"
   TextArea1.Text &= "\t- Google Traslate per la traduzione in inglese e francese;  \n\n"
   TextArea1.Text &= "\t- Txt.io per il servizio di microblogging con cui gestisco i feed;  \n\n"
 
