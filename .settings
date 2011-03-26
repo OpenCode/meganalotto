@@ -12,12 +12,14 @@ SearchComment=False
 SearchString=True
 
 [OpenFile]
-File[1]="FPersonalSystem.class:30.70"
-File[2]="FPersonalSystem.form"
-File[3]="FMain.form"
-File[4]="FMain.class:39.24"
-Active=4
-Count=4
+File[1]="FMain.form"
+File[2]="FMain.class:215.2"
+File[3]="FSmorfia.form"
+File[4]="FSmorfia.class:35.41"
+File[5]="FAbout.form"
+File[6]="FAbout.class:25.0"
+Active=6
+Count=6
 
 [Watches]
 Count=0
