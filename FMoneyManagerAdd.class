@@ -34,5 +34,13 @@ PUBLIC SUB btSave_Click()
 
   $hConn.Commit
   $hConn.Close
+  
+  ME.Close
+
+END
+
+PUBLIC SUB btClose_Click()
+
+  ME.Close
 
 END

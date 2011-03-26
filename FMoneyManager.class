@@ -38,7 +38,6 @@ PUBLIC SUB bRefresh_Click()
   $hConn.Name = Management.DatabaseName
   $hConn.Open
 
-  'sql = "SELECT * FROM money WHERE data > " & DateChooser1.Value & " AND data <" & DateChooser2.Value
   sql = "SELECT * FROM money WHERE data BETWEEN " & CInt(Replace(Str(DateChooser1.Value), "/", "")) & " AND " & CInt(Replace(Str(DateChooser2.Value), "/", ""))
   ' FUNZIONA !sql = "SELECT * FROM money WHERE data LIKE " & CInt(Replace(Str(DateChooser1.Value), "/", ""))
 
