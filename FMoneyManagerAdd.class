@@ -25,7 +25,7 @@ PUBLIC SUB btSave_Click()
 
   hres = $hconn.Create(Management.DatabaseTableName)  'collega il result hres alla tavola prova in modalità creazione record
 
-  hres!data = DateChooser1.Value
+  hres!data = CInt(Replace(Str(DateChooser1.Value), "/", ""))
   hres!used = Str(ValueBox1.Value)
   hres!win = Str(ValueBox2.Value)
   hres!note = TextArea1.Text

@@ -20,3 +20,46 @@ PUBLIC SUB Form_Resize()
   GridView1.Columns[3].Width = GridView1.w / 4
 
 END
+
+PUBLIC SUB bRefresh_Click()
+
+  DIM $hConn AS NEW Connection
+  DIM hres AS Result
+  DIM sql AS String
+  DIM i AS Integer
+
+  GridView1.Clear()
+  
+  WITH $hConn
+    .Type = Management.DatabaseType
+    .Host = Management.DatabasePath
+  END WITH
+
+  $hConn.Name = Management.DatabaseName
+  $hConn.Open
+
+  'sql = "SELECT * FROM money WHERE data > " & DateChooser1.Value & " AND data <" & DateChooser2.Value
+  sql = "SELECT * FROM money WHERE data BETWEEN " & CInt(Replace(Str(DateChooser1.Value), "/", "")) & " AND " & CInt(Replace(Str(DateChooser2.Value), "/", ""))
+  ' FUNZIONA !sql = "SELECT * FROM money WHERE data LIKE " & CInt(Replace(Str(DateChooser1.Value), "/", ""))
+
+  hres = $hconn.Exec(sql)  ' esegue la query
+
+  IF hres.Available = TRUE THEN
+      GridView1.Columns.Count = 4
+      GridView1.Rows.Count = hres.Count
+      i = 0
+      FOR EACH hres
+        GridView1[i, 0].Text = hres!data
+        GridView1[i, 1].Text = hres!used
+        GridView1[i, 2].Text = hres!win
+        GridView1[i, 3].Text = hres!note
+        INC i
+      NEXT
+  ELSE
+        GridView1.Columns.Count = 1
+        GridView1.Rows.Count = 1
+        GridView1[0, 0].Text = ("Nessun dato trovato!")
+        GridView1[0, 0].Alignment = Align.Center
+  END IF
+
+END

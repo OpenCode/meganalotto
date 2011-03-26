@@ -330,6 +330,10 @@ msgstr ""
 msgid "Data"
 msgstr ""
 
+#: FMoneyManager.class:61
+msgid "Nessun dato trovato!"
+msgstr ""
+
 #: FNumByName.class:46
 msgid "Estrai"
 msgstr ""
