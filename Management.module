@@ -1,9 +1,19 @@
 ' Gambas module file
 
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
+
 PUBLIC CONST DatabaseName AS String = "moneymanager"
 PUBLIC CONST DatabaseTableName AS String = "money"
 PUBLIC DatabasePath AS String = User.Home &/ ".meganalotto"
 PUBLIC CONST DatabaseType AS String = "sqlite3"
+
+PUBLIC $Value AS String = "€"
 
 PUBLIC FUNCTION MoveDatabase()
   

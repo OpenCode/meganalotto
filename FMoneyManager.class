@@ -1,5 +1,12 @@
 ' Gambas class file
 
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
 
 PUBLIC SUB btAdd_Click()
 
@@ -25,7 +32,7 @@ PUBLIC SUB bRefresh_Click()
 
   DIM $hConn AS NEW Connection
   DIM hres AS Result
-  DIM sql AS String
+  DIM sql, $data AS String
   DIM i AS Integer
 
   GridView1.Clear()
@@ -39,18 +46,20 @@ PUBLIC SUB bRefresh_Click()
   $hConn.Open
 
   sql = "SELECT * FROM money WHERE data BETWEEN " & CInt(Replace(Str(DateChooser1.Value), "/", "")) & " AND " & CInt(Replace(Str(DateChooser2.Value), "/", ""))
-  ' FUNZIONA !sql = "SELECT * FROM money WHERE data LIKE " & CInt(Replace(Str(DateChooser1.Value), "/", ""))
+  ' FUNZIONA! sql = "SELECT * FROM money WHERE data LIKE " & CInt(Replace(Str(DateChooser1.Value), "/", ""))
 
-  hres = $hconn.Exec(sql)  ' esegue la query
+  hres = $hconn.Exec(sql)
 
   IF hres.Available = TRUE THEN
       GridView1.Columns.Count = 4
       GridView1.Rows.Count = hres.Count
       i = 0
       FOR EACH hres
-        GridView1[i, 0].Text = hres!data
-        GridView1[i, 1].Text = hres!used
-        GridView1[i, 2].Text = hres!win
+        $data = Str(hres!data)
+        $data = Left($data, 2) & "/" & Right(Left($data, 4), 2) & "/" & Right($data, 2)
+        GridView1[i, 0].Text = $data
+        GridView1[i, 1].Text = hres!used & Management.$value
+        GridView1[i, 2].Text = hres!win & Management.$value
         GridView1[i, 3].Text = hres!note
         INC i
       NEXT

@@ -10,6 +10,6 @@
 
 PUBLIC SUB Form_Open()
 
-  TextArea1.Text = File.Load(Application.Path &/ "otherfile/COPYING")
+  TextArea1.Text = File.Load(Application.Path &/ "other/COPYING")
 
 END

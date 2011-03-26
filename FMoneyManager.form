@@ -55,6 +55,7 @@
   { GridView1 GridView
     MoveScaled(1,40,72,22)
     Expand = True
+    Mode = Select.Single
     Header = GridView.Horizontal
     Resizable = False
   }
