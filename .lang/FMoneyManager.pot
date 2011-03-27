@@ -34,39 +34,59 @@ msgstr ""
 msgid "Note"
 msgstr ""
 
-#: FMoneyManager.class:88
+#: FMoneyManager.class:99
 msgid "Nessun dato trovato!"
 msgstr ""
 
-#: FMoneyManager.class:94
+#: FMoneyManager.class:105
 msgid "Guadagno"
 msgstr ""
 
-#: FMoneyManager.class:114
+#: FMoneyManager.class:125
 msgid "Grafico a linea"
 msgstr ""
 
-#: FMoneyManager.class:115
+#: FMoneyManager.class:126
 msgid "Grafico a barre"
 msgstr ""
 
-#: FMoneyManager.class:200
+#: FMoneyManager.class:213
+msgid "Filtra per lotteria"
+msgstr ""
+
+#: FMoneyManager.class:217
+msgid "Lotto"
+msgstr ""
+
+#: FMoneyManager.class:223
+msgid "Superenalotto"
+msgstr ""
+
+#: FMoneyManager.class:229
+msgid "10eLotto"
+msgstr ""
+
+#: FMoneyManager.class:235
+msgid "Win4Life"
+msgstr ""
+
+#: FMoneyManager.class:260
 msgid "Mostra importo giocato"
 msgstr ""
 
-#: FMoneyManager.class:206
+#: FMoneyManager.class:266
 msgid "Mostra importo vinto"
 msgstr ""
 
-#: FMoneyManager.class:212
+#: FMoneyManager.class:272
 msgid "Mostra guadagno"
 msgstr ""
 
-#: FMoneyManager.class:218
+#: FMoneyManager.class:278
 msgid "Mostra data sull'asse x"
 msgstr ""
 
-#: FMoneyManager.class:224
+#: FMoneyManager.class:284
 msgid "ComboBox1"
 msgstr ""
 

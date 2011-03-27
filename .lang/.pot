@@ -150,7 +150,7 @@ msgstr ""
 msgid "Selezionare lingua:"
 msgstr ""
 
-#: FGuide.class:72 FMoneyManagerAdd.class:164 FMoneyManager.class:224
+#: FGuide.class:72 FMoneyManagerAdd.class:164 FMoneyManager.class:284
 #: FWinning.class:166
 msgid "ComboBox1"
 msgstr ""
@@ -219,7 +219,7 @@ msgstr ""
 msgid "Archivio Estrazioni"
 msgstr ""
 
-#: FMain.class:527
+#: FMain.class:527 FMoneyManager.class:217
 msgid "Lotto"
 msgstr ""
 
@@ -227,7 +227,7 @@ msgstr ""
 msgid "SuperEnalotto"
 msgstr ""
 
-#: FMain.class:537
+#: FMain.class:537 FMoneyManager.class:235
 msgid "Win4Life"
 msgstr ""
 
@@ -239,7 +239,7 @@ msgstr ""
 msgid "Tipo estrazione"
 msgstr ""
 
-#: FMain.class:563
+#: FMain.class:563 FMoneyManager.class:229
 msgid "10eLotto"
 msgstr ""
 
@@ -335,35 +335,43 @@ msgstr ""
 msgid "Lotteria"
 msgstr ""
 
-#: FMoneyManager.class:88
+#: FMoneyManager.class:99
 msgid "Nessun dato trovato!"
 msgstr ""
 
-#: FMoneyManager.class:94
+#: FMoneyManager.class:105
 msgid "Guadagno"
 msgstr ""
 
-#: FMoneyManager.class:114
+#: FMoneyManager.class:125
 msgid "Grafico a linea"
 msgstr ""
 
-#: FMoneyManager.class:115
+#: FMoneyManager.class:126
 msgid "Grafico a barre"
 msgstr ""
 
-#: FMoneyManager.class:200
+#: FMoneyManager.class:213
+msgid "Filtra per lotteria"
+msgstr ""
+
+#: FMoneyManager.class:223
+msgid "Superenalotto"
+msgstr ""
+
+#: FMoneyManager.class:260
 msgid "Mostra importo giocato"
 msgstr ""
 
-#: FMoneyManager.class:206
+#: FMoneyManager.class:266
 msgid "Mostra importo vinto"
 msgstr ""
 
-#: FMoneyManager.class:212
+#: FMoneyManager.class:272
 msgid "Mostra guadagno"
 msgstr ""
 
-#: FMoneyManager.class:218
+#: FMoneyManager.class:278
 msgid "Mostra data sull'asse x"
 msgstr ""
 

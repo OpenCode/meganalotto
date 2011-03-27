@@ -76,11 +76,22 @@ PUBLIC SUB bRefresh_Click()
         GridView1[i, 2].Text = hres!win & Management.$value
         GridView1[i, 3].Text = hres!lottery
         GridView1[i, 4].Text = hres!note
-        IF tbUsed.Value THEN datiused.Add(CFloat(Replace(hres!used, ",", ".")))
-        IF tbWin.Value THEN datiwin.Add(CFloat(Replace(hres!win, ",", ".")))
-        IF tbEarn.Value THEN datitot.Add(CFloat(Replace(hres!win, ",", ".")) - CFloat(Replace(hres!used, ",", ".")))
-        IF tbDate.Value THEN dates.Add($data)
-        INC i
+        '-- filter the result
+        IF (cbLotto.Value = FALSE AND hres!lottery = "Lotto") THEN
+          GridView1.Rows.Remove(i)
+        ELSE IF (cbSuper.Value = FALSE AND hres!lottery = "Superenalotto") THEN
+          GridView1.Rows.Remove(i)
+        ELSE IF (cb10.Value = FALSE AND hres!lottery = "10&Lotto") THEN
+          GridView1.Rows.Remove(i)
+        ELSE IF (cbWin.Value = FALSE AND hres!lottery = "Win4Life") THEN
+          GridView1.Rows.Remove(i)
+        ELSE 
+          IF tbUsed.Value THEN datiused.Add(CFloat(Replace(hres!used, ",", ".")))
+          IF tbWin.Value THEN datiwin.Add(CFloat(Replace(hres!win, ",", ".")))
+          IF tbEarn.Value THEN datitot.Add(CFloat(Replace(hres!win, ",", ".")) - CFloat(Replace(hres!used, ",", ".")))
+          IF tbDate.Value THEN dates.Add($data)
+          INC i
+        END IF
       NEXT
   ELSE
         GridView1.Columns.Count = 1
