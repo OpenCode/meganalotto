@@ -59,7 +59,7 @@ PUBLIC SUB bRefresh_Click()
   $hConn.Open
 
   '-- set and use query
-  sql = "SELECT * FROM money WHERE data BETWEEN " & CInt(Replace(Str(DateChooser1.Value), "/", "")) & " AND " & CInt(Replace(Str(DateChooser2.Value), "/", ""))
+  sql = "SELECT * FROM money WHERE data BETWEEN " & CInt(Replace(Str(DateChooser1.Value), "/", "")) & " AND " & CInt(Replace(Str(DateChooser2.Value), "/", "")) & " ORDER BY data"
   ' FUNZIONA! sql = "SELECT * FROM money WHERE data LIKE " & CInt(Replace(Str(DateChooser1.Value), "/", ""))
   hres = $hconn.Exec(sql)
 
