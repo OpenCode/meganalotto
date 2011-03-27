@@ -62,7 +62,7 @@ msgstr ""
 msgid "Il link è stato copiato in memoria. Incollarlo nel proprio browser."
 msgstr ""
 
-#: FAbout.class:50 FMain.class:706 FMoneyManagerAdd.class:133
+#: FAbout.class:50 FMain.class:706 FMoneyManagerAdd.class:142
 #: FPartner.class:14 FPersonalSystem.class:25 FSuper.class:92
 #: FSupport.class:20
 msgid "Chiudi"
@@ -150,7 +150,8 @@ msgstr ""
 msgid "Selezionare lingua:"
 msgstr ""
 
-#: FGuide.class:72 FMoneyManager.class:221 FWinning.class:166
+#: FGuide.class:72 FMoneyManagerAdd.class:164 FMoneyManager.class:224
+#: FWinning.class:166
 msgid "ComboBox1"
 msgstr ""
 
@@ -266,7 +267,7 @@ msgstr ""
 msgid "Inserisci valori personali"
 msgstr ""
 
-#: FMain.class:628 FMoneyManagerAdd.class:139 FMoneyManager.class:26
+#: FMain.class:628 FMoneyManagerAdd.class:148 FMoneyManager.class:28
 msgid "Note"
 msgstr ""
 
@@ -298,7 +299,7 @@ msgstr ""
 msgid "Pulisci"
 msgstr ""
 
-#: FMain.class:700 FMoneyManagerAdd.class:127
+#: FMain.class:700 FMoneyManagerAdd.class:136
 msgid "Salva"
 msgstr ""
 
@@ -310,19 +311,19 @@ msgstr ""
 msgid "Aggiorna i feed per rimanere aggiornato sulle novità del software."
 msgstr ""
 
-#: FMoneyManagerAdd.class:93
+#: FMoneyManagerAdd.class:102
 msgid "€"
 msgstr ""
 
-#: FMoneyManagerAdd.class:99
+#: FMoneyManagerAdd.class:108
 msgid "Data della giocata"
 msgstr ""
 
-#: FMoneyManagerAdd.class:117 FMoneyManager.class:22
+#: FMoneyManagerAdd.class:126 FMoneyManager.class:22
 msgid "Importo giocato"
 msgstr ""
 
-#: FMoneyManagerAdd.class:122 FMoneyManager.class:24
+#: FMoneyManagerAdd.class:131 FMoneyManager.class:24
 msgid "Importo vinto"
 msgstr ""
 
@@ -330,35 +331,39 @@ msgstr ""
 msgid "Data"
 msgstr ""
 
-#: FMoneyManager.class:85
+#: FMoneyManager.class:26
+msgid "Lotteria"
+msgstr ""
+
+#: FMoneyManager.class:88
 msgid "Nessun dato trovato!"
 msgstr ""
 
-#: FMoneyManager.class:91
+#: FMoneyManager.class:94
 msgid "Guadagno"
 msgstr ""
 
-#: FMoneyManager.class:111
+#: FMoneyManager.class:114
 msgid "Grafico a linea"
 msgstr ""
 
-#: FMoneyManager.class:112
+#: FMoneyManager.class:115
 msgid "Grafico a barre"
 msgstr ""
 
-#: FMoneyManager.class:197
+#: FMoneyManager.class:200
 msgid "Mostra importo giocato"
 msgstr ""
 
-#: FMoneyManager.class:203
+#: FMoneyManager.class:206
 msgid "Mostra importo vinto"
 msgstr ""
 
-#: FMoneyManager.class:209
+#: FMoneyManager.class:212
 msgid "Mostra guadagno"
 msgstr ""
 
-#: FMoneyManager.class:215
+#: FMoneyManager.class:218
 msgid "Mostra data sull'asse x"
 msgstr ""
 

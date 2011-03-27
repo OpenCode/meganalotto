@@ -16,15 +16,17 @@ END
 
 PUBLIC SUB Form_Resize()
 
-  GridView1.Columns.Count = 4
+  GridView1.Columns.Count = 5
   GridView1.Columns[0].Text = ("Data")
-  GridView1.Columns[0].Width = GridView1.w / 4
+  GridView1.Columns[0].Width = GridView1.w / 5
   GridView1.Columns[1].Text = ("Importo giocato")
-  GridView1.Columns[1].Width = GridView1.w / 4
+  GridView1.Columns[1].Width = GridView1.w / 5
   GridView1.Columns[2].Text = ("Importo vinto")
-  GridView1.Columns[2].Width = GridView1.w / 4
-  GridView1.Columns[3].Text = ("Note")
-  GridView1.Columns[3].Width = GridView1.w / 4
+  GridView1.Columns[2].Width = GridView1.w / 5
+  GridView1.Columns[3].Text = ("Lotteria")
+  GridView1.Columns[3].Width = GridView1.w / 5
+  GridView1.Columns[4].Text = ("Note")
+  GridView1.Columns[4].Width = GridView1.w / 5
 
 END
 
@@ -63,7 +65,7 @@ PUBLIC SUB bRefresh_Click()
 
   '-- fill gridview with extracts data
   IF hres.Available = TRUE THEN
-      GridView1.Columns.Count = 4
+      GridView1.Columns.Count = 5
       GridView1.Rows.Count = hres.Count
       i = 0
       FOR EACH hres
@@ -72,7 +74,8 @@ PUBLIC SUB bRefresh_Click()
         GridView1[i, 0].Text = $data
         GridView1[i, 1].Text = hres!used & Management.$value
         GridView1[i, 2].Text = hres!win & Management.$value
-        GridView1[i, 3].Text = hres!note
+        GridView1[i, 3].Text = hres!lottery
+        GridView1[i, 4].Text = hres!note
         IF tbUsed.Value THEN datiused.Add(CFloat(Replace(hres!used, ",", ".")))
         IF tbWin.Value THEN datiwin.Add(CFloat(Replace(hres!win, ",", ".")))
         IF tbEarn.Value THEN datitot.Add(CFloat(Replace(hres!win, ",", ".")) - CFloat(Replace(hres!used, ",", ".")))

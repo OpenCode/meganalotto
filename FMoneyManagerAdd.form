@@ -1,18 +1,18 @@
 # Gambas Form File 2.0
 
 { Form Form
-  MoveScaled(0,0,49,47)
+  MoveScaled(0,0,49,53)
   Text = ("")
   Border = Window.Fixed
   { DateChooser1 DateChooser
     MoveScaled(13,1,35,23)
   }
   { ValueBox1 ValueBox
-    MoveScaled(13,25,33,3)
+    MoveScaled(13,29,33,3)
     Allowed = ","
   }
   { Label1 Label
-    MoveScaled(46,25,2,3)
+    MoveScaled(46,29,2,3)
     Padding = 5
     Text = ("\xE2\x82\xAC")
     Transparent = True
@@ -23,40 +23,49 @@
     Alignment = Align.TopLeft
   }
   { ValueBox2 ValueBox
-    MoveScaled(13,29,33,3)
+    MoveScaled(13,33,33,3)
     Allowed = ","
   }
   { Label2 Label
-    MoveScaled(46,29,2,3)
+    MoveScaled(46,33,2,3)
     Padding = 5
     Text = ("\xE2\x82\xAC")
     Transparent = True
   }
   { Label3 Label
-    MoveScaled(1,25,12,3)
+    MoveScaled(1,29,12,3)
     Text = ("Importo giocato")
   }
   { Label4 Label
-    MoveScaled(1,29,12,3)
+    MoveScaled(1,33,12,3)
     Text = ("Importo vinto")
   }
   { btSave Button
-    MoveScaled(4,43,19,3)
+    MoveScaled(4,48,19,3)
     Text = ("Salva")
     Picture = Picture["icon:/24/save"]
   }
   { btClose Button
-    MoveScaled(26,43,19,3)
+    MoveScaled(26,48,19,3)
     Text = ("Chiudi")
     Picture = Picture["icon:/24/close"]
   }
   { Label5 Label
-    MoveScaled(1,33,12,3)
+    MoveScaled(1,37,12,3)
     Text = ("Note")
   }
   { TextArea1 TextArea
-    MoveScaled(13,33,35,9)
+    MoveScaled(13,37,35,9)
     Text = ("")
     Wrap = True
+  }
+  { Label6 Label
+    MoveScaled(1,25,12,3)
+    Text = ("Importo giocato")
+  }
+  { cbLottery ComboBox
+    MoveScaled(13,25,35,3)
+    Text = ("ComboBox1")
+    ReadOnly = True
   }
 }

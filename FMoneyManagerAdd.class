@@ -13,6 +13,12 @@ PUBLIC SUB Form_Open()
   ME.Center
   Label1.Text = Management.$value
   Label2.Text = Management.$value
+  
+  '-- fill combobox with lotteries names
+  cbLottery.Add("Lotto", 0)
+  cbLottery.Add("Superenalotto", 1)
+  cbLottery.Add("10&Lotto", 2)
+  cbLottery.Add("Win4Life", 3)
 
 END
 
@@ -38,6 +44,7 @@ PUBLIC SUB btSave_Click()
   hres!used = Str(ValueBox1.Value)
   hres!win = Str(ValueBox2.Value)
   hres!note = TextArea1.Text
+  hres!lottery = cbLottery.Text
 
   hres.Update
 
