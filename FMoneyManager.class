@@ -14,22 +14,6 @@ PUBLIC SUB btAdd_Click()
 
 END
 
-PUBLIC SUB Form_Resize()
-
-  GridView1.Columns.Count = 5
-  GridView1.Columns[0].Text = ("Data")
-  GridView1.Columns[0].Width = GridView1.w / 5
-  GridView1.Columns[1].Text = ("Importo giocato")
-  GridView1.Columns[1].Width = GridView1.w / 5
-  GridView1.Columns[2].Text = ("Importo vinto")
-  GridView1.Columns[2].Width = GridView1.w / 5
-  GridView1.Columns[3].Text = ("Lotteria")
-  GridView1.Columns[3].Width = GridView1.w / 5
-  GridView1.Columns[4].Text = ("Note")
-  GridView1.Columns[4].Width = GridView1.w / 5
-
-END
-
 PUBLIC SUB bRefresh_Click()
 
   '-- graph data
@@ -65,39 +49,40 @@ PUBLIC SUB bRefresh_Click()
 
   '-- fill gridview with extracts data
   IF hres.Available = TRUE THEN
-      GridView1.Columns.Count = 5
-      GridView1.Rows.Count = hres.Count
-      i = 0
-      FOR EACH hres
-        $data = Str(hres!data)
-        $data = Left($data, 2) & "/" & Right(Left($data, 4), 2) & "/" & Right($data, 2)
-        GridView1[i, 0].Text = $data
-        GridView1[i, 1].Text = hres!used & Management.$value
-        GridView1[i, 2].Text = hres!win & Management.$value
-        GridView1[i, 3].Text = hres!lottery
-        GridView1[i, 4].Text = hres!note
-        '-- filter the result
-        IF (cbLotto.Value = FALSE AND hres!lottery = "Lotto") THEN
-          GridView1.Rows.Remove(i)
-        ELSE IF (cbSuper.Value = FALSE AND hres!lottery = "Superenalotto") THEN
-          GridView1.Rows.Remove(i)
-        ELSE IF (cb10.Value = FALSE AND hres!lottery = "10&Lotto") THEN
-          GridView1.Rows.Remove(i)
-        ELSE IF (cbWin.Value = FALSE AND hres!lottery = "Win4Life") THEN
-          GridView1.Rows.Remove(i)
-        ELSE 
-          IF tbUsed.Value THEN datiused.Add(CFloat(Replace(hres!used, ",", ".")))
-          IF tbWin.Value THEN datiwin.Add(CFloat(Replace(hres!win, ",", ".")))
-          IF tbEarn.Value THEN datitot.Add(CFloat(Replace(hres!win, ",", ".")) - CFloat(Replace(hres!used, ",", ".")))
-          IF tbDate.Value THEN dates.Add($data)
-          INC i
-        END IF
-      NEXT
+    GridView1.Columns.Count = 5
+    GridView1.Rows.Count = hres.Count
+    ResizeColums()
+    i = 0
+    FOR EACH hres
+      $data = Str(hres!data)
+      $data = Left($data, 2) & "/" & Right(Left($data, 4), 2) & "/" & Right($data, 2)
+      GridView1[i, 0].Text = $data
+      GridView1[i, 1].Text = hres!used & Management.$value
+      GridView1[i, 2].Text = hres!win & Management.$value
+      GridView1[i, 3].Text = hres!lottery
+      GridView1[i, 4].Text = hres!note
+      '-- filter the result
+      IF (cbLotto.Value = FALSE AND hres!lottery = "Lotto") THEN
+        GridView1.Rows.Remove(i)
+      ELSE IF (cbSuper.Value = FALSE AND hres!lottery = "Superenalotto") THEN
+        GridView1.Rows.Remove(i)
+      ELSE IF (cb10.Value = FALSE AND hres!lottery = "10&Lotto") THEN
+        GridView1.Rows.Remove(i)
+      ELSE IF (cbWin.Value = FALSE AND hres!lottery = "Win4Life") THEN
+        GridView1.Rows.Remove(i)
+      ELSE 
+        IF tbUsed.Value THEN datiused.Add(CFloat(Replace(hres!used, ",", ".")))
+        IF tbWin.Value THEN datiwin.Add(CFloat(Replace(hres!win, ",", ".")))
+        IF tbEarn.Value THEN datitot.Add(CFloat(Replace(hres!win, ",", ".")) - CFloat(Replace(hres!used, ",", ".")))
+        IF tbDate.Value THEN dates.Add($data)
+        INC i
+      END IF
+    NEXT
   ELSE
-        GridView1.Columns.Count = 1
-        GridView1.Rows.Count = 1
-        GridView1[0, 0].Text = ("Nessun dato trovato!")
-        GridView1[0, 0].Alignment = Align.Center
+    GridView1.Columns.Count = 1
+    GridView1.Rows.Count = 1
+    GridView1[0, 0].Text = ("Nessun dato trovato!")
+    GridView1[0, 0].Alignment = Align.Center
   END IF
 
   IF tbUsed.Value THEN graf.put(datiused, Color.Red, ("Importo giocato"))
@@ -124,5 +109,39 @@ PUBLIC SUB Form_Open()
 
   cbGraph.Add(("Grafico a linea"), 0)
   cbGraph.Add(("Grafico a barre"), 1)
+
+END
+
+PRIVATE SUB ResizeColums()
+  
+  GridView1.Columns.Count = 5
+  GridView1.Columns[0].Text = ("Data")
+  GridView1.Columns[0].Width = GridView1.w / 5
+  GridView1.Columns[1].Text = ("Importo giocato")
+  GridView1.Columns[1].Width = GridView1.w / 5
+  GridView1.Columns[2].Text = ("Importo vinto")
+  GridView1.Columns[2].Width = GridView1.w / 5
+  GridView1.Columns[3].Text = ("Lotteria")
+  GridView1.Columns[3].Width = GridView1.w / 5
+  GridView1.Columns[4].Text = ("Note")
+  GridView1.Columns[4].Width = GridView1.w / 5
+  
+END
+
+
+PUBLIC SUB Form_Resize()
+
+  ResizeColums()
+
+END
+
+PUBLIC SUB btExportChart_Click()
+
+  DIM percorso AS String
+  
+  IF Dialog.SaveFile() THEN RETURN
+  percorso = Dialog.Path
+
+  pbUsed.Picture.Save(percorso, 100)
 
 END

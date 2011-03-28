@@ -14,79 +14,79 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FMoneyManager.class:20
-msgid "Data"
-msgstr ""
-
-#: FMoneyManager.class:22
-msgid "Importo giocato"
-msgstr ""
-
-#: FMoneyManager.class:24
-msgid "Importo vinto"
-msgstr ""
-
-#: FMoneyManager.class:26
-msgid "Lotteria"
-msgstr ""
-
-#: FMoneyManager.class:28
-msgid "Note"
-msgstr ""
-
-#: FMoneyManager.class:99
+#: FMoneyManager.class:84
 msgid "Nessun dato trovato!"
 msgstr ""
 
-#: FMoneyManager.class:105
+#: FMoneyManager.class:88
+msgid "Importo giocato"
+msgstr ""
+
+#: FMoneyManager.class:89
+msgid "Importo vinto"
+msgstr ""
+
+#: FMoneyManager.class:90
 msgid "Guadagno"
 msgstr ""
 
-#: FMoneyManager.class:125
+#: FMoneyManager.class:110
 msgid "Grafico a linea"
 msgstr ""
 
-#: FMoneyManager.class:126
+#: FMoneyManager.class:111
 msgid "Grafico a barre"
 msgstr ""
 
-#: FMoneyManager.class:213
+#: FMoneyManager.class:118
+msgid "Data"
+msgstr ""
+
+#: FMoneyManager.class:124
+msgid "Lotteria"
+msgstr ""
+
+#: FMoneyManager.class:126
+msgid "Note"
+msgstr ""
+
+#: FMoneyManager.class:244
 msgid "Filtra per lotteria"
 msgstr ""
 
-#: FMoneyManager.class:217
+#: FMoneyManager.class:248
 msgid "Lotto"
 msgstr ""
 
-#: FMoneyManager.class:223
+#: FMoneyManager.class:254
 msgid "Superenalotto"
 msgstr ""
 
-#: FMoneyManager.class:229
+#: FMoneyManager.class:260
 msgid "10eLotto"
 msgstr ""
 
-#: FMoneyManager.class:235
+#: FMoneyManager.class:266
 msgid "Win4Life"
 msgstr ""
 
-#: FMoneyManager.class:260
+#: FMoneyManager.class:291
 msgid "Mostra importo giocato"
 msgstr ""
 
-#: FMoneyManager.class:266
+#: FMoneyManager.class:297
 msgid "Mostra importo vinto"
 msgstr ""
 
-#: FMoneyManager.class:272
+#: FMoneyManager.class:303
 msgid "Mostra guadagno"
 msgstr ""
 
-#: FMoneyManager.class:278
+#: FMoneyManager.class:309
 msgid "Mostra data sull'asse x"
 msgstr ""
 
-#: FMoneyManager.class:284
+#: FMoneyManager.class:315
 msgid "ComboBox1"
 msgstr ""
 

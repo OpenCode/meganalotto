@@ -32,12 +32,6 @@ PRIVATE $Zero_origine AS Boolean = FALSE
 PRIVATE valoriTorta AS NEW Float[]
 PRIVATE $valori AS NEW Float[]
 
-PUBLIC SUB __new() 
-  
-   
- 
-  
-END
 PUBLIC SUB WRITE(titolo AS String, w AS Integer, h AS Integer, coloresfondo AS Integer, ombra AS Boolean, OPTIONAL datiy AS String[], OPTIONAL textsize AS Integer, OPTIONAL BeginFromZero AS Boolean) AS Picture
 
 DIM bl, ba, n, i, c, i5, h1, i1, passi, n_l, passoy, ba1 AS Integer
@@ -81,14 +75,9 @@ i = 0
 IF n = 0 THEN n = 1
 
 pic = NEW Picture($w, $h, TRUE)
-    
-    
-    
-    
-    
-    
+
           massimo = 0
-          
+
           bl = $w / 10  'dimensione bordo laterale
           ba = bl / 2 'dimensione bordi sup inf
           dx = ($w - (2 * bl)) / n 'moltiplicatore asse x
@@ -347,7 +336,7 @@ pic = NEW Picture($w, $h, TRUE)
     
           massimo = 0
           
-          bl = $w / 10  'dimensione bordo laterale
+          bl = $w / 10 'dimensione bordo laterale
           ba = bl / 2 'dimensione bordi sup inf
           dx1 = ($w - (2 * bl)) / n 'moltiplicatore asse x
           IF obj1.Count <> 0 THEN 

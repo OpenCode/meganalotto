@@ -25,10 +25,18 @@
       Text = ("")
       Picture = Picture["icon:/24/edit"]
     }
+    { Separator1 Separator
+      MoveScaled(12,0,1,4)
+    }
     { bRefresh Button
-      MoveScaled(12,0,4,4)
+      MoveScaled(13,0,4,4)
       Text = ("")
       Picture = Picture["icon:/24/refresh"]
+    }
+    { btExportChart Button
+      MoveScaled(18,0,4,4)
+      Text = ("")
+      Picture = Picture["icons/exportgraph.png"]
     }
   }
   { HBox2 HBox

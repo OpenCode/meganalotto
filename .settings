@@ -13,8 +13,8 @@ SearchString=True
 
 [OpenFile]
 File[1]="FMoneyManager.form"
-Active=1
-File[2]="FMoneyManager.class:102.36"
+File[2]="FMoneyManager.class:133.16"
+Active=2
 Count=2
 
 [Watches]

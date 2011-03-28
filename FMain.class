@@ -112,6 +112,8 @@ PUBLIC SUB btSave_Click()
 
   DIM percorso AS String
 
+  Dialog.Path = User.Home
+
   IF Dialog.SaveFile() THEN RETURN
 
   percorso = Dialog.Path
