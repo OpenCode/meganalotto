@@ -25,6 +25,7 @@ PUBLIC SUB bRefresh_Click()
   DIM hres AS Result
   DIM sql, $data AS String
   DIM i AS Integer
+  DIM chart AS Picture
 
   IF tbUsed.Value = FALSE AND tbWin.Value = FALSE AND tbEarn.Value = FALSE THEN 
     pbUsed.Visible = FALSE
@@ -33,6 +34,15 @@ PUBLIC SUB bRefresh_Click()
   END IF
 
   GridView1.Clear()
+
+  btExportChart.Enabled = TRUE
+  pbUsed.Visible = TRUE
+
+  IF Slider1.Value = 1 THEN 
+    ScrollView1.ScrollBar = Scroll.None
+  ELSE
+    ScrollView1.ScrollBar = Scroll.Both
+  END IF
 
   '-- open the connection
   WITH $hConn
@@ -91,17 +101,21 @@ PUBLIC SUB bRefresh_Click()
   
   IF cbGraph.Index = 0 THEN
     IF tbDate.Value THEN 
-      pbUsed.Picture = graf.WRITE("", pbUsed.w, pbUsed.h, Color.white, FALSE, dates, FALSE)
+      chart = graf.WRITE("", ScrollView1.w * Slider1.Value, ScrollView1.h * Slider1.Value, Color.white, FALSE, dates, FALSE)
     ELSE 
-      pbUsed.Picture = graf.WRITE("", pbUsed.w, pbUsed.h, Color.white, FALSE,,, FALSE)
+      chart = graf.WRITE("", ScrollView1.w * Slider1.Value, ScrollView1.h * Slider1.Value, Color.white, FALSE,,, FALSE)
     END IF
   ELSE IF cbGraph.Index = 1 THEN 
     IF tbDate.Value THEN 
-      pbUsed.Picture = graf.WriteBar("", pbUsed.w, pbUsed.h, Color.white, FALSE, dates, FALSE)
+      chart = graf.WriteBar("", ScrollView1.w * Slider1.Value, ScrollView1.h * Slider1.Value, Color.white, FALSE, dates, FALSE)
     ELSE 
-      pbUsed.Picture = graf.WriteBar("", pbUsed.w, pbUsed.h, Color.white, FALSE,,, FALSE)
+      chart = graf.WriteBar("", ScrollView1.w * Slider1.Value, ScrollView1.h * Slider1.Value, Color.white, FALSE,,, FALSE)
     END IF
   END IF
+
+  pbUsed.w = chart.W
+  pbUsed.h = chart.H
+  pbUsed.Picture = chart
 
 END
 
@@ -109,6 +123,17 @@ PUBLIC SUB Form_Open()
 
   cbGraph.Add(("Grafico a linea"), 0)
   cbGraph.Add(("Grafico a barre"), 1)
+  
+  Slider1.Value = 1
+  
+  '-- set scrollview and picturebox interoperativity
+  IF Slider1.Value = 1 THEN 
+    ScrollView1.ScrollBar = Scroll.None
+    pbUsed.x = 0
+    pbUsed.W = ScrollView1.W
+    pbUsed.y = 0
+    pbUsed.h = ScrollView1.h
+  END IF
 
 END
 
@@ -139,9 +164,32 @@ PUBLIC SUB btExportChart_Click()
 
   DIM percorso AS String
   
+  Dialog.Path = User.Home &/ "chart" & Day(Now) & Hour(Now) & Minute(Now) & Second(Now) & ".png"
+  
   IF Dialog.SaveFile() THEN RETURN
   percorso = Dialog.Path
+
+  ' IF File.Ext(percorso) <> ".png" OR File.Ext(percorso) <> ".jpg" THEN 
+  '   Message.Error(("Specificare estensione PNG o JPG"), "Ok")
+  '   RETURN 
+  ' END IF
 
   pbUsed.Picture.Save(percorso, 100)
 
 END
+
+PUBLIC SUB Slider1_Change()
+
+  TextBox1.Text = Str(Slider1.Value)
+
+END
+
+PRIVATE SUB PictureZoom()
+  
+    pbUsed.x = 0
+    pbUsed.W = ScrollView1.W * Slider1.Value
+    pbUsed.y = 0
+    pbUsed.h = ScrollView1.h * Slider1.Value
+
+END
+

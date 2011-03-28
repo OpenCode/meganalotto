@@ -1,7 +1,7 @@
 # Gambas Project File 2.0
 # Compiled with Gambas 2.21.0
 Title=meganalotto
-Startup=FMoneyManager
+Startup=FMain
 Icon=icona.png
 Version=0.3.9
 Library=gb.gui

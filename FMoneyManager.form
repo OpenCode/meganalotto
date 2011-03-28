@@ -31,10 +31,33 @@
     { bRefresh Button
       MoveScaled(13,0,4,4)
       Text = ("")
-      Picture = Picture["icon:/24/refresh"]
+      Picture = Picture["icon:/24/pen"]
+    }
+    { VBox1 VBox
+      MoveScaled(18,0,17,4)
+      { Label1 Label
+        MoveScaled(0,0,17,2)
+        Text = ("Zoom")
+        Alignment = Align.Center
+      }
+      { Slider1 Slider
+        MoveScaled(0,2,17,2)
+        MinValue = 1
+        MaxValue = 10
+        PageStep = 1
+        Value = 1
+      }
+    }
+    { TextBox1 TextBox
+      MoveScaled(36,0,4,4)
+      Font = Font["+3"]
+      Text = ("1")
+      Alignment = Align.Center
+      ReadOnly = True
     }
     { btExportChart Button
-      MoveScaled(18,0,4,4)
+      MoveScaled(41,0,4,4)
+      Enabled = False
       Text = ("")
       Picture = Picture["icons/exportgraph.png"]
     }
@@ -119,9 +142,14 @@
       Expand = True
     }
   }
-  { pbUsed PictureBox
-    MoveScaled(1,47,72,8)
+  { ScrollView1 ScrollView
+    MoveScaled(1,46,74,10)
     Expand = True
-    Border = Border.Plain
+    ScrollBar = Scroll.None
+    { pbUsed PictureBox
+      MoveScaled(0,1,72,8)
+      Visible = False
+      Expand = True
+    }
   }
 }
