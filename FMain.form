@@ -140,18 +140,24 @@
       Text = ("Genera")
       Picture = Picture["icon:/24/exec"]
     }
+    { Separator1 Separator
+      MoveScaled(31,0,1,4)
+    }
     { Button2 Button
-      MoveScaled(34,0,11,4)
+      MoveScaled(32,0,11,4)
       Text = ("Pulisci")
       Picture = Picture["icon:/16/clear"]
     }
     { btSave Button
-      MoveScaled(48,0,11,4)
+      MoveScaled(43,0,11,4)
       Text = ("Salva")
       Picture = Picture["icon:/16/save"]
     }
+    { Separator2 Separator
+      MoveScaled(54,0,1,4)
+    }
     { Button4 Button
-      MoveScaled(63,0,11,4)
+      MoveScaled(55,0,11,4)
       Text = ("Chiudi")
       Picture = Picture["icon:/16/quit"]
     }

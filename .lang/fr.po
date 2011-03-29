@@ -6,117 +6,475 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FSuper.class:98
-msgid "0"
-msgstr "0"
+#: extractOnlyPair.module:44
+msgid "Lotto con sistema di parità"
+msgstr ""
 
-#: FMain.class:351
-msgid "10&lotto"
-msgstr "10&lotto"
+#: extractOnlyPair.module:75
+msgid "Superenalotto con sistema di parità"
+msgstr ""
 
-#: FMain.class:372
-msgid "10&Lotto"
-msgstr "10&Lotto"
+#: extractOnlyPair.module:106
+msgid "10&Lotto con sistema di parità"
+msgstr ""
 
-#: FMain.class:418
-msgid "About"
-msgstr "About"
+#: extractOnlyUneven.module:43
+msgid "Lotto con sistema di disparità"
+msgstr ""
 
-#: FRitardatari.class:127
-msgid "Aggiornamento componenti...attendere"
-msgstr "Mise à jour des composants...attendre"
+#: extractOnlyUneven.module:74
+msgid "Superenalotto con sistema di disparità"
+msgstr ""
 
-#: FLotto.class:164
+#: extractOnlyUneven.module:105
+msgid "10&Lotto con sistema di disparità"
+msgstr ""
+
+#: extract.module:58
+msgid "Lotto con sistema standard"
+msgstr ""
+
+#: extract.module:101
+msgid "Superenalotto con sistema standard"
+msgstr ""
+
+#: extract.module:132
+msgid "Win4Life con sistema standard"
+msgstr ""
+
+#: extract.module:176
+msgid "10&Lotto con sistema standard"
+msgstr ""
+
+#: F10eLotto.class:17
+msgid "Estrazione 10&Lotto"
+msgstr ""
+
+#: FAbout.class:50 FPartner.class:14 FSupport.class:20
+msgid "Nessun Browser trovato"
+msgstr ""
+
+#: FAbout.class:50
+msgid "Il link è stato copiato in memoria. Incollarlo nel proprio browser."
+msgstr ""
+
+#: FAbout.class:50 FMain.class:708 FMoneyManagerAdd.class:142
+#: FPartner.class:14 FPersonalSystem.class:25 FSuper.class:92
+#: FSupport.class:20
+msgid "Chiudi"
+msgstr "Fermes"
+
+#: FAbout.class:84
+#, fuzzy
+msgid "Meganalotto - About"
+msgstr "Meganalotto"
+
+#: FAbout.class:91 FNote.class:65
+msgid "Meganalotto"
+msgstr "Meganalotto"
+
+#: FAbout.class:97 FMain.class:644
+msgid "Ringraziamenti"
+msgstr "Remerciements"
+
+#: FAbout.class:110
+msgid "Licenza"
+msgstr ""
+
+#: FAbout.class:116
+msgid "Giochi supportati"
+msgstr ""
+
+#: FAbout.class:128
+msgid "Autore"
+msgstr ""
+
+#: FAbout.class:132
+msgid "Francesco \"Ceskho OpenCode\" Apruzzese"
+msgstr "Francesco \"Ceskho OpenCode\" Apruzzese"
+
+#: FGame.class:31
+#, fuzzy
+msgid "Meganalotto - Giochi supportati"
+msgstr "Megnalotto - Extractions lotto"
+
+#: FGame.class:36
+msgid ""
+"Il software non è il alcun modo supportato e/o ricondubile ai gestori dei "
+"vari giochi."
+msgstr ""
+
+#: FGpl.class:27
+#, fuzzy
+msgid "Meganalotto - Licenza"
+msgstr "Meganalotto"
+
+#: FGpl.class:34
+msgid "TextArea1"
+msgstr ""
+
+#: FGuide.class:16 FMain.class:570
+msgid "Sistemi"
+msgstr "Systèmes"
+
+#: FGuide.class:17
+msgid "Sistema Completo"
+msgstr ""
+
+#: FGuide.class:18 FMain.class:578
+msgid "Sistema di Parità"
+msgstr ""
+
+#: FGuide.class:19 FMain.class:583
+msgid "Sistema di Disparità"
+msgstr ""
+
+#: FGuide.class:20 FMain.class:589
+msgid "Strumenti"
+msgstr "Outils"
+
+#: FGuide.class:21
+#, fuzzy
+msgid "Top 10 Ritardatari"
+msgstr "Top 10 retardataires"
+
+#: FGuide.class:22 FMain.class:601
+msgid "Consulta la smorfia"
+msgstr "Vérifier smorfia"
+
+#: FGuide.class:23
+msgid "estrai numero da nome"
+msgstr ""
+
+#: FGuide.class:66
+msgid "Selezionare lingua:"
+msgstr ""
+
+#: FGuide.class:72 FMoneyManagerAdd.class:164 FMoneyManager.class:395
+#: FWinning.class:166
+msgid "ComboBox1"
+msgstr ""
+
+#: FLotto.class:166
+msgid "Meganalotto - Estrazioni del lotto"
+msgstr "Megnalotto - Extractions lotto"
+
+#: FLotto.class:176 FRitardatari.class:140
+msgid "Ruota"
+msgstr ""
+
+#: FLotto.class:183 FWin4Life.class:115
+msgid "1°"
+msgstr ""
+
+#: FLotto.class:190 FWin4Life.class:122
+msgid "2°"
+msgstr ""
+
+#: FLotto.class:197 FWin4Life.class:129
+msgid "3°"
+msgstr ""
+
+#: FLotto.class:204 FWin4Life.class:136
+msgid "4°"
+msgstr ""
+
+#: FLotto.class:211 FWin4Life.class:143
+msgid "5°"
+msgstr ""
+
+#: FLotto.class:224
 msgid "Aggiornamento dei dati in corso...attendere...."
 msgstr "Mise à jour des données...patienter ...."
 
-#: FMain.class:247
+#: FMain.class:54
+#, fuzzy
+msgid "Nessuna connessione alla rete"
+msgstr "Impossible de se connecter au réseau"
+
+#: FMain.class:57
+msgid "Connessione OK"
+msgstr ""
+
+#: FMain.class:150
+msgid "Impossibile connettersi alla rete"
+msgstr "Impossible de se connecter au réseau"
+
+#: FMain.class:227
 msgid "Apertura visualizzatore ritardatari in corso"
 msgstr "Visionneuse d'ouverture retardataires étant"
 
-#: FMain.class:333
+#: FMain.class:232
+msgid "Impossibile accedere alla rete"
+msgstr "Impossible de se connecter au réseau"
+
+#: FMain.class:447
+msgid "Sistema personalizzato dall'utente"
+msgstr ""
+
+#: FMain.class:519 FSmorfia.class:64
+msgid "Meganalotto - Noi diamo i numeri!!!"
+msgstr "Meganalotto"
+
+#: FMain.class:526
 msgid "Archivio Estrazioni"
 msgstr "J'archive des extractions"
 
-#: FMain.class:388
-msgid "Cadenza"
-msgstr "Cadence"
+#: FMain.class:529 FMoneyManager.class:328
+msgid "Lotto"
+msgstr "Lotto"
+
+#: FMain.class:534
+msgid "SuperEnalotto"
+msgstr "SuperEnalotto"
+
+#: FMain.class:539 FMoneyManager.class:346
+msgid "Win4Life"
+msgstr "Win4Life"
+
+#: FMain.class:544
+#, fuzzy
+msgid "10elotto"
+msgstr "10&lotto"
+
+#: FMain.class:550
+msgid "Tipo estrazione"
+msgstr "Type d'extraction"
+
+#: FMain.class:565 FMoneyManager.class:340
+#, fuzzy
+msgid "10eLotto"
+msgstr "10&Lotto"
+
+#: FMain.class:573
+msgid "Completo"
+msgstr ""
+
+#: FMain.class:592
+msgid "Top 10 ritardatari"
+msgstr "Top 10 retardataires"
+
+#: FMain.class:606
+msgid "Gestione vincite"
+msgstr ""
+
+#: FMain.class:611
+msgid "Estrai numero da nome"
+msgstr ""
+
+#: FMain.class:616
+msgid "Calcola quota vittoria"
+msgstr ""
+
+#: FMain.class:621
+msgid "Inserisci valori personali"
+msgstr ""
+
+#: FMain.class:630 FMoneyManagerAdd.class:148 FMoneyManager.class:151
+msgid "Note"
+msgstr "Notes"
+
+#: FMain.class:635
+msgid "Guida"
+msgstr ""
+
+#: FMain.class:641
+msgid "About"
+msgstr "About"
+
+#: FMain.class:649
+msgid "Visita il sito del progetto"
+msgstr "Visite le situé de projette"
+
+#: FMain.class:658
+#, fuzzy
+msgid "Sostieni il progetto"
+msgstr "Visite le situé de projette"
+
+#: FMain.class:663
+msgid "Diventa partner"
+msgstr ""
+
+#: FMain.class:690
+msgid "Genera"
+msgstr "Extrais"
+
+#: FMain.class:696
+msgid "Pulisci"
+msgstr "Nettoies"
+
+#: FMain.class:702 FMoneyManagerAdd.class:136
+msgid "Salva"
+msgstr "Sauve"
+
+#: FMain.class:745
+msgid "Aggiorna Feed"
+msgstr ""
+
+#: FMain.class:765
+msgid "Aggiorna i feed per rimanere aggiornato sulle novità del software."
+msgstr ""
+
+#: FMoneyManagerAdd.class:102
+msgid "€"
+msgstr ""
+
+#: FMoneyManagerAdd.class:108
+msgid "Data della giocata"
+msgstr ""
+
+#: FMoneyManagerAdd.class:126 FMoneyManager.class:98
+msgid "Importo giocato"
+msgstr ""
+
+#: FMoneyManagerAdd.class:131 FMoneyManager.class:99
+msgid "Importo vinto"
+msgstr ""
+
+#: FMoneyManager.class:94
+msgid "Nessun dato trovato!"
+msgstr ""
+
+#: FMoneyManager.class:100
+msgid "Guadagno"
+msgstr ""
+
+#: FMoneyManager.class:124
+msgid "Grafico a linea"
+msgstr ""
+
+#: FMoneyManager.class:125
+msgid "Grafico a barre"
+msgstr ""
+
+#: FMoneyManager.class:143
+msgid "Data"
+msgstr ""
+
+#: FMoneyManager.class:149
+#, fuzzy
+msgid "Lotteria"
+msgstr "Lotto"
+
+#: FMoneyManager.class:279
+msgid "Zoom"
+msgstr ""
+
+#: FMoneyManager.class:295
+msgid "1"
+msgstr ""
+
+#: FMoneyManager.class:324
+msgid "Filtra per lotteria"
+msgstr ""
+
+#: FMoneyManager.class:334
+#, fuzzy
+msgid "Superenalotto"
+msgstr "SuperEnalotto"
+
+#: FMoneyManager.class:371
+msgid "Mostra importo giocato"
+msgstr ""
+
+#: FMoneyManager.class:377
+msgid "Mostra importo vinto"
+msgstr ""
+
+#: FMoneyManager.class:383
+msgid "Mostra guadagno"
+msgstr ""
+
+#: FMoneyManager.class:389
+msgid "Mostra data sull'asse x"
+msgstr ""
+
+#: FNumByName.class:46
+msgid "Estrai"
+msgstr ""
+
+#: FNumByName.class:52
+msgid "Inserire un nome:"
+msgstr ""
+
+#: FNumByName.class:58
+msgid "??"
+msgstr ""
+
+#: FPartner.class:14 FSupport.class:20
+msgid "Clicca sul tasto Copia Link ed incollalo nel tuo browser."
+msgstr ""
+
+#: FPartner.class:39
+#, fuzzy
+msgid "Meganalotto - Partnership"
+msgstr "Meganalotto"
+
+#: FPartner.class:43
+msgid ""
+"\"Non chiederti cosa Meganalotto può fare per te ma chiediti cosa puoi fare "
+"tu per Meganalotto\""
+msgstr ""
+
+#: FPartner.class:53
+msgid ""
+"Scopri come diventare partner del software ottenenedo visibilità grazie alla "
+"continua diffusione del software."
+msgstr ""
+
+#: FPartner.class:64 FSupport.class:70
+msgid "Visita pagina web"
+msgstr ""
+
+#: FPartner.class:70 FSupport.class:82
+msgid "Copia link"
+msgstr ""
+
+#: FPersonalSystem.class:25
+msgid "Inserire al massimo 10 valori"
+msgstr ""
+
+#: FPersonalSystem.class:35
+msgid "Inserire solo valori da 1 a 90"
+msgstr ""
+
+#: FPersonalSystem.class:76
+msgid "Aggiungi la massimo 10 valori separati da una virgola"
+msgstr ""
+
+#: FPersonalSystem.class:81
+msgid "Aggiungi"
+msgstr ""
+
+#: FRitardatari.class:120
+msgid "Meganalotto - Top 10 ritardatari lotto"
+msgstr "Meganalotto - Top 10 retardataires lotto"
+
+#: FRitardatari.class:126
+msgid "Aggiornamento componenti...attendere"
+msgstr "Mise à jour des composants...attendre"
+
+#: FRitardatari.class:147
+#, fuzzy
+msgid "Numero"
+msgstr "Numéro Jolly"
+
+#: FRitardatari.class:154
+msgid "Ritardo"
+msgstr ""
 
 #: FSmorfia.class:85
 msgid "Cerca vocabolo"
 msgstr "Le terme de recherche"
 
-#: FMain.class:494 FSuper.class:92
-msgid "Chiudi"
-msgstr "Fermes"
-
-#: FMain.class:402
-msgid "Consulta la smorfia"
-msgstr "Vérifier smorfia"
-
-#: FAbout.class:56
-msgid "Francesco \"Ceskho OpenCode\" Apruzzese"
-msgstr "Francesco \"Ceskho OpenCode\" Apruzzese"
-
-#: FMain.class:384
-msgid "Gemelli"
-msgstr "Gémeaux"
-
-#: FMain.class:475
-msgid "Genera"
-msgstr "Extrais"
-
-#: FMain.class:252
-msgid "Impossibile accedere alla rete"
-msgstr "Impossible de se connecter au réseau"
-
-#: FMain.class:109
-msgid "Impossibile connettersi alla rete"
-msgstr "Impossible de se connecter au réseau"
-
-#: FSuper.class:154
-msgid "Label9"
-msgstr "Label9"
-
-#: FAbout.class:68
-msgid "Licenza: GPL versione 3 o superiore"
-msgstr "Licence: GPL version 3 ou supérieure"
-
-#: FMain.class:336
-msgid "Lotto"
-msgstr "Lotto"
-
-#: .project:1
-msgid "meganalotto"
-msgstr "meganalotto"
-
-#: FAbout.class:50 FNote.class:57
-msgid "Meganalotto"
-msgstr "Meganalotto"
-
-#: FLotto.class:153
-msgid "Meganalotto - Estrazioni del lotto"
-msgstr "Megnalotto - Extractions lotto"
-
-#: FAbout.class:43 FMain.class:326 FSmorfia.class:64
-msgid "Meganalotto - Noi diamo i numeri!!!"
-msgstr "Meganalotto"
-
-#: FRitardatari.class:116
-msgid "Meganalotto - Top 10 ritardatari lotto"
-msgstr "Meganalotto - Top 10 retardataires lotto"
-
-#: FMain.class:265
-msgid "Non ancora implementato"
-msgstr "Pas encore implémenté"
-
-#: FMain.class:412
-msgid "Note"
-msgstr "Notes"
+#: FSuper.class:19
+msgid "Ultima estrazione supernalotto."
+msgstr "Dernière supernalotto extraction."
 
 #: FSuper.class:20
 msgid "Numero Jolly"
@@ -126,55 +484,123 @@ msgstr "Numéro Jolly"
 msgid "Numero Superstar"
 msgstr "Numéro Superstar"
 
-#: .project:2
-msgid "Programma per calcolare diverse combinazioni di numeri dei diversi giochi italiani. Lotto, SuperEnalotto Win4Life e 10eLotto."
-msgstr "Programme pour le calcul de différentes combinaisons de numéros différents jeux de société italienne. Lotto, Lotto chaude et 10eLotto Win4Life."
+#: FSuper.class:98
+msgid "0"
+msgstr "0"
 
-#: FMain.class:482
-msgid "Pulisci"
-msgstr "Nettoies"
+#: FSuper.class:154
+msgid "Label9"
+msgstr "Label9"
 
-#: FAbout.class:74 FMain.class:421
-msgid "Ringraziamenti"
-msgstr "Remerciements"
+#: FSupport.class:60
+#, fuzzy
+msgid "Meganalotto - Sostini il progetto"
+msgstr "Megnalotto - Extractions lotto"
 
-#: FMain.class:488
-msgid "Salva"
-msgstr "Sauve"
+#: FSupport.class:65
+msgid ""
+"Meganalotto è un progetto amatoriale che conta solo sul lavoro di gente "
+"appassionata per supportare la passione di altra gente. Non possiamo contare "
+"su grandi aziende o nomi celebri per continuare lo sviluppo e pertanto "
+"chiediamo a chiunque ne avesse voglia di sostenere il nostro lavoro con "
+"piccolissime donazione se ciò viene ritenuto giusto."
+msgstr ""
 
-#: FMain.class:377
-msgid "Sistemi"
-msgstr "Systèmes"
+#: FWin4Life.class:22
+msgid "Concorso"
+msgstr ""
 
-#: FMain.class:399
-msgid "Strumenti"
-msgstr "Outils"
+#: FWin4Life.class:23
+msgid "Ora"
+msgstr ""
 
-#: FMain.class:341
-msgid "SuperEnalotto"
-msgstr "SuperEnalotto"
-
-#: FMain.class:357
-msgid "Tipo estrazione"
+#: FWin4Life.class:101
+#, fuzzy
+msgid "Estrazione"
 msgstr "Type d'extraction"
 
-#: FMain.class:407
-msgid "Top 10 ritardatari"
-msgstr "Top 10 retardataires"
+#: FWin4Life.class:150
+msgid "6°"
+msgstr ""
 
-#: FSuper.class:19
-msgid "Ultima estrazione supernalotto."
-msgstr "Dernière supernalotto extraction."
+#: FWin4Life.class:157
+msgid "7°"
+msgstr ""
 
-#: FMain.class:431
-msgid "Visita il sito del progetto"
-msgstr "Visite le situé de projette"
+#: FWin4Life.class:164
+msgid "8°"
+msgstr ""
 
-#: FMain.class:426
-msgid "Visita il sito del programmatore"
-msgstr "Visite le situé de réalisateur"
+#: FWin4Life.class:171
+msgid "9°"
+msgstr ""
 
-#: FMain.class:346
-msgid "Win4Life"
-msgstr "Win4Life"
+#: FWin4Life.class:178
+msgid "10°"
+msgstr ""
 
+#: FWin4Life.class:185
+#, fuzzy
+msgid "Numerone"
+msgstr "Numéro Jolly"
+
+#: FWinning.class:138
+msgid "Vincita lorda di "
+msgstr ""
+
+#: FWinning.class:138
+msgid "Vincita con trattenuta di "
+msgstr ""
+
+#: FWinning.class:162
+#, fuzzy
+msgid "Tipo di estrazione quotata"
+msgstr "Type d'extraction"
+
+#: FWinning.class:173
+#, fuzzy
+msgid "Numeri estratti"
+msgstr "Numéro Superstar"
+
+#: FWinning.class:184
+msgid "Quota della giocata"
+msgstr ""
+
+#: FWinning.class:194
+msgid "Calcola quota"
+msgstr ""
+
+#: .project:1
+msgid "meganalotto"
+msgstr "meganalotto"
+
+#: .project:2
+msgid ""
+"Programma per calcolare diverse combinazioni di numeri dei diversi giochi "
+"italiani. Lotto, SuperEnalotto Win4Life e 10eLotto."
+msgstr ""
+"Programme pour le calcul de différentes combinaisons de numéros différents "
+"jeux de société italienne. Lotto, Lotto chaude et 10eLotto Win4Life."
+
+#: SoftVersion.module:45
+msgid "Non ci sono nuove versioni"
+msgstr ""
+
+#: SoftVersion.module:48
+msgid "È disponibile la versione"
+msgstr ""
+
+#~ msgid "Cadenza"
+#~ msgstr "Cadence"
+
+#~ msgid "Gemelli"
+#~ msgstr "Gémeaux"
+
+#~ msgid "Licenza: GPL versione 3 o superiore"
+#~ msgstr "Licence: GPL version 3 ou supérieure"
+
+#~ msgid "Non ancora implementato"
+#~ msgstr "Pas encore implémenté"
+
+#~ msgid "Visita il sito del programmatore"
+#~ msgstr "Visite le situé de réalisateur"

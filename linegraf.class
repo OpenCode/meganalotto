@@ -32,6 +32,12 @@ PRIVATE $Zero_origine AS Boolean = FALSE
 PRIVATE valoriTorta AS NEW Float[]
 PRIVATE $valori AS NEW Float[]
 
+PUBLIC SUB __new() 
+  
+   
+ 
+  
+END
 PUBLIC SUB WRITE(titolo AS String, w AS Integer, h AS Integer, coloresfondo AS Integer, ombra AS Boolean, OPTIONAL datiy AS String[], OPTIONAL textsize AS Integer, OPTIONAL BeginFromZero AS Boolean) AS Picture
 
 DIM bl, ba, n, i, c, i5, h1, i1, passi, n_l, passoy, ba1 AS Integer
@@ -75,9 +81,14 @@ i = 0
 IF n = 0 THEN n = 1
 
 pic = NEW Picture($w, $h, TRUE)
-
+    
+    
+    
+    
+    
+    
           massimo = 0
-
+          
           bl = $w / 10  'dimensione bordo laterale
           ba = bl / 2 'dimensione bordi sup inf
           dx = ($w - (2 * bl)) / n 'moltiplicatore asse x
@@ -107,6 +118,10 @@ pic = NEW Picture($w, $h, TRUE)
     
           
           massimo = Int(massimo) + 1
+          
+          IF minimo < 0 THEN 
+            $Zero_origine = FALSE
+          ENDIF 
           
           IF NOT $Zero_origine THEN 
               minimo = Int(minimo) 
@@ -290,7 +305,7 @@ PUBLIC SUB WriteBar(titolo AS String, w AS Integer, h AS Integer, coloresfondo A
 
 DIM bl, ba, n, i, c, i5, h1, i1, passi, n_l, passoy, ba1, id AS Integer
 DIM dx, dy, dato, x1, y1, dys, mx, dx1 AS Float
-DIM minimo, massimo AS Float
+DIM minimo, massimo, zero AS Float
 DIM variazione AS Integer
 DIM testo1 AS String
 DIM dati, dati1 AS NEW Float[]
@@ -336,7 +351,7 @@ pic = NEW Picture($w, $h, TRUE)
     
           massimo = 0
           
-          bl = $w / 10 'dimensione bordo laterale
+          bl = $w / 10  'dimensione bordo laterale
           ba = bl / 2 'dimensione bordi sup inf
           dx1 = ($w - (2 * bl)) / n 'moltiplicatore asse x
           IF obj1.Count <> 0 THEN 
@@ -371,6 +386,9 @@ pic = NEW Picture($w, $h, TRUE)
     
           massimo = Int(massimo) + 1
           
+         IF minimo < 0 THEN 
+          $Zero_origine = FALSE
+         ENDIF 
           
           IF NOT $Zero_origine THEN 
               minimo = Int(minimo) 
@@ -472,6 +490,7 @@ pic = NEW Picture($w, $h, TRUE)
         Draw.Foreground = Color.Black
         Draw.LineStyle = 1
         'IF $h + (minimo * dy) - ba < ba THEN 
+            zero = $h + (minimo * dy) - ba
             Draw.Line(bl, $h + (minimo * dy) - ba, $w - bl, $h + (minimo * dy) - ba)  
         'ENDIF 
         Draw.Foreground = Color.DarkGray
@@ -532,15 +551,16 @@ pic = NEW Picture($w, $h, TRUE)
                               Draw.LineWidth = 1
                               Draw.FillStyle = 1
                               Draw.FillColor = color.Gray
-                              Draw.Rect(bl + (dx1 / 10) + (dx1 * i) + (dx * i5), $h - ba, (dx1 - dx) - (dx1 / 10 * obj1.Count), - (Dato * dy) + (dx1 / 10))
-                              
+                              'Draw.Rect(bl + (dx1 / 10) + (dx1 * i) + (dx * i5), $h - ba, (dx1 - dx) - (dx1 / 10 * obj1.Count), - (Dato * dy) + (dx1 / 10))
+                              Draw.Rect(bl + (dx1 / 10) + (dx1 * i) + (dx * i5), zero, (dx1 - dx) - (dx1 / 10 * obj1.Count), - (Dato * dy) + (dx1 / 10))
                           ENDIF 
                           Draw.Foreground = color.Black
                           Draw.LineWidth = 1
                           Draw.FillStyle = 1
                           Draw.FillColor = obj1[id].$colore
-                          
-                          Draw.Rect(bl + (dx1 * i) + (dx * i5), $h - ba, (dx1 - dx) - (dx1 / 10 * obj1.Count), - (Dato * dy))
+                          '###prova correzzione bug
+                          'Draw.Rect(bl + (dx1 * i) + (dx * i5), $h - ba, (dx1 - dx) - (dx1 / 10 * obj1.Count), - (Dato * dy))
+                          Draw.Rect(bl + (dx1 * i) + (dx * i5), zero, (dx1 - dx) - (dx1 / 10 * obj1.Count), - (Dato * dy))
                           'Draw.Rect(bl + (dx1 * i) +
                           id = dati1.Find(dato)
                           INC i5

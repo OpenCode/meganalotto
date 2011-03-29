@@ -193,13 +193,13 @@ END
 
 PUBLIC SUB Menu4_Click()
 
-  FAbout.ShowModal
+  FAbout.ShowModal()
 
 END
 
 PUBLIC SUB blog_Click()
 
-  TRY Desktop.Open("http://code.google.com/p/meganalotto/")
+  TRY Desktop.Open("http://opencode.github.com/meganalotto/")
   IF ERROR THEN Message.Warning("Impostare un browser predefinito per completare l'operazione", "Ok")
 
 END

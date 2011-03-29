@@ -13,9 +13,12 @@ SearchString=True
 
 [OpenFile]
 File[1]="FMoneyManager.form"
-File[2]="FMoneyManager.class:133.16"
-Active=2
-Count=2
+File[2]="FMoneyManager.class:36.0"
+File[3]="linegraf.class:156.0"
+File[4]="FMain.form"
+Active=4
+File[5]="FMain.class:195.20"
+Count=5
 
 [Watches]
 Count=0
