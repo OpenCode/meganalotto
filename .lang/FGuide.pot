@@ -43,14 +43,26 @@ msgid "Consulta la smorfia"
 msgstr ""
 
 #: FGuide.class:23
-msgid "estrai numero da nome"
+msgid "Gestione vincite"
 msgstr ""
 
-#: FGuide.class:66
+#: FGuide.class:24
+msgid "Estrai numero da nome"
+msgstr ""
+
+#: FGuide.class:25
+msgid "Calcola quota vittoria"
+msgstr ""
+
+#: FGuide.class:26
+msgid "Inserisci valori personali"
+msgstr ""
+
+#: FGuide.class:69
 msgid "Selezionare lingua:"
 msgstr ""
 
-#: FGuide.class:72
+#: FGuide.class:75
 msgid "ComboBox1"
 msgstr ""
 

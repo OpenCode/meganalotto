@@ -20,7 +20,10 @@ PUBLIC SUB Form_Open()
   TreeView1.Add("tools", ("Strumenti"), Picture["icon:/16/tools"])
     TreeView1.Add("tools-top10", ("Top 10 Ritardatari"), Picture["icon:/16/watch"], "tools")
     TreeView1.Add("tools-smorfia", ("Consulta la smorfia"), Picture["icon:/16/font"], "tools")
-    TreeView1.Add("tools-name2num", ("estrai numero da nome"), Picture["icons/icon_name_to_number.png"], "tools")
+    TreeView1.Add("tools-win-manager", ("Gestione vincite"), Picture["icons/hand_money.png"], "tools")
+    TreeView1.Add("tools-name2num", ("Estrai numero da nome"), Picture["icons/icon_name_to_number.png"], "tools")
+    TreeView1.Add("tools-win-calc", ("Calcola quota vittoria"), Picture["icons/money.png"], "tools")
+    TreeView1.Add("tools-insert-personal", ("Inserisci valori personali"), Picture["icons/icon_personal_system.png"], "tools")
 
 END
 

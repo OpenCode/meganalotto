@@ -15,86 +15,94 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: FMoneyManager.class:94
+msgid "TOTALE"
+msgstr ""
+
+#: FMoneyManager.class:102
+msgid "Vincita effettiva"
+msgstr ""
+
+#: FMoneyManager.class:114
 msgid "Nessun dato trovato!"
 msgstr ""
 
-#: FMoneyManager.class:98
+#: FMoneyManager.class:118
 msgid "Importo giocato"
 msgstr ""
 
-#: FMoneyManager.class:99
+#: FMoneyManager.class:119
 msgid "Importo vinto"
 msgstr ""
 
-#: FMoneyManager.class:100
+#: FMoneyManager.class:120
 msgid "Guadagno"
 msgstr ""
 
-#: FMoneyManager.class:124
+#: FMoneyManager.class:144
 msgid "Grafico a linea"
 msgstr ""
 
-#: FMoneyManager.class:125
+#: FMoneyManager.class:145
 msgid "Grafico a barre"
 msgstr ""
 
-#: FMoneyManager.class:143
+#: FMoneyManager.class:163
 msgid "Data"
 msgstr ""
 
-#: FMoneyManager.class:149
+#: FMoneyManager.class:169
 msgid "Lotteria"
 msgstr ""
 
-#: FMoneyManager.class:151
+#: FMoneyManager.class:171
 msgid "Note"
 msgstr ""
 
-#: FMoneyManager.class:279
+#: FMoneyManager.class:299
 msgid "Zoom"
 msgstr ""
 
-#: FMoneyManager.class:295
+#: FMoneyManager.class:315
 msgid "1"
 msgstr ""
 
-#: FMoneyManager.class:324
+#: FMoneyManager.class:344
 msgid "Filtra per lotteria"
 msgstr ""
 
-#: FMoneyManager.class:328
+#: FMoneyManager.class:348
 msgid "Lotto"
 msgstr ""
 
-#: FMoneyManager.class:334
+#: FMoneyManager.class:354
 msgid "Superenalotto"
 msgstr ""
 
-#: FMoneyManager.class:340
+#: FMoneyManager.class:360
 msgid "10eLotto"
 msgstr ""
 
-#: FMoneyManager.class:346
+#: FMoneyManager.class:366
 msgid "Win4Life"
 msgstr ""
 
-#: FMoneyManager.class:371
+#: FMoneyManager.class:391
 msgid "Mostra importo giocato"
 msgstr ""
 
-#: FMoneyManager.class:377
+#: FMoneyManager.class:397
 msgid "Mostra importo vinto"
 msgstr ""
 
-#: FMoneyManager.class:383
+#: FMoneyManager.class:403
 msgid "Mostra guadagno"
 msgstr ""
 
-#: FMoneyManager.class:389
+#: FMoneyManager.class:409
 msgid "Mostra data sull'asse x"
 msgstr ""
 
-#: FMoneyManager.class:395
+#: FMoneyManager.class:415
 msgid "ComboBox1"
 msgstr ""
 
