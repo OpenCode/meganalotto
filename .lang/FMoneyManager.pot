@@ -14,95 +14,95 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FMoneyManager.class:97
+#: FMoneyManager.class:105
 msgid "TOTALE"
 msgstr ""
 
-#: FMoneyManager.class:105
+#: FMoneyManager.class:113
 msgid "Vincita effettiva"
 msgstr ""
 
-#: FMoneyManager.class:117
+#: FMoneyManager.class:125
 msgid "Nessun dato trovato!"
 msgstr ""
 
-#: FMoneyManager.class:121
+#: FMoneyManager.class:129
 msgid "Importo giocato"
 msgstr ""
 
-#: FMoneyManager.class:122
+#: FMoneyManager.class:130
 msgid "Importo vinto"
 msgstr ""
 
-#: FMoneyManager.class:123
+#: FMoneyManager.class:131
 msgid "Guadagno"
 msgstr ""
 
-#: FMoneyManager.class:147
+#: FMoneyManager.class:155
 msgid "Grafico a linea"
 msgstr ""
 
-#: FMoneyManager.class:148
+#: FMoneyManager.class:156
 msgid "Grafico a barre"
 msgstr ""
 
-#: FMoneyManager.class:166
+#: FMoneyManager.class:174
 msgid "Data"
 msgstr ""
 
-#: FMoneyManager.class:172
+#: FMoneyManager.class:180
 msgid "Lotteria"
 msgstr ""
 
-#: FMoneyManager.class:174
+#: FMoneyManager.class:182
 msgid "Note"
 msgstr ""
 
-#: FMoneyManager.class:331
+#: FMoneyManager.class:351
 msgid "Zoom"
 msgstr ""
 
-#: FMoneyManager.class:347
+#: FMoneyManager.class:367
 msgid "1"
 msgstr ""
 
-#: FMoneyManager.class:376
+#: FMoneyManager.class:396
 msgid "Filtra per lotteria"
 msgstr ""
 
-#: FMoneyManager.class:380
+#: FMoneyManager.class:400
 msgid "Lotto"
 msgstr ""
 
-#: FMoneyManager.class:386
+#: FMoneyManager.class:406
 msgid "Superenalotto"
 msgstr ""
 
-#: FMoneyManager.class:392
+#: FMoneyManager.class:412
 msgid "10eLotto"
 msgstr ""
 
-#: FMoneyManager.class:398
+#: FMoneyManager.class:418
 msgid "Win4Life"
 msgstr ""
 
-#: FMoneyManager.class:423
+#: FMoneyManager.class:443
 msgid "Mostra importo giocato"
 msgstr ""
 
-#: FMoneyManager.class:429
+#: FMoneyManager.class:449
 msgid "Mostra importo vinto"
 msgstr ""
 
-#: FMoneyManager.class:435
+#: FMoneyManager.class:455
 msgid "Mostra guadagno"
 msgstr ""
 
-#: FMoneyManager.class:441
+#: FMoneyManager.class:461
 msgid "Mostra data sull'asse x"
 msgstr ""
 
-#: FMoneyManager.class:447
+#: FMoneyManager.class:467
 msgid "ComboBox1"
 msgstr ""
 

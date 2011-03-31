@@ -8,17 +8,49 @@
 ' cescoap@gmail.com
 '#################################################
 
+$data AS String
+$Lottery AS String 
+$Played AS Float
+$Winned AS Float
+$Note AS String
+$Edit AS Boolean
+$Index AS Integer
+
+PUBLIC SUB _new(pData AS String, pLottery AS String, pPlayed AS String, pWinned AS String, pNote AS String, pEdit AS Boolean, pIndex AS Integer)
+  
+  $data = pData
+  $Lottery = pLottery
+  $Played = 1.4 'CFloat(pPlayed)
+  $Winned = 2.5 'CFloat(pWinned)
+  $Note = pNote
+  $Edit = pEdit
+  $Index = pIndex
+  
+END
+
+
 PUBLIC SUB Form_Open()
 
   ME.Center
   Label1.Text = Management.$value
   Label2.Text = Management.$value
-  
+
   '-- fill combobox with lotteries names
   cbLottery.Add("Lotto", 0)
   cbLottery.Add("Superenalotto", 1)
   cbLottery.Add("10&Lotto", 2)
   cbLottery.Add("Win4Life", 3)
+
+  '-- set the initial voice of the combobox
+  IF $Edit THEN 
+    cbLottery.Text = $Lottery
+    DateChooser1.Day = Left($data, 2) 
+    DateChooser1.Month = Right(Left($data, 4), 2) 
+    DateChooser1.Year = Right($data, 2)
+    ValueBox1.Value = $Played
+    ValueBox2.Value = $Winned
+    TextArea1.Text = $Note
+  END IF
 
 END
 
@@ -40,7 +72,8 @@ PUBLIC SUB btSave_Click()
 
   hres = $hconn.Create(Management.DatabaseTableName)  'collega il result hres alla tavola prova in modalità creazione record
 
-  hres!data = CInt(Replace(Str(DateChooser1.Value), "/", ""))
+  'hres!data = CInt(Replace(Str(DateChooser1.Value), "/", ""))
+  hres!data = DateChooser1.Year & Format$(DateChooser1.Month, "00") & Format$(DateChooser1.day, "00")
   hres!used = Str(ValueBox1.Value)
   hres!win = Str(ValueBox2.Value)
   hres!note = TextArea1.Text

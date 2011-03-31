@@ -12,7 +12,12 @@ iIndex AS NEW Integer[]
 
 PUBLIC SUB btAdd_Click()
 
-  FMoneyManagerAdd.ShowDialog()
+  DIM frmMoneyManagerAdd AS Form
+
+    '-- create a new form with parameter
+  frmMoneyManagerAdd = NEW FMoneyManagerAdd("", "", 0, 0, "", FALSE, 0)
+  frmMoneyManagerAdd.ShowDialog()
+
 
 END
 
@@ -56,7 +61,7 @@ PUBLIC SUB bRefresh_Click()
   $hConn.Open
 
   '-- set and use query
-  sql = "SELECT * FROM money WHERE data BETWEEN " & CInt(Replace(Str(DateChooser1.Value), "/", "")) & " AND " & CInt(Replace(Str(DateChooser2.Value), "/", "")) & " ORDER BY data"
+  sql = "SELECT * FROM money WHERE data BETWEEN " & Right(Str(DateChooser1.Year), 2) & Format$(DateChooser1.Month, "00") & Format$(DateChooser1.day, "00") & " AND " & Right(Str(DateChooser2.Year), 2) & Format$(DateChooser2.Month, "00") & Format$(DateChooser2.day, "00") & " ORDER BY data"
   ' FUNZIONA! sql = "SELECT * FROM money WHERE data LIKE " & CInt(Replace(Str(DateChooser1.Value), "/", ""))
   hres = $hconn.Exec(sql)
 
@@ -68,6 +73,7 @@ PUBLIC SUB bRefresh_Click()
     i = 0
     FOR EACH hres
       $data = Str(hres!data)
+      PRINT "$data - " & $data
       $data = Left($data, 2) & "/" & Right(Left($data, 4), 2) & "/" & Right($data, 2)
       GridView1[i, 0].Text = $data
       GridView1[i, 1].Text = hres!used & Management.$value
@@ -243,5 +249,17 @@ PUBLIC SUB btRemove_Click()
   $hConn.Close
 
   bRefresh_Click()
+
+END
+
+PUBLIC SUB btEdit_Click()
+
+  DIM frmMoneyManagerAdd AS Form
+  DIM iActual AS Integer
+  
+  iActual = GridView1.Row
+    '-- create a new form with parameter
+  frmMoneyManagerAdd = NEW FMoneyManagerAdd(GridView1[iActual, 0].Text, GridView1[iActual, 3].Text, GridView1[iActual, 1].Text, GridView1[iActual, 2].Text, GridView1[iActual, 4].Text, TRUE, iIndex[iActual])
+  frmMoneyManagerAdd.ShowDialog()
 
 END
