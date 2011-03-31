@@ -8,6 +8,8 @@
 ' cescoap@gmail.com
 '#################################################
 
+iIndex AS NEW Integer[]
+
 PUBLIC SUB btAdd_Click()
 
   FMoneyManagerAdd.ShowDialog()
@@ -82,6 +84,7 @@ PUBLIC SUB bRefresh_Click()
       ELSE IF (cbWin.Value = FALSE AND hres!lottery = "Win4Life") THEN
         GridView1.Rows.Remove(i)
       ELSE 
+        iIndex.Add(hres!indice)
         IF tbUsed.Value THEN datiused.Add(CFloat(Replace(hres!used, ",", ".")))
         IF tbWin.Value THEN datiwin.Add(CFloat(Replace(hres!win, ",", ".")))
         IF tbEarn.Value THEN datitot.Add(CFloat(Replace(hres!win, ",", ".")) - CFloat(Replace(hres!used, ",", ".")))
@@ -213,3 +216,32 @@ PRIVATE SUB PictureZoom()
 
 END
 
+
+PUBLIC SUB btRemove_Click()
+
+  DIM id AS Integer
+  DIM $hConn AS NEW Connection
+  DIM hres AS Result
+  DIM sql AS String
+
+  '-- open the connection
+  WITH $hConn
+    .Type = Management.DatabaseType
+    .Host = Management.DatabasePath
+  END WITH
+  $hConn.Name = Management.DatabaseName
+  $hConn.Open
+
+  '-- find the index in the array of all the index
+  id = iIndex[GridView1.Row]
+  PRINT "GR" & GridView1.Row
+  PRINT "ID" & Str(id)
+
+  hres = $hConn.edit(Management.DatabaseTableName, "indice=" & Str(id))
+  hres.Delete
+  $hconn.Commit
+  $hConn.Close
+
+  bRefresh_Click()
+
+END

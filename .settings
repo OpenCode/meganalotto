@@ -13,11 +13,11 @@ SearchString=True
 
 [OpenFile]
 File[1]="FMoneyManager.form"
-File[2]="FMoneyManager.class:36.0"
-File[3]="linegraf.class:156.0"
-File[4]="FMain.form"
-Active=4
-File[5]="FMain.class:195.20"
+File[2]="FMoneyManager.class:220.21"
+Active=2
+File[3]="FMain.form"
+File[4]="FMain.class:31.2"
+File[5]="Management.module:20.39"
 Count=5
 
 [Watches]

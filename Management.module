@@ -16,9 +16,9 @@ PUBLIC CONST DatabaseType AS String = "sqlite3"
 PUBLIC $Value AS String = "€"
 
 PUBLIC FUNCTION MoveDatabase()
-  
+
   IF NOT Exist(DatabasePath &/ DatabaseName) THEN 
-    COPY Application.Path &/ "other/" & DatabaseName TO DatabasePath &/ DatabaseName
+    COPY Application.Path &/ "other" &/ DatabaseName TO DatabasePath &/ DatabaseName
     PRINT "New DataBase created in " & DatabasePath
   END IF
   
