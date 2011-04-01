@@ -12,16 +12,21 @@
     Spacing = 5
     { btAdd Button
       MoveScaled(0,0,4,4)
+      ToolTip = ("Aggiungi niuova voce")
       Text = ("")
       Picture = Picture["icon:/24/add"]
     }
     { btRemove Button
       MoveScaled(4,0,4,4)
+      Enabled = False
+      ToolTip = ("Elimina voce selezionata")
       Text = ("")
       Picture = Picture["icon:/24/remove"]
     }
     { btEdit Button
       MoveScaled(8,0,4,4)
+      Enabled = False
+      ToolTip = ("Edita voce selezionata")
       Text = ("")
       Picture = Picture["icon:/24/edit"]
     }
@@ -30,6 +35,7 @@
     }
     { bRefresh Button
       MoveScaled(13,0,4,4)
+      ToolTip = ("Mostra grafico")
       Text = ("")
       Picture = Picture["icon:/24/pen"]
     }
@@ -42,6 +48,7 @@
       }
       { Slider1 Slider
         MoveScaled(0,2,17,2)
+        ToolTip = ("Imposta lo zoom")
         MinValue = 1
         MaxValue = 10
         PageStep = 1
@@ -58,6 +65,7 @@
     { btExportChart Button
       MoveScaled(41,0,4,4)
       Enabled = False
+      ToolTip = ("Esporta grafico")
       Text = ("")
       Picture = Picture["icons/exportgraph.png"]
     }

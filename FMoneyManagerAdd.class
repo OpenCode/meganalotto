@@ -71,35 +71,38 @@ PUBLIC SUB btSave_Click()
   DIM hres AS Result
   
   IF $Edit THEN 
+  
     Management.EditDatabase($Index, Str(DateChooser1.Value), cbLottery.Text, Str(ValueBox1.Value), Str(ValueBox2.Value), TextArea1.Text)
-    ME.CLOSE 
+  
+  ELSE 
+    
+    WITH $hConn
+    .Type = Management.DatabaseType
+    .Host = Management.DatabasePath
+    END WITH
+
+    $hConn.Name = Management.DatabaseName
+    $hConn.Open
+
+    $hconn.Begin
+
+    hres = $hconn.Create(Management.DatabaseTableName)  'collega il result hres alla tavola prova in modalità creazione record
+
+    'hres!data = CInt(Replace(Str(DateChooser1.Value), "/", ""))
+    hres!data = Right(Str(DateChooser1.Year), 2) & Format$(DateChooser1.Month, "00") & Format$(DateChooser1.day, "00")
+    hres!used = Str(ValueBox1.Value)
+    hres!win = Str(ValueBox2.Value)
+    hres!note = TextArea1.Text
+    hres!lottery = cbLottery.Text
+
+    hres.Update
+
+    $hConn.Commit
+    $hConn.Close
+    
   END IF
-  
-  WITH $hConn
-  .Type = Management.DatabaseType
-  .Host = Management.DatabasePath
-  END WITH
 
-  $hConn.Name = Management.DatabaseName
-  $hConn.Open
-
-  $hconn.Begin
-
-  hres = $hconn.Create(Management.DatabaseTableName)  'collega il result hres alla tavola prova in modalità creazione record
-
-  'hres!data = CInt(Replace(Str(DateChooser1.Value), "/", ""))
-  hres!data = Right(Str(DateChooser1.Year), 2) & Format$(DateChooser1.Month, "00") & Format$(DateChooser1.day, "00")
-  hres!used = Str(ValueBox1.Value)
-  hres!win = Str(ValueBox2.Value)
-  hres!note = TextArea1.Text
-  hres!lottery = cbLottery.Text
-
-  hres.Update
-
-  $hConn.Commit
-  $hConn.Close
-  
-  ME.Close
+    ME.Close
 
 END
 

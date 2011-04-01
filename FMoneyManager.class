@@ -115,12 +115,17 @@ PUBLIC SUB bRefresh_Click()
       GridView1[GridView1.Rows.Count - 1, 4].BackColor = Color.Green
       GridView1[GridView1.Rows.Count - 1, 4].Foreground = Color.Black
     END IF
-    
+    btEdit.Enabled = TRUE
+    btRemove.Enabled = TRUE
+    btExportChart.Enabled = TRUE
   ELSE
     GridView1.Columns.Count = 1
     GridView1.Rows.Count = 1
     GridView1[0, 0].Text = ("Nessun dato trovato!")
     GridView1[0, 0].Alignment = Align.Center
+    btEdit.Enabled = FALSE
+    btRemove.Enabled = FALSE
+    btExportChart.Enabled = FALSE
   END IF
 
   IF tbUsed.Value THEN graf.put(datiused, Color.Red, ("Importo giocato"))
