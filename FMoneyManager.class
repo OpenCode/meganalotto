@@ -95,10 +95,10 @@ PUBLIC SUB bRefresh_Click()
         GridView1.Rows.Remove(i)
         iIndex.Remove(i)
       ELSE
-        IF tbUsed.Value THEN datiused.Add(CFloat(Replace(hres!used, ",", ".")))
-        IF tbWin.Value THEN datiwin.Add(CFloat(Replace(hres!win, ",", ".")))
-        IF tbEarn.Value THEN datitot.Add(CFloat(Replace(hres!win, ",", ".")) - CFloat(Replace(hres!used, ",", ".")))
-        IF tbDate.Value THEN dates.Add($data)
+        datiused.Add(CFloat(Replace(hres!used, ",", ".")))
+        datiwin.Add(CFloat(Replace(hres!win, ",", ".")))
+        datitot.Add(CFloat(Replace(hres!win, ",", ".")) - CFloat(Replace(hres!used, ",", ".")))
+        dates.Add($data)
         INC i
       END IF
     NEXT
