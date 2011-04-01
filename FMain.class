@@ -35,6 +35,17 @@ PUBLIC SUB Form_Open()
   feed = "http://txt.io/opencode/rss"
   '-- /feed
 
+  '-- note management
+  IF Exist(User.Home &/ ".meganalotto/note") THEN 
+    DEBUG "Apertura note automatica..."
+    txtNote.Text = File.Load(User.Home &/ ".meganalotto/note")
+    DEBUG "Caricato file " & User.Home & "/.meganalotto/note"
+  ELSE IF NOT Exist(User.Home &/ ".meganalotto") THEN 
+    MKDIR User.Home &/ ".meganalotto"
+    DEBUG "Creazione directory di sistema..."
+    DEBUG "Cartella meganalotto creata in " & User.Home
+  END IF
+
   ME.Center
   ME.Maximized = TRUE
   ValueBox1.value = 1
@@ -231,12 +242,6 @@ PUBLIC SUB ritardatari_Click()
   ELSE 
     Label2.Text = ("Impossibile accedere alla rete")
   END IF
-
-END
-
-PUBLIC SUB note_Click()
-
-  FNote.Show
 
 END
 
@@ -458,5 +463,31 @@ END
 PUBLIC SUB Button3_Click()
 
   FMoneyManager.ShowDialog()
+
+END
+
+PUBLIC SUB txtNote_KeyRelease()
+
+  btNoteSave.Enabled = TRUE
+  IF txtNote.Text = "" THEN 
+    btNoteClean.Enabled = FALSE
+  ELSE 
+    btNoteClean.Enabled = TRUE
+  END IF
+
+END
+
+PUBLIC SUB btNoteSave_Click()
+
+  File.Save(User.Home &/ ".meganalotto/note", txtNote.Text)
+
+END
+
+PUBLIC SUB btNoteClean_Click()
+
+  txtNote.Text = ""
+  File.Save(User.Home &/ ".meganalotto/note", txtNote.Text)
+  btNoteSave.Enabled = FALSE
+  btNoteClean.Enabled = FALSE
 
 END
