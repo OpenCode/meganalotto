@@ -14,35 +14,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FMoneyManagerAdd.class:135
+#: FMoneyManagerAdd.class:150
 msgid "€"
 msgstr ""
 
-#: FMoneyManagerAdd.class:141
+#: FMoneyManagerAdd.class:156
 msgid "Data della giocata"
 msgstr ""
 
-#: FMoneyManagerAdd.class:159
+#: FMoneyManagerAdd.class:174
 msgid "Importo giocato"
 msgstr ""
 
-#: FMoneyManagerAdd.class:164
+#: FMoneyManagerAdd.class:179
 msgid "Importo vinto"
 msgstr ""
 
-#: FMoneyManagerAdd.class:169
+#: FMoneyManagerAdd.class:184
 msgid "Salva"
 msgstr ""
 
-#: FMoneyManagerAdd.class:175
+#: FMoneyManagerAdd.class:190
 msgid "Chiudi"
 msgstr ""
 
-#: FMoneyManagerAdd.class:181
+#: FMoneyManagerAdd.class:196
 msgid "Note"
 msgstr ""
 
-#: FMoneyManagerAdd.class:197
+#: FMoneyManagerAdd.class:212
 msgid "ComboBox1"
 msgstr ""
 

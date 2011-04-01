@@ -23,3 +23,42 @@ PUBLIC FUNCTION MoveDatabase()
   END IF
   
 END
+
+PUBLIC FUNCTION EditDatabase(pIndice AS Integer, pData AS String, pLottery AS String, pPlayed AS String, pWinned AS String, pNote AS String)
+
+  DIM sName AS String  ' sName è una variabile che indica il nome che diamo al nostro database
+  DIM sPercorso AS String ' indica il percoso in cui andremo a creare il db
+  DIM $hConn AS NEW Connection
+  DIM hres AS Result
+  DIM sql AS String
+
+  DIM $id AS String = pIndice
+  DIM $date AS String = pData
+  DIM $lottery AS String = pLottery
+  DIM $played AS String = pPlayed
+  DIM $winned AS String = pWinned
+  DIM $note AS String = pNote
+
+  WITH $hConn
+    .Type = DatabaseType
+    .Host = DatabasePath
+  END WITH 
+  $hConn.Name = DatabaseName
+  $hConn.Open
+
+  $date = Split($date, "/")[2] & Split($date, "/")[1] & Split($date, "/")[0]
+
+  hres = $hConn.edit(DatabaseTableName, "indice=" & $id)
+
+  hres!lottery = $lottery
+  hres!data = $date
+  hres!note = $note
+  hres!used = $played 
+  hres!win = $winned
+
+  hres.Update
+  $hconn.Commit
+  $hConn.Close
+
+END
+

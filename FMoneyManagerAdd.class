@@ -9,10 +9,12 @@
 '#################################################
 
 $data AS String
-$Lottery AS String 
-$Played AS Float
-$Winned AS Float
+$Lottery AS String
+$Winned AS String
+$Played AS String
 $Note AS String
+fPlayed AS Float
+fWinned AS Float
 $Edit AS Boolean
 $Index AS Integer
 
@@ -20,8 +22,12 @@ PUBLIC SUB _new(pData AS String, pLottery AS String, pPlayed AS String, pWinned 
   
   $data = pData
   $Lottery = pLottery
-  $Played = 1.4 'CFloat(pPlayed)
-  $Winned = 2.5 'CFloat(pWinned)
+  $Played = Replace(pPlayed, "€", "")
+  $Played = Replace($Played, ",", ".")
+  $Winned = Replace(pWinned, "€", "")
+  $Winned = Replace($Winned, ",", ".")
+  fPlayed = CFloat($Played)
+  fWinned = CFloat($Winned)
   $Note = pNote
   $Edit = pEdit
   $Index = pIndex
@@ -44,11 +50,15 @@ PUBLIC SUB Form_Open()
   '-- set the initial voice of the combobox
   IF $Edit THEN 
     cbLottery.Text = $Lottery
-    DateChooser1.Day = Left($data, 2) 
-    DateChooser1.Month = Right(Left($data, 4), 2) 
-    DateChooser1.Year = Right($data, 2)
-    ValueBox1.Value = $Played
-    ValueBox2.Value = $Winned
+    IF Right(Left($data, 4)) = "0" THEN
+      DateChooser1.Month = CInt(Right(Left($data, 5)))
+    ELSE
+      DateChooser1.Month = CInt(Right(Left($data, 4), 2))
+    END IF
+    DateChooser1.Year = CInt("20" & Right($data, 2))
+    DateChooser1.Day = CInt(Left($data, 2))
+    ValueBox1.Value = fPlayed
+    ValueBox2.Value = fWinned
     TextArea1.Text = $Note
   END IF
 
@@ -59,6 +69,11 @@ PUBLIC SUB btSave_Click()
   DIM $hConn AS NEW Connection
   DIM sql AS String
   DIM hres AS Result
+  
+  IF $Edit THEN 
+    Management.EditDatabase($Index, Str(DateChooser1.Value), cbLottery.Text, Str(ValueBox1.Value), Str(ValueBox2.Value), TextArea1.Text)
+    ME.CLOSE 
+  END IF
   
   WITH $hConn
   .Type = Management.DatabaseType
@@ -73,7 +88,7 @@ PUBLIC SUB btSave_Click()
   hres = $hconn.Create(Management.DatabaseTableName)  'collega il result hres alla tavola prova in modalità creazione record
 
   'hres!data = CInt(Replace(Str(DateChooser1.Value), "/", ""))
-  hres!data = DateChooser1.Year & Format$(DateChooser1.Month, "00") & Format$(DateChooser1.day, "00")
+  hres!data = Right(Str(DateChooser1.Year), 2) & Format$(DateChooser1.Month, "00") & Format$(DateChooser1.day, "00")
   hres!used = Str(ValueBox1.Value)
   hres!win = Str(ValueBox2.Value)
   hres!note = TextArea1.Text

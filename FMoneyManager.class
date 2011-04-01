@@ -73,8 +73,7 @@ PUBLIC SUB bRefresh_Click()
     i = 0
     FOR EACH hres
       $data = Str(hres!data)
-      PRINT "$data - " & $data
-      $data = Left($data, 2) & "/" & Right(Left($data, 4), 2) & "/" & Right($data, 2)
+      $data = Right($data, 2) & "/" & Right(Left($data, 4), 2) & "/" & Left($data, 2)
       GridView1[i, 0].Text = $data
       GridView1[i, 1].Text = hres!used & Management.$value
       GridView1[i, 2].Text = hres!win & Management.$value
@@ -240,8 +239,8 @@ PUBLIC SUB btRemove_Click()
 
   '-- find the index in the array of all the index
   id = iIndex[GridView1.Row]
-  PRINT "GR" & GridView1.Row
-  PRINT "ID" & Str(id)
+  ' PRINT "GR" & GridView1.Row
+  ' PRINT "ID" & Str(id)
 
   hres = $hConn.edit(Management.DatabaseTableName, "indice=" & Str(id))
   hres.Delete
