@@ -38,131 +38,139 @@ msgstr ""
 msgid "Sistema personalizzato dall'utente"
 msgstr ""
 
-#: FMain.class:521
+#: FMain.class:528
 msgid "Meganalotto - Noi diamo i numeri!!!"
 msgstr ""
 
-#: FMain.class:528
+#: FMain.class:535
 msgid "Archivio Estrazioni"
 msgstr ""
 
-#: FMain.class:531
+#: FMain.class:538
 msgid "Lotto"
 msgstr ""
 
-#: FMain.class:536
+#: FMain.class:543
 msgid "SuperEnalotto"
 msgstr ""
 
-#: FMain.class:541
+#: FMain.class:548
 msgid "Win4Life"
 msgstr ""
 
-#: FMain.class:546
+#: FMain.class:553
 msgid "10elotto"
 msgstr ""
 
-#: FMain.class:552
+#: FMain.class:559
 msgid "Tipo estrazione"
 msgstr ""
 
-#: FMain.class:567
+#: FMain.class:574
 msgid "10eLotto"
 msgstr ""
 
-#: FMain.class:572
+#: FMain.class:579
 msgid "Sistemi"
 msgstr ""
 
-#: FMain.class:575
+#: FMain.class:582
 msgid "Completo"
 msgstr ""
 
-#: FMain.class:580
+#: FMain.class:587
 msgid "Sistema di Parità"
 msgstr ""
 
-#: FMain.class:585
+#: FMain.class:592
 msgid "Sistema di Disparità"
 msgstr ""
 
-#: FMain.class:591
+#: FMain.class:598
 msgid "Strumenti"
 msgstr ""
 
-#: FMain.class:594
+#: FMain.class:601
 msgid "Top 10 ritardatari"
 msgstr ""
 
-#: FMain.class:603
+#: FMain.class:610
 msgid "Consulta la smorfia"
 msgstr ""
 
-#: FMain.class:608
+#: FMain.class:615
 msgid "Gestione vincite"
 msgstr ""
 
-#: FMain.class:613
+#: FMain.class:620
 msgid "Estrai numero da nome"
 msgstr ""
 
-#: FMain.class:618
+#: FMain.class:625
 msgid "Calcola quota vittoria"
 msgstr ""
 
-#: FMain.class:623
+#: FMain.class:630
 msgid "Inserisci valori personali"
 msgstr ""
 
-#: FMain.class:632
+#: FMain.class:639
 msgid "Note"
 msgstr ""
 
-#: FMain.class:637
+#: FMain.class:644
 msgid "Guida"
 msgstr ""
 
-#: FMain.class:643
+#: FMain.class:650
 msgid "About"
 msgstr ""
 
-#: FMain.class:646
+#: FMain.class:653
 msgid "Ringraziamenti"
 msgstr ""
 
-#: FMain.class:651
+#: FMain.class:658
 msgid "Visita il sito del progetto"
 msgstr ""
 
-#: FMain.class:660
+#: FMain.class:667
 msgid "Sostieni il progetto"
 msgstr ""
 
-#: FMain.class:665
+#: FMain.class:672
 msgid "Diventa partner"
 msgstr ""
 
-#: FMain.class:692
-msgid "Genera"
+#: FMain.class:683
+msgid "Decrementa"
 msgstr ""
 
-#: FMain.class:702
+#: FMain.class:694
+msgid "Incrementa"
+msgstr ""
+
+#: FMain.class:701
+msgid "Genera estrazioni"
+msgstr ""
+
+#: FMain.class:712
 msgid "Pulisci"
 msgstr ""
 
-#: FMain.class:708
+#: FMain.class:719
 msgid "Salva"
 msgstr ""
 
-#: FMain.class:718
+#: FMain.class:742
 msgid "Chiudi"
 msgstr ""
 
-#: FMain.class:755
+#: FMain.class:775
 msgid "Aggiorna Feed"
 msgstr ""
 
-#: FMain.class:775
+#: FMain.class:795
 msgid "Aggiorna i feed per rimanere aggiornato sulle novità del software."
 msgstr ""
 

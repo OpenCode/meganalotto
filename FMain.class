@@ -454,3 +454,9 @@ PUBLIC SUB mymoneymanager_Click()
   FMoneyManager.ShowDialog()
 
 END
+
+PUBLIC SUB Button3_Click()
+
+  FMoneyManager.ShowDialog()
+
+END

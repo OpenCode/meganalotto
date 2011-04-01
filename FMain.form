@@ -124,6 +124,7 @@
     Spacing = 5
     { btMinus Button
       MoveScaled(0,0,4,4)
+      ToolTip = ("Decrementa")
       Text = ("")
       Picture = Picture["icon:/24/remove"]
     }
@@ -132,38 +133,49 @@
     }
     { btPlus Button
       MoveScaled(12,0,4,4)
+      ToolTip = ("Incrementa")
       Text = ("")
       Picture = Picture["icon:/24/add"]
     }
     { Button1 Button
-      MoveScaled(17,0,14,4)
-      Text = ("Genera")
+      MoveScaled(17,0,4,4)
+      ToolTip = ("Genera estrazioni")
+      Text = ("")
       Picture = Picture["icon:/24/exec"]
     }
     { Separator1 Separator
-      MoveScaled(31,0,1,4)
+      MoveScaled(22,0,1,4)
     }
     { Button2 Button
-      MoveScaled(32,0,11,4)
-      Text = ("Pulisci")
+      MoveScaled(25,0,4,4)
+      ToolTip = ("Pulisci")
+      Text = ("")
       Picture = Picture["icon:/16/clear"]
     }
     { btSave Button
-      MoveScaled(43,0,11,4)
-      Text = ("Salva")
+      MoveScaled(30,0,4,4)
+      ToolTip = ("Salva")
+      Text = ("")
       Picture = Picture["icon:/16/save"]
     }
     { Separator2 Separator
-      MoveScaled(54,0,1,4)
+      MoveScaled(36,0,1,4)
     }
-    { Button4 Button
-      MoveScaled(55,0,11,4)
-      Text = ("Chiudi")
-      Picture = Picture["icon:/16/quit"]
+    { Button3 Button
+      MoveScaled(39,0,4,4)
+      ToolTip = ("Gestione vincite")
+      Text = ("")
+      Picture = Picture["icons/hand_money.png"]
     }
     { Panel1 Panel
-      MoveScaled(78,0,6,5)
+      MoveScaled(56,0,6,5)
       Expand = True
+    }
+    { Button4 Button
+      MoveScaled(62,0,4,4)
+      ToolTip = ("Chiudi")
+      Text = ("")
+      Picture = Picture["icon:/16/quit"]
     }
   }
   { HBox3 HBox
