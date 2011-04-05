@@ -119,6 +119,7 @@ END
 PUBLIC SUB Button2_Click()
 
   TextArea1.Text = ""
+  Listex.Clear()
 
 END
 
