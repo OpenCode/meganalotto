@@ -22,159 +22,171 @@ msgstr ""
 msgid "Connessione OK"
 msgstr ""
 
-#: FMain.class:165
+#: FMain.class:136
+msgid "Creato con"
+msgstr ""
+
+#: FMain.class:173
 msgid "Impossibile connettersi alla rete"
 msgstr ""
 
-#: FMain.class:242
+#: FMain.class:250
 msgid "Apertura visualizzatore ritardatari in corso"
 msgstr ""
 
-#: FMain.class:247
+#: FMain.class:255
 msgid "Impossibile accedere alla rete"
 msgstr ""
 
-#: FMain.class:456
+#: FMain.class:464
 msgid "Sistema personalizzato dall'utente"
 msgstr ""
 
-#: FMain.class:525
+#: FMain.class:533
 msgid "Personalizzato"
 msgstr ""
 
-#: FMain.class:634
+#: FMain.class:649
 msgid "Meganalotto - Noi diamo i numeri!!!"
 msgstr ""
 
-#: FMain.class:641
+#: FMain.class:656
 msgid "Archivio Estrazioni"
 msgstr ""
 
-#: FMain.class:644
+#: FMain.class:659
 msgid "Lotto"
 msgstr ""
 
-#: FMain.class:649
+#: FMain.class:664
 msgid "SuperEnalotto"
 msgstr ""
 
-#: FMain.class:654
+#: FMain.class:669
 msgid "Win4Life"
 msgstr ""
 
-#: FMain.class:659
+#: FMain.class:674
 msgid "10elotto"
 msgstr ""
 
-#: FMain.class:665
+#: FMain.class:680
 msgid "Tipo estrazione"
 msgstr ""
 
-#: FMain.class:680
+#: FMain.class:695
 msgid "10eLotto"
 msgstr ""
 
-#: FMain.class:685
+#: FMain.class:700
 msgid "Sistemi"
 msgstr ""
 
-#: FMain.class:688
+#: FMain.class:703
 msgid "Completo"
 msgstr ""
 
-#: FMain.class:693
+#: FMain.class:708
 msgid "Sistema di Parità"
 msgstr ""
 
-#: FMain.class:698
+#: FMain.class:713
 msgid "Sistema di Disparità"
 msgstr ""
 
-#: FMain.class:704
+#: FMain.class:719
 msgid "Strumenti"
 msgstr ""
 
-#: FMain.class:707
+#: FMain.class:722
 msgid "Top 10 ritardatari"
 msgstr ""
 
-#: FMain.class:716
+#: FMain.class:731
 msgid "Consulta la smorfia"
 msgstr ""
 
-#: FMain.class:721
+#: FMain.class:736
 msgid "Gestione vincite"
 msgstr ""
 
-#: FMain.class:726
+#: FMain.class:741
 msgid "Estrai numero da nome"
 msgstr ""
 
-#: FMain.class:731
+#: FMain.class:746
 msgid "Calcola quota vittoria"
 msgstr ""
 
-#: FMain.class:736
+#: FMain.class:751
 msgid "Inserisci valori personali"
 msgstr ""
 
-#: FMain.class:745
+#: FMain.class:760
 msgid "Guida"
 msgstr ""
 
-#: FMain.class:751
+#: FMain.class:766
 msgid "About"
 msgstr ""
 
-#: FMain.class:754
+#: FMain.class:769
 msgid "Ringraziamenti"
 msgstr ""
 
-#: FMain.class:759
+#: FMain.class:774
 msgid "Visita il sito del progetto"
 msgstr ""
 
-#: FMain.class:768
+#: FMain.class:783
 msgid "Sostieni il progetto"
 msgstr ""
 
-#: FMain.class:773
+#: FMain.class:788
 msgid "Diventa partner"
 msgstr ""
 
-#: FMain.class:837
+#: FMain.class:852
 msgid "Decrementa"
 msgstr ""
 
-#: FMain.class:848
+#: FMain.class:863
 msgid "Incrementa"
 msgstr ""
 
-#: FMain.class:855
+#: FMain.class:870
 msgid "Genera estrazioni"
 msgstr ""
 
-#: FMain.class:866
+#: FMain.class:881
 msgid "Pulisci"
 msgstr ""
 
-#: FMain.class:880
+#: FMain.class:895
 msgid "Salva"
 msgstr ""
 
-#: FMain.class:903
+#: FMain.class:918
 msgid "Chiudi"
 msgstr ""
 
-#: FMain.class:922
+#: FMain.class:937
 msgid "Editor"
 msgstr ""
 
-#: FMain.class:927
+#: FMain.class:942
 msgid "00"
 msgstr ""
 
-#: FMain.class:1059
+#: FMain.class:1012
+msgid "Applica modifiche"
+msgstr ""
+
+#: FMain.class:1019
+msgid "Annulla modifiche"
+msgstr ""
+
+#: FMain.class:1082
 msgid "Aggiorna i feed per rimanere aggiornato sulle novità del software."
 msgstr ""
 

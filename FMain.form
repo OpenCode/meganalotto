@@ -296,10 +296,17 @@
           Alignment = Align.Center
           MaxLength = 2
         }
-        { Button5 Button
-          MoveScaled(41,0,3,3)
+        { btApply Button
+          MoveScaled(36,0,3,3)
+          ToolTip = ("Applica modifiche")
           Text = ("")
-          Picture = Picture["icon:/16/refresh"]
+          Picture = Picture["icon:/16/apply"]
+        }
+        { btCancel Button
+          MoveScaled(40,0,3,3)
+          ToolTip = ("Annulla modifiche")
+          Text = ("")
+          Picture = Picture["icon:/16/cancel"]
         }
         { Panel6 Panel
           MoveScaled(45,0,3,3)

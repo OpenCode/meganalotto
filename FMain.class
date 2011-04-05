@@ -125,14 +125,22 @@ END
 
 PUBLIC SUB btSave_Click()
 
-  DIM percorso AS String
+  DIM $content, percorso AS String
+  DIM i AS Integer
+
+  $content = ""
+  FOR i = 0 TO Listex.Count - 1
+    $content &= Listex[i].Text & gb.NewLine
+  NEXT
+
+  $content &= "\n" & ("Creato con") & " Meganalotto " & "- " & Application.Version
 
   Dialog.Path = User.Home
 
   IF Dialog.SaveFile() THEN RETURN
 
   percorso = Dialog.Path
-  File.Save(percorso, TextArea1.Text)
+  File.Save(percorso, $content)
 
 END
 
@@ -517,7 +525,7 @@ PUBLIC SUB btEditor_Click()
 
 END
 
-PUBLIC SUB Button5_Click()
+PUBLIC SUB btApply_Click()
 
   DIM $comment AS String = ""
   DIM $all_numbers AS String
@@ -539,4 +547,10 @@ PUBLIC SUB Button5_Click()
   
   hbEditor.Visible = FALSE
   
+END
+
+PUBLIC SUB btCancel_Click()
+
+  hbEditor.Visible = FALSE
+
 END
