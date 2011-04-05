@@ -14,19 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: extract.module:58
+#: extract.module:60
 msgid "Lotto con sistema standard"
 msgstr ""
 
-#: extract.module:101
+#: extract.module:107
 msgid "Superenalotto con sistema standard"
 msgstr ""
 
-#: extract.module:132
+#: extract.module:141
 msgid "Win4Life con sistema standard"
 msgstr ""
 
-#: extract.module:176
+#: extract.module:188
 msgid "10&Lotto con sistema standard"
 msgstr ""
 

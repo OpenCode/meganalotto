@@ -13,9 +13,11 @@ SearchString=True
 
 [OpenFile]
 File[1]="FMain.form"
-File[2]="FMain.class:245.3"
-Active=2
-Count=2
+Active=1
+File[2]="FMain.class:484.3"
+File[3]="FMoneyManager.class:276.8"
+File[4]="FMoneyManager.form"
+Count=4
 
 [Watches]
 Count=0

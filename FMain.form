@@ -1,7 +1,7 @@
 # Gambas Form File 2.0
 
 { Form Form
-  MoveScaled(0,0,89,63)
+  MoveScaled(0,0,89,59)
   Text = ("Meganalotto - Noi diamo i numeri!!!")
   Icon = Picture["icona.png"]
   Arrangement = Arrange.Vertical
@@ -116,7 +116,7 @@
     }
   }
   { HBox3 HBox
-    MoveScaled(1,6,87,49)
+    MoveScaled(1,1,87,49)
     Expand = True
     Spacing = 5
     { VBox3 VBox
@@ -220,8 +220,13 @@
           MoveScaled(46,0,1,4)
         }
       }
+      { ListEx ListBox
+        MoveScaled(3,8,42,25)
+        Expand = True
+      }
       { TextArea1 TextArea
-        MoveScaled(1,10,47,38)
+        MoveScaled(2,34,47,12)
+        Visible = False
         Expand = True
         Text = ("")
         ReadOnly = True
@@ -264,7 +269,7 @@
     }
   }
   { HBox5 HBox
-    MoveScaled(1,56,82,2)
+    MoveScaled(1,52,82,2)
     Spacing = 5
     { Label2 Label
       MoveScaled(0,0,46,2)

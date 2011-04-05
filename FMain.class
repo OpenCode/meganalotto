@@ -76,38 +76,41 @@ END
 
 PUBLIC SUB Button1_Click()
 
+  DIM i AS Integer
+
 '  Label1.Alignment = Align.left
   IF lotto.Checked THEN
     IF menu_extract.Checked THEN 
-      extract.lotto()
+        extract.lotto(Listex, ValueBox1.Value)
+        'extract.lotto()
     ELSE IF menu_extract_only_pair.Checked THEN 
-      extractOnlyPair.lotto()
+      extractOnlyPair.lotto(Listex, ValueBox1.Value)
     ELSE IF menu_extract_only_uneven.Checked THEN 
-      extractOnlyUneven.lotto()
+      extractOnlyUneven.lotto(Listex, ValueBox1.Value)
     END IF
   ELSE IF superenal.Checked THEN 
     IF menu_extract.Checked THEN 
-      extract.enalotto()
+      extract.enalotto(Listex, ValueBox1.Value)
     ELSE IF menu_extract_only_pair.Checked THEN 
-      extractOnlyPair.enalotto()
+      extractOnlyPair.enalotto(Listex, ValueBox1.Value)
     ELSE IF menu_extract_only_uneven.Checked THEN 
-      extractOnlyUneven.enalotto()
+      extractOnlyUneven.enalotto(Listex, ValueBox1.Value)
     END IF
   ELSE IF win.Checked THEN 
     IF menu_extract.Checked THEN 
-      extract.win()
+      extract.win(Listex, ValueBox1.Value)
     ELSE IF menu_extract_only_pair.Checked THEN 
-      extractOnlyPair.win()
+      extractOnlyPair.win(Listex, ValueBox1.Value)
     ELSE IF menu_extract_only_uneven.Checked THEN 
-      extractOnlyUneven.win()
+      extractOnlyUneven.win(Listex, ValueBox1.Value)
     END IF
   ELSE IF dieci.Checked THEN 
     IF menu_extract.Checked THEN 
-      extract.dieci()
+      extract.dieci(Listex, ValueBox1.Value)
     ELSE IF menu_extract_only_pair.Checked THEN 
-      extractOnlyPair.dieci()
+      extractOnlyPair.dieci(Listex, ValueBox1.Value)
     ELSE IF menu_extract_only_uneven.Checked THEN 
-      extractOnlyUneven.dieci()
+      extractOnlyUneven.dieci(Listex, ValueBox1.Value)
     END IF
   END IF
 
@@ -490,5 +493,11 @@ PUBLIC SUB btNoteClean_Click()
   File.Save(User.Home &/ ".meganalotto/note", txtNote.Text)
   btNoteSave.Enabled = FALSE
   btNoteClean.Enabled = FALSE
+
+END
+
+PUBLIC SUB TextArea1_DblClick()
+
+  PRINT TextArea1.Line
 
 END

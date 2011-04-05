@@ -18,15 +18,17 @@
 '-- switcher di array
  warray AS Boolean
 
-PUBLIC FUNCTION lotto()
+PUBLIC FUNCTION lotto(MyList AS ListBox, MyValue AS Integer)
   
   DIM i AS Integer    '-- contatore per estrazioni
   DIM j AS Integer    '-- ""  ""     ""   ""
+  DIM $return AS String
 
   n.resize(5)
 
-FOR i = 1 TO FMain.ValueBox1.value
+FOR i = 1 TO MyValue
 
+  $return = ""
   nuova_estrazione(45, TRUE)
 
   FOR j = 0 TO 4
@@ -52,25 +54,29 @@ FOR i = 1 TO FMain.ValueBox1.value
   n.sort(gb.Ascent)
 
   FOR j = 0 TO 4
-    FMain.TextArea1.Text &= Str(n[j]) & "\t"
+    $return &= Str(n[j]) & "\t"
   NEXT 
 
-    FMain.TextArea1.Text &= "\t\t\t\t\t# " & ("Lotto con sistema standard")
-    FMain.TextArea1.Text &= gb.NewLine
+    $return &= "\t\t\t\t\t# " & ("Lotto con sistema standard")
+    '$return &= gb.NewLine
+    FMain.TextArea1.Text &= $return & gb.NewLine
+    MyList.Add($return)
 
 NEXT
 
 END
 
-PUBLIC FUNCTION enalotto()
+PUBLIC FUNCTION enalotto(MyList AS ListBox, MyValue AS Integer)
   
   DIM i AS Integer    '-- contatore per estrazioni
   DIM j AS Integer    '-- ""  ""     ""   ""
+  DIM $return AS String
 
   n.resize(8)
 
-FOR i = 1 TO FMain.ValueBox1.value
+FOR i = 1 TO MyValue
 
+  $return = ""
   nuova_estrazione(45, TRUE)
 
   FOR j = 0 TO 7
@@ -95,25 +101,28 @@ FOR i = 1 TO FMain.ValueBox1.value
   n.sort(gb.Ascent)
 
   FOR j = 0 TO 7
-    FMain.TextArea1.Text &= Str(n[j]) & "\t"
+    $return &= Str(n[j]) & "\t"
   NEXT 
 
-  FMain.TextArea1.Text &= "\t\t# " & ("Superenalotto con sistema standard")
-  FMain.TextArea1.Text &= gb.NewLine
+  $return &= "\t\t# " & ("Superenalotto con sistema standard")
+  FMain.TextArea1.Text &= $return & gb.NewLine
+  MyList.Add($return)
   
 NEXT
 
 END
 
-PUBLIC FUNCTION win()
+PUBLIC FUNCTION win(MyList AS ListBox, MyValue AS Integer)
 
   DIM i AS Integer    '-- contatore per estrazioni
   DIM j AS Integer    '-- ""  ""     ""   ""
+  DIM $return AS String
 
   n.resize(10)
 
-FOR i = 1 TO FMain.ValueBox1.value
+FOR i = 1 TO MyValue
 
+  $return = ""
   nuova_estrazione(20, FALSE)
 
   FOR j = 0 TO 9
@@ -126,25 +135,28 @@ FOR i = 1 TO FMain.ValueBox1.value
     n.sort(gb.Ascent)
 
   FOR j = 0 TO 9
-    FMain.TextArea1.Text &= Str(n[j]) & "\t"
+    $return &= Str(n[j]) & "\t"
   NEXT 
 
-  FMain.TextArea1.Text &= "# " & ("Win4Life con sistema standard")
-  FMain.TextArea1.Text &= gb.NewLine
+    $return &= "# " & ("Win4Life con sistema standard")
+    FMain.TextArea1.Text &= $return & gb.NewLine
+    MyList.Add($return)
 
 NEXT
 
 END
 
-PUBLIC FUNCTION dieci()
+PUBLIC FUNCTION dieci(MyList AS ListBox, MyValue AS Integer)
   
   DIM i AS Integer    '-- contatore per estrazioni
   DIM j AS Integer    '-- ""  ""     ""   ""
+  DIM $return AS String
 
   n.resize(10)
 
-FOR i = 1 TO FMain.ValueBox1.value
+FOR i = 1 TO MyValue
 
+  $return = ""
   nuova_estrazione(45, TRUE)
 
   FOR j = 0 TO 9
@@ -170,11 +182,12 @@ FOR i = 1 TO FMain.ValueBox1.value
   n.sort(gb.Ascent)
 
   FOR j = 0 TO 9
-    FMain.TextArea1.Text &= Str(n[j]) & "\t"
+    $return &= Str(n[j]) & "\t"
   NEXT 
 
-  FMain.TextArea1.Text &= "# " & ("10&Lotto con sistema standard")
-  FMain.TextArea1.Text &= gb.NewLine
+  $return &= "# " & ("10&Lotto con sistema standard")
+  FMain.TextArea1.Text &= $return & gb.NewLine
+  MyList.Add($return)
 
 NEXT
 
