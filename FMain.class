@@ -480,6 +480,7 @@ END
 PUBLIC SUB btNoteSave_Click()
 
   File.Save(User.Home &/ ".meganalotto/note", txtNote.Text)
+  btNoteSave.Enabled = FALSE
 
 END
 

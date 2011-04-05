@@ -62,7 +62,7 @@ msgstr ""
 msgid "Il link è stato copiato in memoria. Incollarlo nel proprio browser."
 msgstr ""
 
-#: FAbout.class:50 FMain.class:774 FMoneyManagerAdd.class:193
+#: FAbout.class:50 FMain.class:775 FMoneyManagerAdd.class:193
 #: FPartner.class:14 FPersonalSystem.class:25 FSuper.class:92
 #: FSupport.class:20
 msgid "Chiudi"
@@ -76,7 +76,7 @@ msgstr ""
 msgid "Meganalotto"
 msgstr ""
 
-#: FAbout.class:97 FMain.class:685
+#: FAbout.class:97 FMain.class:686
 msgid "Ringraziamenti"
 msgstr ""
 
@@ -114,7 +114,7 @@ msgstr ""
 msgid "TextArea1"
 msgstr ""
 
-#: FGuide.class:16 FMain.class:616
+#: FGuide.class:16 FMain.class:617
 msgid "Sistemi"
 msgstr ""
 
@@ -122,15 +122,15 @@ msgstr ""
 msgid "Sistema Completo"
 msgstr ""
 
-#: FGuide.class:18 FMain.class:624
+#: FGuide.class:18 FMain.class:625
 msgid "Sistema di Parità"
 msgstr ""
 
-#: FGuide.class:19 FMain.class:629
+#: FGuide.class:19 FMain.class:630
 msgid "Sistema di Disparità"
 msgstr ""
 
-#: FGuide.class:20 FMain.class:635
+#: FGuide.class:20 FMain.class:636
 msgid "Strumenti"
 msgstr ""
 
@@ -138,23 +138,23 @@ msgstr ""
 msgid "Top 10 Ritardatari"
 msgstr ""
 
-#: FGuide.class:22 FMain.class:647
+#: FGuide.class:22 FMain.class:648
 msgid "Consulta la smorfia"
 msgstr ""
 
-#: FGuide.class:23 FMain.class:652
+#: FGuide.class:23 FMain.class:653
 msgid "Gestione vincite"
 msgstr ""
 
-#: FGuide.class:24 FMain.class:657
+#: FGuide.class:24 FMain.class:658
 msgid "Estrai numero da nome"
 msgstr ""
 
-#: FGuide.class:25 FMain.class:662
+#: FGuide.class:25 FMain.class:663
 msgid "Calcola quota vittoria"
 msgstr ""
 
-#: FGuide.class:26 FMain.class:667
+#: FGuide.class:26 FMain.class:668
 msgid "Inserisci valori personali"
 msgstr ""
 
@@ -162,7 +162,7 @@ msgstr ""
 msgid "Selezionare lingua:"
 msgstr ""
 
-#: FGuide.class:75 FMoneyManagerAdd.class:215 FMoneyManager.class:482
+#: FGuide.class:75 FMoneyManagerAdd.class:215 FMoneyManager.class:492
 #: FWinning.class:166
 msgid "ComboBox1"
 msgstr ""
@@ -223,91 +223,91 @@ msgstr ""
 msgid "Sistema personalizzato dall'utente"
 msgstr ""
 
-#: FMain.class:565 FSmorfia.class:64
+#: FMain.class:566 FSmorfia.class:64
 msgid "Meganalotto - Noi diamo i numeri!!!"
 msgstr ""
 
-#: FMain.class:572
+#: FMain.class:573
 msgid "Archivio Estrazioni"
 msgstr ""
 
-#: FMain.class:575 FMoneyManager.class:415
+#: FMain.class:576 FMoneyManager.class:425
 msgid "Lotto"
 msgstr ""
 
-#: FMain.class:580
+#: FMain.class:581
 msgid "SuperEnalotto"
 msgstr ""
 
-#: FMain.class:585 FMoneyManager.class:433
+#: FMain.class:586 FMoneyManager.class:443
 msgid "Win4Life"
 msgstr ""
 
-#: FMain.class:590
+#: FMain.class:591
 msgid "10elotto"
 msgstr ""
 
-#: FMain.class:596
+#: FMain.class:597
 msgid "Tipo estrazione"
 msgstr ""
 
-#: FMain.class:611 FMoneyManager.class:427
+#: FMain.class:612 FMoneyManager.class:437
 msgid "10eLotto"
 msgstr ""
 
-#: FMain.class:619
+#: FMain.class:620
 msgid "Completo"
 msgstr ""
 
-#: FMain.class:638
+#: FMain.class:639
 msgid "Top 10 ritardatari"
 msgstr ""
 
-#: FMain.class:676
+#: FMain.class:677
 msgid "Guida"
 msgstr ""
 
-#: FMain.class:682
+#: FMain.class:683
 msgid "About"
 msgstr ""
 
-#: FMain.class:690
+#: FMain.class:691
 msgid "Visita il sito del progetto"
 msgstr ""
 
-#: FMain.class:699
+#: FMain.class:700
 msgid "Sostieni il progetto"
 msgstr ""
 
-#: FMain.class:704
+#: FMain.class:705
 msgid "Diventa partner"
 msgstr ""
 
-#: FMain.class:715
+#: FMain.class:716
 msgid "Decrementa"
 msgstr ""
 
-#: FMain.class:726
+#: FMain.class:727
 msgid "Incrementa"
 msgstr ""
 
-#: FMain.class:733
+#: FMain.class:734
 msgid "Genera estrazioni"
 msgstr ""
 
-#: FMain.class:744
+#: FMain.class:745
 msgid "Pulisci"
 msgstr ""
 
-#: FMain.class:751 FMoneyManagerAdd.class:187
+#: FMain.class:752 FMoneyManagerAdd.class:187
 msgid "Salva"
 msgstr ""
 
-#: FMain.class:845
+#: FMain.class:846
 msgid "Aggiorna Feed"
 msgstr ""
 
-#: FMain.class:865
+#: FMain.class:866
 msgid "Aggiorna i feed per rimanere aggiornato sulle novità del software."
 msgstr ""
 
@@ -363,59 +363,59 @@ msgstr ""
 msgid "Lotteria"
 msgstr ""
 
-#: FMoneyManager.class:327
+#: FMoneyManager.class:337
 msgid "Aggiungi niuova voce"
 msgstr ""
 
-#: FMoneyManager.class:335
+#: FMoneyManager.class:345
 msgid "Elimina voce selezionata"
 msgstr ""
 
-#: FMoneyManager.class:343
+#: FMoneyManager.class:353
 msgid "Edita voce selezionata"
 msgstr ""
 
-#: FMoneyManager.class:354
+#: FMoneyManager.class:364
 msgid "Mostra grafico"
 msgstr ""
 
-#: FMoneyManager.class:364
+#: FMoneyManager.class:374
 msgid "Zoom"
 msgstr ""
 
-#: FMoneyManager.class:370
+#: FMoneyManager.class:380
 msgid "Imposta lo zoom"
 msgstr ""
 
-#: FMoneyManager.class:381
+#: FMoneyManager.class:391
 msgid "1"
 msgstr ""
 
-#: FMoneyManager.class:389
+#: FMoneyManager.class:399
 msgid "Esporta grafico"
 msgstr ""
 
-#: FMoneyManager.class:411
+#: FMoneyManager.class:421
 msgid "Filtra per lotteria"
 msgstr ""
 
-#: FMoneyManager.class:421
+#: FMoneyManager.class:431
 msgid "Superenalotto"
 msgstr ""
 
-#: FMoneyManager.class:458
+#: FMoneyManager.class:468
 msgid "Mostra importo giocato"
 msgstr ""
 
-#: FMoneyManager.class:464
+#: FMoneyManager.class:474
 msgid "Mostra importo vinto"
 msgstr ""
 
-#: FMoneyManager.class:470
+#: FMoneyManager.class:480
 msgid "Mostra guadagno"
 msgstr ""
 
-#: FMoneyManager.class:476
+#: FMoneyManager.class:486
 msgid "Mostra data sull'asse x"
 msgstr ""
 

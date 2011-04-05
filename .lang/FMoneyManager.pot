@@ -58,75 +58,75 @@ msgstr ""
 msgid "Note"
 msgstr ""
 
-#: FMoneyManager.class:327
+#: FMoneyManager.class:337
 msgid "Aggiungi niuova voce"
 msgstr ""
 
-#: FMoneyManager.class:335
+#: FMoneyManager.class:345
 msgid "Elimina voce selezionata"
 msgstr ""
 
-#: FMoneyManager.class:343
+#: FMoneyManager.class:353
 msgid "Edita voce selezionata"
 msgstr ""
 
-#: FMoneyManager.class:354
+#: FMoneyManager.class:364
 msgid "Mostra grafico"
 msgstr ""
 
-#: FMoneyManager.class:364
+#: FMoneyManager.class:374
 msgid "Zoom"
 msgstr ""
 
-#: FMoneyManager.class:370
+#: FMoneyManager.class:380
 msgid "Imposta lo zoom"
 msgstr ""
 
-#: FMoneyManager.class:381
+#: FMoneyManager.class:391
 msgid "1"
 msgstr ""
 
-#: FMoneyManager.class:389
+#: FMoneyManager.class:399
 msgid "Esporta grafico"
 msgstr ""
 
-#: FMoneyManager.class:411
+#: FMoneyManager.class:421
 msgid "Filtra per lotteria"
 msgstr ""
 
-#: FMoneyManager.class:415
+#: FMoneyManager.class:425
 msgid "Lotto"
 msgstr ""
 
-#: FMoneyManager.class:421
+#: FMoneyManager.class:431
 msgid "Superenalotto"
 msgstr ""
 
-#: FMoneyManager.class:427
+#: FMoneyManager.class:437
 msgid "10eLotto"
 msgstr ""
 
-#: FMoneyManager.class:433
+#: FMoneyManager.class:443
 msgid "Win4Life"
 msgstr ""
 
-#: FMoneyManager.class:458
+#: FMoneyManager.class:468
 msgid "Mostra importo giocato"
 msgstr ""
 
-#: FMoneyManager.class:464
+#: FMoneyManager.class:474
 msgid "Mostra importo vinto"
 msgstr ""
 
-#: FMoneyManager.class:470
+#: FMoneyManager.class:480
 msgid "Mostra guadagno"
 msgstr ""
 
-#: FMoneyManager.class:476
+#: FMoneyManager.class:486
 msgid "Mostra data sull'asse x"
 msgstr ""
 
-#: FMoneyManager.class:482
+#: FMoneyManager.class:492
 msgid "ComboBox1"
 msgstr ""
 
