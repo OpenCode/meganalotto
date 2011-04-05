@@ -115,77 +115,15 @@
       Picture = Picture["icon:/16/people"]
     }
   }
-  { HBox2 HBox
-    MoveScaled(1,1,87,4)
-    Spacing = 5
-    { btMinus Button
-      MoveScaled(0,0,4,4)
-      ToolTip = ("Decrementa")
-      Text = ("")
-      Picture = Picture["icon:/24/remove"]
-    }
-    { ValueBox1 ValueBox
-      MoveScaled(4,0,8,4)
-    }
-    { btPlus Button
-      MoveScaled(12,0,4,4)
-      ToolTip = ("Incrementa")
-      Text = ("")
-      Picture = Picture["icon:/24/add"]
-    }
-    { Button1 Button
-      MoveScaled(17,0,4,4)
-      ToolTip = ("Genera estrazioni")
-      Text = ("")
-      Picture = Picture["icon:/24/exec"]
-    }
-    { Separator1 Separator
-      MoveScaled(22,0,1,4)
-    }
-    { Button2 Button
-      MoveScaled(25,0,4,4)
-      ToolTip = ("Pulisci")
-      Text = ("")
-      Picture = Picture["icon:/16/clear"]
-    }
-    { btSave Button
-      MoveScaled(30,0,4,4)
-      ToolTip = ("Salva")
-      Text = ("")
-      Picture = Picture["icon:/16/save"]
-    }
-    { Separator2 Separator
-      MoveScaled(36,0,1,4)
-    }
-    { Button3 Button
-      MoveScaled(39,0,4,4)
-      ToolTip = ("Gestione vincite")
-      Text = ("")
-      Picture = Picture["icons/hand_money.png"]
-    }
-    { Panel1 Panel
-      MoveScaled(56,0,6,5)
-      Expand = True
-    }
-    { Button4 Button
-      MoveScaled(62,0,4,4)
-      ToolTip = ("Chiudi")
-      Text = ("")
-      Picture = Picture["icon:/16/quit"]
-    }
-  }
   { HBox3 HBox
-    MoveScaled(1,6,79,49)
+    MoveScaled(1,6,87,49)
     Expand = True
     Spacing = 5
     { VBox3 VBox
-      MoveScaled(1,2,20,46)
+      MoveScaled(1,1,20,46)
       Spacing = 5
-      { Separator3 Separator
-        MoveScaled(1,1,18,1)
-      }
       { HBox4 HBox
-        MoveScaled(1,4,18,4)
+        MoveScaled(1,1,18,4)
         Spacing = 5
         { btNoteSave Button
           MoveScaled(1,0,4,4)
@@ -198,9 +136,16 @@
           Text = ("")
           Picture = Picture["icon:/24/clear"]
         }
+        { Panel4 Panel
+          MoveScaled(11,0,3,4)
+          Expand = True
+        }
+        { Separator5 Separator
+          MoveScaled(17,0,1,4)
+        }
       }
       { txtNote TextArea
-        MoveScaled(1,9,18,10)
+        MoveScaled(1,6,18,10)
         Expand = True
         Text = ("")
         Wrap = True
@@ -209,25 +154,94 @@
     { VBox1 VBox
       MoveScaled(22,0,51,49)
       Expand = True
+      Spacing = 5
+      { HBox2 HBox
+        MoveScaled(1,2,49,4)
+        Spacing = 5
+        { Separator4 Separator
+          MoveScaled(0,0,1,4)
+        }
+        { btMinus Button
+          MoveScaled(3,0,4,4)
+          ToolTip = ("Decrementa")
+          Text = ("")
+          Picture = Picture["icon:/24/remove"]
+        }
+        { ValueBox1 ValueBox
+          MoveScaled(7,0,8,4)
+        }
+        { btPlus Button
+          MoveScaled(15,0,4,4)
+          ToolTip = ("Incrementa")
+          Text = ("")
+          Picture = Picture["icon:/24/add"]
+        }
+        { Button1 Button
+          MoveScaled(19,0,4,4)
+          ToolTip = ("Genera estrazioni")
+          Text = ("")
+          Picture = Picture["icon:/24/exec"]
+        }
+        { Separator1 Separator
+          MoveScaled(23,0,1,4)
+        }
+        { Button2 Button
+          MoveScaled(24,0,4,4)
+          ToolTip = ("Pulisci")
+          Text = ("")
+          Picture = Picture["icon:/16/clear"]
+        }
+        { btSave Button
+          MoveScaled(28,0,4,4)
+          ToolTip = ("Salva")
+          Text = ("")
+          Picture = Picture["icon:/16/save"]
+        }
+        { Separator2 Separator
+          MoveScaled(32,0,1,4)
+        }
+        { Button3 Button
+          MoveScaled(33,0,4,4)
+          ToolTip = ("Gestione vincite")
+          Text = ("")
+          Picture = Picture["icons/hand_money.png"]
+        }
+        { Panel1 Panel
+          MoveScaled(37,0,3,5)
+          Expand = True
+        }
+        { Button4 Button
+          MoveScaled(40,0,4,4)
+          ToolTip = ("Chiudi")
+          Text = ("")
+          Picture = Picture["icon:/16/quit"]
+        }
+        { Separator3 Separator
+          MoveScaled(46,0,1,4)
+        }
+      }
       { TextArea1 TextArea
-        MoveScaled(1,3,47,45)
+        MoveScaled(1,10,47,38)
         Expand = True
         Text = ("")
         ReadOnly = True
       }
     }
     { VBox2 VBox
-      MoveScaled(58,1,21,47)
+      MoveScaled(73,3,21,47)
       Spacing = 5
-      { Separator4 Separator
-        MoveScaled(2,1,18,1)
-      }
       { HBox1 HBox
-        MoveScaled(1,3,18,3)
-        { btFeed Button
-          MoveScaled(1,0,17,3)
+        MoveScaled(1,1,12,4)
+        { Separator6 Separator
+          MoveScaled(0,0,1,4)
+        }
+        { Panel3 Panel
+          MoveScaled(5,0,4,5)
           Expand = True
-          Text = ("Aggiorna Feed")
+        }
+        { btFeed Button
+          MoveScaled(8,0,4,4)
+          Text = ("")
           Picture = Picture["icon:/24/refresh"]
         }
       }
