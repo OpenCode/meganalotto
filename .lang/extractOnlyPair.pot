@@ -18,11 +18,11 @@ msgstr ""
 msgid "Lotto con sistema di parità"
 msgstr ""
 
-#: extractOnlyPair.module:75
+#: extractOnlyPair.module:78
 msgid "Superenalotto con sistema di parità"
 msgstr ""
 
-#: extractOnlyPair.module:106
+#: extractOnlyPair.module:112
 msgid "10&Lotto con sistema di parità"
 msgstr ""
 

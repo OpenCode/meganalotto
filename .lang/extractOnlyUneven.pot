@@ -14,15 +14,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: extractOnlyUneven.module:43
+#: extractOnlyUneven.module:44
 msgid "Lotto con sistema di disparità"
 msgstr ""
 
-#: extractOnlyUneven.module:74
+#: extractOnlyUneven.module:78
 msgid "Superenalotto con sistema di disparità"
 msgstr ""
 
-#: extractOnlyUneven.module:105
+#: extractOnlyUneven.module:112
 msgid "10&Lotto con sistema di disparità"
 msgstr ""
 

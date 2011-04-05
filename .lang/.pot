@@ -14,23 +14,23 @@ msgstr ""
 msgid "Lotto con sistema di parità"
 msgstr ""
 
-#: extractOnlyPair.module:75
+#: extractOnlyPair.module:78
 msgid "Superenalotto con sistema di parità"
 msgstr ""
 
-#: extractOnlyPair.module:106
+#: extractOnlyPair.module:112
 msgid "10&Lotto con sistema di parità"
 msgstr ""
 
-#: extractOnlyUneven.module:43
+#: extractOnlyUneven.module:44
 msgid "Lotto con sistema di disparità"
 msgstr ""
 
-#: extractOnlyUneven.module:74
+#: extractOnlyUneven.module:78
 msgid "Superenalotto con sistema di disparità"
 msgstr ""
 
-#: extractOnlyUneven.module:105
+#: extractOnlyUneven.module:112
 msgid "10&Lotto con sistema di disparità"
 msgstr ""
 

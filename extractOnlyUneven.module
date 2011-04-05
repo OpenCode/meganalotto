@@ -15,16 +15,17 @@
 '-- indice estrazione
  indice AS Integer
 
-PUBLIC FUNCTION lotto()
+PUBLIC FUNCTION lotto(MyList AS ListBox, MyValue AS Integer)
   
   DIM i AS Integer    '-- contatore per estrazioni
   DIM j AS Integer    '-- ""  ""     ""   ""
+  DIM $result AS String
 
   n.resize(5)
 
-
 FOR i = 1 TO FMain.ValueBox1.value
 
+  $result = ""
   nuova_estrazione(45, TRUE)
 
   FOR j = 0 TO 4
@@ -37,25 +38,28 @@ FOR i = 1 TO FMain.ValueBox1.value
   n.sort(gb.Ascent)
 
   FOR j = 0 TO 4
-    FMain.TextArea1.Text &= Str(n[j]) & "\t"
+    $result &= Str(n[j]) & "\t"
   NEXT 
 
-  FMain.TextArea1.Text &= "\t\t\t\t\t# " & ("Lotto con sistema di disparità")
-  FMain.TextArea1.Text &= gb.NewLine
+  FMain.TextArea1.Text &= $result & "\t\t\t\t\t# " & ("Lotto con sistema di disparità") & gb.NewLine
+  $result &= "\t\t\t\t\t# " & ("Lotto con sistema di disparità")
+  MyList.Add($result)
     
 NEXT
 
 END
 
-PUBLIC FUNCTION enalotto()
+PUBLIC FUNCTION enalotto(MyList AS ListBox, MyValue AS Integer)
   
   DIM i AS Integer    '-- contatore per estrazioni
   DIM j AS Integer    '-- ""  ""     ""   ""
+  DIM $result AS String
 
   n.resize(8)
 
 FOR i = 1 TO FMain.ValueBox1.value
 
+  $result = ""
   nuova_estrazione(45, TRUE)
 
   FOR j = 0 TO 7
@@ -68,25 +72,28 @@ FOR i = 1 TO FMain.ValueBox1.value
   n.sort(gb.Ascent)
 
   FOR j = 0 TO 7
-    FMain.TextArea1.Text &= Str(n[j]) & "\t"
+    $result &= Str(n[j]) & "\t"
   NEXT 
 
-  FMain.TextArea1.Text &= "\t\t# " & ("Superenalotto con sistema di disparità")
-  FMain.TextArea1.Text &= gb.NewLine
-
+  FMain.TextArea1.Text &= $result & "\t\t# " & ("Superenalotto con sistema di disparità") & gb.NewLine
+  $result &= "\t\t# " & ("Superenalotto con sistema di disparità")
+  MyList.Add($result)
+  
 NEXT
 
 END
 
-PUBLIC FUNCTION dieci()
+PUBLIC FUNCTION dieci(MyList AS ListBox, MyValue AS Integer)
   
   DIM i AS Integer    '-- contatore per estrazioni
   DIM j AS Integer    '-- ""  ""     ""   ""
+  DIM $result AS String
 
   n.resize(10)
 
 FOR i = 1 TO FMain.ValueBox1.value
 
+  $result = ""
   nuova_estrazione(45, TRUE)
 
   FOR j = 0 TO 9
@@ -99,11 +106,12 @@ FOR i = 1 TO FMain.ValueBox1.value
   n.sort(gb.Ascent)
 
   FOR j = 0 TO 9
-    FMain.TextArea1.Text &= Str(n[j]) & "\t"
+    $result &= Str(n[j]) & "\t"
   NEXT 
 
-  FMain.TextArea1.Text &= "# " & ("10&Lotto con sistema di disparità")
-  FMain.TextArea1.Text &= gb.NewLine
+  FMain.TextArea1.Text &= $result & "# " & ("10&Lotto con sistema di disparità") & gb.NewLine
+  $result &= "# " & ("10&Lotto con sistema di disparità")
+  MyList.Add($result)
 
 NEXT
 
