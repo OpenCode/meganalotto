@@ -12,9 +12,9 @@ SearchComment=False
 SearchString=True
 
 [OpenFile]
-File[1]="FMain.form"
-Active=1
-File[2]="FMain.class:513.41"
+File[1]="FMoneyManager.form"
+File[2]="FMoneyManager.class:143.24"
+Active=2
 Count=2
 
 [Watches]

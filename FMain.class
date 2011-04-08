@@ -120,6 +120,7 @@ PUBLIC SUB Button2_Click()
 
   TextArea1.Text = ""
   Listex.Clear()
+  hbEditor.Visible = FALSE
 
 END
 
@@ -507,21 +508,7 @@ END
 
 PUBLIC SUB btEditor_Click()
 
-  '-- do not execute the sub if there isn't selected line in the list
-  IF Listex.Index = -1 THEN RETURN 
-  
-  hbEditor.Visible = TRUE
-  
-  TextBox1.Text = Split(Listex.Text, "\t")[0]
-  TextBox2.Text = Split(Listex.Text, "\t")[1]
-  TextBox3.Text = Split(Listex.Text, "\t")[2]
-  TextBox4.Text = Split(Listex.Text, "\t")[3]
-  TextBox5.Text = Split(Listex.Text, "\t")[4]
-  TextBox6.Text = Split(Listex.Text, "\t")[5]
-  TextBox7.Text = Split(Listex.Text, "\t")[6]
-  TextBox8.Text = Split(Listex.Text, "\t")[7]
-  TextBox9.Text = Split(Listex.Text, "\t")[8]
-  TextBox10.Text = Split(Listex.Text, "\t")[9]
+  EditExtractedNumber()
 
 END
 
@@ -554,3 +541,30 @@ PUBLIC SUB btCancel_Click()
   hbEditor.Visible = FALSE
 
 END
+
+PUBLIC SUB ListEx_DblClick()
+
+  EditExtractedNumber()
+
+END
+
+PRIVATE SUB EditExtractedNumber()
+  
+  '-- do not execute the sub if there isn't selected line in the list
+  IF Listex.Index = -1 THEN RETURN 
+  
+  hbEditor.Visible = TRUE
+  
+  TextBox1.Text = Split(Listex.Text, "\t")[0]
+  TextBox2.Text = Split(Listex.Text, "\t")[1]
+  TextBox3.Text = Split(Listex.Text, "\t")[2]
+  TextBox4.Text = Split(Listex.Text, "\t")[3]
+  TextBox5.Text = Split(Listex.Text, "\t")[4]
+  TextBox6.Text = Split(Listex.Text, "\t")[5]
+  TextBox7.Text = Split(Listex.Text, "\t")[6]
+  TextBox8.Text = Split(Listex.Text, "\t")[7]
+  TextBox9.Text = Split(Listex.Text, "\t")[8]
+  TextBox10.Text = Split(Listex.Text, "\t")[9]
+  
+END
+
