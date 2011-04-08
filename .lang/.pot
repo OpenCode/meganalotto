@@ -54,6 +54,10 @@ msgstr ""
 msgid "Estrazione 10&Lotto"
 msgstr ""
 
+#: F10eLotto.class:59
+msgid "Meganalotto - 10&Lotto"
+msgstr ""
+
 #: FAbout.class:50 FPartner.class:14 FSupport.class:20
 msgid "Nessun Browser trovato"
 msgstr ""
@@ -62,8 +66,8 @@ msgstr ""
 msgid "Il link è stato copiato in memoria. Incollarlo nel proprio browser."
 msgstr ""
 
-#: FAbout.class:50 FMain.class:932 FMoneyManagerAdd.class:193
-#: FPartner.class:14 FPersonalSystem.class:25 FSuper.class:92
+#: FAbout.class:50 FMain.class:932 FMoneyManagerAdd.class:194
+#: FPartner.class:14 FPersonalSystem.class:25 FSuper.class:93
 #: FSupport.class:20
 msgid "Chiudi"
 msgstr ""
@@ -72,7 +76,7 @@ msgstr ""
 msgid "Meganalotto - About"
 msgstr ""
 
-#: FAbout.class:91
+#: FAbout.class:91 FMain.class:663
 msgid "Meganalotto"
 msgstr ""
 
@@ -100,7 +104,7 @@ msgstr ""
 msgid "Meganalotto - Giochi supportati"
 msgstr ""
 
-#: FGame.class:36
+#: FGame.class:37
 msgid ""
 "Il software non è il alcun modo supportato e/o ricondubile ai gestori dei "
 "vari giochi."
@@ -110,7 +114,7 @@ msgstr ""
 msgid "Meganalotto - Licenza"
 msgstr ""
 
-#: FGpl.class:34
+#: FGpl.class:35
 msgid "TextArea1"
 msgstr ""
 
@@ -158,40 +162,44 @@ msgstr ""
 msgid "Inserisci valori personali"
 msgstr ""
 
-#: FGuide.class:69
+#: FGuide.class:57
+msgid "Meganalotto - Guida"
+msgstr ""
+
+#: FGuide.class:70
 msgid "Selezionare lingua:"
 msgstr ""
 
-#: FGuide.class:75 FMoneyManagerAdd.class:215 FMoneyManager.class:492
-#: FWinning.class:166
+#: FGuide.class:76 FMoneyManagerAdd.class:216 FMoneyManager.class:493
+#: FWinning.class:167
 msgid "ComboBox1"
 msgstr ""
 
 #: FLotto.class:166
-msgid "Meganalotto - Estrazioni del lotto"
+msgid "Meganalotto - Lotto"
 msgstr ""
 
 #: FLotto.class:176 FRitardatari.class:140
 msgid "Ruota"
 msgstr ""
 
-#: FLotto.class:183 FWin4Life.class:115
+#: FLotto.class:183 FWin4Life.class:116
 msgid "1°"
 msgstr ""
 
-#: FLotto.class:190 FWin4Life.class:122
+#: FLotto.class:190 FWin4Life.class:123
 msgid "2°"
 msgstr ""
 
-#: FLotto.class:197 FWin4Life.class:129
+#: FLotto.class:197 FWin4Life.class:130
 msgid "3°"
 msgstr ""
 
-#: FLotto.class:204 FWin4Life.class:136
+#: FLotto.class:204 FWin4Life.class:137
 msgid "4°"
 msgstr ""
 
-#: FLotto.class:211 FWin4Life.class:143
+#: FLotto.class:211 FWin4Life.class:144
 msgid "5°"
 msgstr ""
 
@@ -231,15 +239,11 @@ msgstr ""
 msgid "Personalizzato"
 msgstr ""
 
-#: FMain.class:663 FSmorfia.class:64
-msgid "Meganalotto - Noi diamo i numeri!!!"
-msgstr ""
-
 #: FMain.class:670
 msgid "Archivio Estrazioni"
 msgstr ""
 
-#: FMain.class:673 FMoneyManager.class:425
+#: FMain.class:673 FMoneyManager.class:426
 msgid "Lotto"
 msgstr ""
 
@@ -247,7 +251,7 @@ msgstr ""
 msgid "SuperEnalotto"
 msgstr ""
 
-#: FMain.class:683 FMoneyManager.class:443
+#: FMain.class:683 FMoneyManager.class:444
 msgid "Win4Life"
 msgstr ""
 
@@ -259,7 +263,7 @@ msgstr ""
 msgid "Tipo estrazione"
 msgstr ""
 
-#: FMain.class:709 FMoneyManager.class:437
+#: FMain.class:709 FMoneyManager.class:438
 msgid "10eLotto"
 msgstr ""
 
@@ -307,7 +311,7 @@ msgstr ""
 msgid "Pulisci"
 msgstr ""
 
-#: FMain.class:909 FMoneyManagerAdd.class:187
+#: FMain.class:909 FMoneyManagerAdd.class:188
 msgid "Salva"
 msgstr ""
 
@@ -331,23 +335,27 @@ msgstr ""
 msgid "Aggiorna i feed per rimanere aggiornato sulle novità del software."
 msgstr ""
 
-#: FMoneyManagerAdd.class:153
+#: FMoneyManagerAdd.class:138
+msgid "Meganalotto - Aggiungi vincita"
+msgstr ""
+
+#: FMoneyManagerAdd.class:154
 msgid "€"
 msgstr ""
 
-#: FMoneyManagerAdd.class:159
+#: FMoneyManagerAdd.class:160
 msgid "Data della giocata"
 msgstr ""
 
-#: FMoneyManagerAdd.class:177 FMoneyManager.class:136
+#: FMoneyManagerAdd.class:178 FMoneyManager.class:136
 msgid "Importo giocato"
 msgstr ""
 
-#: FMoneyManagerAdd.class:182 FMoneyManager.class:137
+#: FMoneyManagerAdd.class:183 FMoneyManager.class:137
 msgid "Importo vinto"
 msgstr ""
 
-#: FMoneyManagerAdd.class:199 FMoneyManager.class:189
+#: FMoneyManagerAdd.class:200 FMoneyManager.class:189
 msgid "Note"
 msgstr ""
 
@@ -383,71 +391,79 @@ msgstr ""
 msgid "Lotteria"
 msgstr ""
 
-#: FMoneyManager.class:337
+#: FMoneyManager.class:325
+msgid "Meganalotto - Gestione vincite"
+msgstr ""
+
+#: FMoneyManager.class:338
 msgid "Aggiungi niuova voce"
 msgstr ""
 
-#: FMoneyManager.class:345
+#: FMoneyManager.class:346
 msgid "Elimina voce selezionata"
 msgstr ""
 
-#: FMoneyManager.class:353
+#: FMoneyManager.class:354
 msgid "Edita voce selezionata"
 msgstr ""
 
-#: FMoneyManager.class:364
+#: FMoneyManager.class:365
 msgid "Mostra grafico"
 msgstr ""
 
-#: FMoneyManager.class:374
+#: FMoneyManager.class:375
 msgid "Zoom"
 msgstr ""
 
-#: FMoneyManager.class:380
+#: FMoneyManager.class:381
 msgid "Imposta lo zoom"
 msgstr ""
 
-#: FMoneyManager.class:391
+#: FMoneyManager.class:392
 msgid "1"
 msgstr ""
 
-#: FMoneyManager.class:399
+#: FMoneyManager.class:400
 msgid "Esporta grafico"
 msgstr ""
 
-#: FMoneyManager.class:421
+#: FMoneyManager.class:422
 msgid "Filtra per lotteria"
 msgstr ""
 
-#: FMoneyManager.class:431
+#: FMoneyManager.class:432
 msgid "Superenalotto"
 msgstr ""
 
-#: FMoneyManager.class:468
+#: FMoneyManager.class:469
 msgid "Mostra importo giocato"
 msgstr ""
 
-#: FMoneyManager.class:474
+#: FMoneyManager.class:475
 msgid "Mostra importo vinto"
 msgstr ""
 
-#: FMoneyManager.class:480
+#: FMoneyManager.class:481
 msgid "Mostra guadagno"
 msgstr ""
 
-#: FMoneyManager.class:486
+#: FMoneyManager.class:487
 msgid "Mostra data sull'asse x"
 msgstr ""
 
-#: FNumByName.class:46
+#: FNumByName.class:36
+msgid "Meganalotto - Estrai numero da nome"
+msgstr ""
+
+#: FNumByName.class:47
 msgid "Estrai"
 msgstr ""
 
-#: FNumByName.class:52
+#: FNumByName.class:53
 msgid "Inserire un nome:"
 msgstr ""
 
-#: FNumByName.class:58
+#: FNumByName.class:59
 msgid "??"
 msgstr ""
 
@@ -459,23 +475,23 @@ msgstr ""
 msgid "Meganalotto - Partnership"
 msgstr ""
 
-#: FPartner.class:43
+#: FPartner.class:44
 msgid ""
 "\"Non chiederti cosa Meganalotto può fare per te ma chiediti cosa puoi fare "
 "tu per Meganalotto\""
 msgstr ""
 
-#: FPartner.class:53
+#: FPartner.class:54
 msgid ""
 "Scopri come diventare partner del software ottenenedo visibilità grazie alla "
 "continua diffusione del software."
 msgstr ""
 
-#: FPartner.class:64 FSupport.class:70
+#: FPartner.class:65 FSupport.class:71
 msgid "Visita pagina web"
 msgstr ""
 
-#: FPartner.class:70 FSupport.class:82
+#: FPartner.class:71 FSupport.class:83
 msgid "Copia link"
 msgstr ""
 
@@ -487,11 +503,15 @@ msgstr ""
 msgid "Inserire solo valori da 1 a 90"
 msgstr ""
 
-#: FPersonalSystem.class:76
+#: FPersonalSystem.class:71
+msgid "Meganalotto - Aggiungi valori"
+msgstr ""
+
+#: FPersonalSystem.class:77
 msgid "Aggiungi la massimo 10 valori separati da una virgola"
 msgstr ""
 
-#: FPersonalSystem.class:81
+#: FPersonalSystem.class:82
 msgid "Aggiungi"
 msgstr ""
 
@@ -511,6 +531,10 @@ msgstr ""
 msgid "Ritardo"
 msgstr ""
 
+#: FSmorfia.class:64
+msgid "Meganalotto - Smorfia"
+msgstr ""
+
 #: FSmorfia.class:85
 msgid "Cerca vocabolo"
 msgstr ""
@@ -527,11 +551,15 @@ msgstr ""
 msgid "Numero Superstar"
 msgstr ""
 
-#: FSuper.class:98
+#: FSuper.class:87
+msgid "Meganalotto - Superenalotto"
+msgstr ""
+
+#: FSuper.class:99
 msgid "0"
 msgstr ""
 
-#: FSuper.class:154
+#: FSuper.class:155
 msgid "Label9"
 msgstr ""
 
@@ -539,7 +567,7 @@ msgstr ""
 msgid "Meganalotto - Sostini il progetto"
 msgstr ""
 
-#: FSupport.class:65
+#: FSupport.class:66
 msgid ""
 "Meganalotto è un progetto amatoriale che conta solo sul lavoro di gente "
 "appassionata per supportare la passione di altra gente. Non possiamo contare "
@@ -556,31 +584,35 @@ msgstr ""
 msgid "Ora"
 msgstr ""
 
-#: FWin4Life.class:101
+#: FWin4Life.class:92
+msgid "Meganalotto - Win4Life"
+msgstr ""
+
+#: FWin4Life.class:102
 msgid "Estrazione"
 msgstr ""
 
-#: FWin4Life.class:150
+#: FWin4Life.class:151
 msgid "6°"
 msgstr ""
 
-#: FWin4Life.class:157
+#: FWin4Life.class:158
 msgid "7°"
 msgstr ""
 
-#: FWin4Life.class:164
+#: FWin4Life.class:165
 msgid "8°"
 msgstr ""
 
-#: FWin4Life.class:171
+#: FWin4Life.class:172
 msgid "9°"
 msgstr ""
 
-#: FWin4Life.class:178
+#: FWin4Life.class:179
 msgid "10°"
 msgstr ""
 
-#: FWin4Life.class:185
+#: FWin4Life.class:186
 msgid "Numerone"
 msgstr ""
 
@@ -592,19 +624,23 @@ msgstr ""
 msgid "Vincita con trattenuta di "
 msgstr ""
 
-#: FWinning.class:162
+#: FWinning.class:158
+msgid "Meganalotto - Calcola vincita"
+msgstr ""
+
+#: FWinning.class:163
 msgid "Tipo di estrazione quotata"
 msgstr ""
 
-#: FWinning.class:173
+#: FWinning.class:174
 msgid "Numeri estratti"
 msgstr ""
 
-#: FWinning.class:184
+#: FWinning.class:185
 msgid "Quota della giocata"
 msgstr ""
 
-#: FWinning.class:194
+#: FWinning.class:195
 msgid "Calcola quota"
 msgstr ""
 

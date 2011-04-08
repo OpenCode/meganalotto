@@ -2,7 +2,7 @@
 
 { Form Form
   MoveScaled(0,0,64,54)
-  Text = ("Meganalotto - Noi diamo i numeri!!!")
+  Text = ("Meganalotto - Smorfia")
   Icon = Picture["icona.png"]
   Arrangement = Arrange.Fill
   { VBox1 VBox

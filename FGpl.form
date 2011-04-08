@@ -3,6 +3,7 @@
 { Form Form
   MoveScaled(0,0,62,62)
   Text = ("Meganalotto - Licenza")
+  Icon = Picture["icona.png"]
   Maximized = True
   Arrangement = Arrange.Fill
   Padding = 5

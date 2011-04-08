@@ -2,7 +2,8 @@
 
 { Form Form
   MoveScaled(0,0,45,12)
-  Text = ("")
+  Text = ("Meganalotto - Aggiungi valori")
+  Icon = Picture["icona.png"]
   Border = Window.Fixed
   { TextLabel1 TextLabel
     MoveScaled(1,1,43,3)

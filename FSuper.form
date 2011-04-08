@@ -2,7 +2,8 @@
 
 { Form Form
   MoveScaled(0,0,31,22)
-  Text = ("")
+  Text = ("Meganalotto - Superenalotto")
+  Icon = Picture["icona.png"]
   Border = Window.Fixed
   { BtClose Button
     MoveScaled(10,17,11,4)

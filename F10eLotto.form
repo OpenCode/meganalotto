@@ -2,7 +2,8 @@
 
 { Form Form
   MoveScaled(0,0,47,20)
-  Text = ("")
+  Text = ("Meganalotto - 10&Lotto")
+  Icon = Picture["icona.png"]
   Border = Window.Fixed
   Arrangement = Arrange.Fill
   { GridView1 GridView

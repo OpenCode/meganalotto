@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: FLotto.class:166
-msgid "Meganalotto - Estrazioni del lotto"
+msgid "Meganalotto - Lotto"
 msgstr ""
 
 #: FLotto.class:176

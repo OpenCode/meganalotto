@@ -30,15 +30,15 @@ msgstr ""
 msgid "Meganalotto - Sostini il progetto"
 msgstr ""
 
-#: FSupport.class:65
+#: FSupport.class:66
 msgid "Meganalotto è un progetto amatoriale che conta solo sul lavoro di gente appassionata per supportare la passione di altra gente. Non possiamo contare su grandi aziende o nomi celebri per continuare lo sviluppo e pertanto chiediamo a chiunque ne avesse voglia di sostenere il nostro lavoro con piccolissime donazione se ciò viene ritenuto giusto."
 msgstr ""
 
-#: FSupport.class:70
+#: FSupport.class:71
 msgid "Visita pagina web"
 msgstr ""
 
-#: FSupport.class:82
+#: FSupport.class:83
 msgid "Copia link"
 msgstr ""
 

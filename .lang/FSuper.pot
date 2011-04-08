@@ -26,15 +26,19 @@ msgstr ""
 msgid "Numero Superstar"
 msgstr ""
 
-#: FSuper.class:92
+#: FSuper.class:87
+msgid "Meganalotto - Superenalotto"
+msgstr ""
+
+#: FSuper.class:93
 msgid "Chiudi"
 msgstr ""
 
-#: FSuper.class:98
+#: FSuper.class:99
 msgid "0"
 msgstr ""
 
-#: FSuper.class:154
+#: FSuper.class:155
 msgid "Label9"
 msgstr ""
 

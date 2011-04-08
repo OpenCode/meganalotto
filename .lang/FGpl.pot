@@ -18,7 +18,7 @@ msgstr ""
 msgid "Meganalotto - Licenza"
 msgstr ""
 
-#: FGpl.class:34
+#: FGpl.class:35
 msgid "TextArea1"
 msgstr ""
 

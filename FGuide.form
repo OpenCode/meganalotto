@@ -2,7 +2,8 @@
 
 { Form Form
   MoveScaled(0,0,56,44)
-  Text = ("")
+  Text = ("Meganalotto - Guida")
+  Icon = Picture["icona.png"]
   Arrangement = Arrange.Vertical
   { HBox2 HBox
     MoveScaled(1,1,53,4)

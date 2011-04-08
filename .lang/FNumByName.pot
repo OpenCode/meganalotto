@@ -14,15 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FNumByName.class:46
+#: FNumByName.class:36
+msgid "Meganalotto - Estrai numero da nome"
+msgstr ""
+
+#: FNumByName.class:47
 msgid "Estrai"
 msgstr ""
 
-#: FNumByName.class:52
+#: FNumByName.class:53
 msgid "Inserire un nome:"
 msgstr ""
 
-#: FNumByName.class:58
+#: FNumByName.class:59
 msgid "??"
 msgstr ""
 

@@ -14,35 +14,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FMoneyManagerAdd.class:153
+#: FMoneyManagerAdd.class:138
+msgid "Meganalotto - Aggiungi vincita"
+msgstr ""
+
+#: FMoneyManagerAdd.class:154
 msgid "€"
 msgstr ""
 
-#: FMoneyManagerAdd.class:159
+#: FMoneyManagerAdd.class:160
 msgid "Data della giocata"
 msgstr ""
 
-#: FMoneyManagerAdd.class:177
+#: FMoneyManagerAdd.class:178
 msgid "Importo giocato"
 msgstr ""
 
-#: FMoneyManagerAdd.class:182
+#: FMoneyManagerAdd.class:183
 msgid "Importo vinto"
 msgstr ""
 
-#: FMoneyManagerAdd.class:187
+#: FMoneyManagerAdd.class:188
 msgid "Salva"
 msgstr ""
 
-#: FMoneyManagerAdd.class:193
+#: FMoneyManagerAdd.class:194
 msgid "Chiudi"
 msgstr ""
 
-#: FMoneyManagerAdd.class:199
+#: FMoneyManagerAdd.class:200
 msgid "Note"
 msgstr ""
 
-#: FMoneyManagerAdd.class:215
+#: FMoneyManagerAdd.class:216
 msgid "ComboBox1"
 msgstr ""
 

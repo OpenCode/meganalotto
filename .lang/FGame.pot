@@ -18,7 +18,7 @@ msgstr ""
 msgid "Meganalotto - Giochi supportati"
 msgstr ""
 
-#: FGame.class:36
+#: FGame.class:37
 msgid "Il software non è il alcun modo supportato e/o ricondubile ai gestori dei vari giochi."
 msgstr ""
 

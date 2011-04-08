@@ -30,19 +30,19 @@ msgstr ""
 msgid "Meganalotto - Partnership"
 msgstr ""
 
-#: FPartner.class:43
+#: FPartner.class:44
 msgid "\"Non chiederti cosa Meganalotto può fare per te ma chiediti cosa puoi fare tu per Meganalotto\""
 msgstr ""
 
-#: FPartner.class:53
+#: FPartner.class:54
 msgid "Scopri come diventare partner del software ottenenedo visibilità grazie alla continua diffusione del software."
 msgstr ""
 
-#: FPartner.class:64
+#: FPartner.class:65
 msgid "Visita pagina web"
 msgstr ""
 
-#: FPartner.class:70
+#: FPartner.class:71
 msgid "Copia link"
 msgstr ""
 

@@ -2,7 +2,8 @@
 
 { Form Form
   MoveScaled(0,0,47,33)
-  Text = ("")
+  Text = ("Meganalotto - Calcola vincita")
+  Icon = Picture["icona.png"]
   { Frame1 Frame
     MoveScaled(1,1,45,8)
     Text = ("Tipo di estrazione quotata")

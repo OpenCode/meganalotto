@@ -22,23 +22,27 @@ msgstr ""
 msgid "Vincita con trattenuta di "
 msgstr ""
 
-#: FWinning.class:162
+#: FWinning.class:158
+msgid "Meganalotto - Calcola vincita"
+msgstr ""
+
+#: FWinning.class:163
 msgid "Tipo di estrazione quotata"
 msgstr ""
 
-#: FWinning.class:166
+#: FWinning.class:167
 msgid "ComboBox1"
 msgstr ""
 
-#: FWinning.class:173
+#: FWinning.class:174
 msgid "Numeri estratti"
 msgstr ""
 
-#: FWinning.class:184
+#: FWinning.class:185
 msgid "Quota della giocata"
 msgstr ""
 
-#: FWinning.class:194
+#: FWinning.class:195
 msgid "Calcola quota"
 msgstr ""
 

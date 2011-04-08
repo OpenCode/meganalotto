@@ -58,11 +58,15 @@ msgstr ""
 msgid "Inserisci valori personali"
 msgstr ""
 
-#: FGuide.class:69
+#: FGuide.class:57
+msgid "Meganalotto - Guida"
+msgstr ""
+
+#: FGuide.class:70
 msgid "Selezionare lingua:"
 msgstr ""
 
-#: FGuide.class:75
+#: FGuide.class:76
 msgid "ComboBox1"
 msgstr ""
 

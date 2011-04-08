@@ -2,7 +2,7 @@
 
 { Form Form
   MoveScaled(0,0,89,59)
-  Text = ("Meganalotto - Noi diamo i numeri!!!")
+  Text = ("Meganalotto")
   Icon = Picture["icona.png"]
   Arrangement = Arrange.Vertical
   Spacing = 5

@@ -2,7 +2,8 @@
 
 { Form Form
   MoveScaled(0,0,84,56)
-  Text = ("")
+  Text = ("Meganalotto - Gestione vincite")
+  Icon = Picture["icona.png"]
   Maximized = True
   Arrangement = Arrange.Vertical
   Spacing = 5

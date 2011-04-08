@@ -47,7 +47,7 @@ msgid "Personalizzato"
 msgstr ""
 
 #: FMain.class:663
-msgid "Meganalotto - Noi diamo i numeri!!!"
+msgid "Meganalotto"
 msgstr ""
 
 #: FMain.class:670

@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: FSmorfia.class:64
-msgid "Meganalotto - Noi diamo i numeri!!!"
+msgid "Meganalotto - Smorfia"
 msgstr ""
 
 #: FSmorfia.class:85

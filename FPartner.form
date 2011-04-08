@@ -3,6 +3,7 @@
 { Form Form
   MoveScaled(0,0,42,24)
   Text = ("Meganalotto - Partnership")
+  Icon = Picture["icona.png"]
   { TextLabel1 TextLabel
     MoveScaled(1,1,40,5)
     Text = ("\"Non chiederti cosa Meganalotto pu\xC3\xB2 fare per te ma chiediti cosa puoi fare tu per Meganalotto\"")

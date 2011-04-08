@@ -22,51 +22,55 @@ msgstr ""
 msgid "Ora"
 msgstr ""
 
-#: FWin4Life.class:101
+#: FWin4Life.class:92
+msgid "Meganalotto - Win4Life"
+msgstr ""
+
+#: FWin4Life.class:102
 msgid "Estrazione"
 msgstr ""
 
-#: FWin4Life.class:115
+#: FWin4Life.class:116
 msgid "1°"
 msgstr ""
 
-#: FWin4Life.class:122
+#: FWin4Life.class:123
 msgid "2°"
 msgstr ""
 
-#: FWin4Life.class:129
+#: FWin4Life.class:130
 msgid "3°"
 msgstr ""
 
-#: FWin4Life.class:136
+#: FWin4Life.class:137
 msgid "4°"
 msgstr ""
 
-#: FWin4Life.class:143
+#: FWin4Life.class:144
 msgid "5°"
 msgstr ""
 
-#: FWin4Life.class:150
+#: FWin4Life.class:151
 msgid "6°"
 msgstr ""
 
-#: FWin4Life.class:157
+#: FWin4Life.class:158
 msgid "7°"
 msgstr ""
 
-#: FWin4Life.class:164
+#: FWin4Life.class:165
 msgid "8°"
 msgstr ""
 
-#: FWin4Life.class:171
+#: FWin4Life.class:172
 msgid "9°"
 msgstr ""
 
-#: FWin4Life.class:178
+#: FWin4Life.class:179
 msgid "10°"
 msgstr ""
 
-#: FWin4Life.class:185
+#: FWin4Life.class:186
 msgid "Numerone"
 msgstr ""
 

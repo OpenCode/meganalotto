@@ -18,3 +18,7 @@ msgstr ""
 msgid "Estrazione 10&Lotto"
 msgstr ""
 
+#: F10eLotto.class:59
+msgid "Meganalotto - 10&Lotto"
+msgstr ""
+
