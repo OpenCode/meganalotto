@@ -462,8 +462,9 @@ PUBLIC SUB menu_personal_system_Click()
   FOR i = 0 TO 10 - Split(Other.NumbersString, ",").Count
     $String &= "\t"
   NEXT 
-  $String &= "# " & ("Sistema personalizzato dall'utente") & "\n"
-  TextArea1.Text &= $String
+  $String &= "# " & ("Sistema personalizzato dall'utente") 
+  TextArea1.Text &= $String & "\n"
+  Listex.Add($String)
 
 END
 
