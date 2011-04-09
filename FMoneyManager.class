@@ -239,6 +239,11 @@ PUBLIC SUB btRemove_Click()
   DIM hres AS Result
   DIM sql AS String
 
+  '-- abort the function if the user select None
+  IF Message.Question(("Cancellare la voce selezionata?"), ("Ok"), ("Annulla")) = 2 THEN  
+    RETURN 
+  END IF
+
   '-- control the selected line to not delete unusable line
   IF GridView1.Row = GridView1.Rows.Count - 1 OR GridView1.Row = GridView1.Rows.Count - 2 THEN 
     RETURN 
