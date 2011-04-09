@@ -1,0 +1,27 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,39,11)
+  Text = ("Meganalotto - Beta Tester")
+  Icon = Picture["icona.png"]
+  Border = Window.Fixed
+  { PictureBox1 PictureBox
+    MoveScaled(1,1,4,4)
+    Picture = Picture["icon:/32/people"]
+    Alignment = Align.Center
+  }
+  { Label1 Label
+    MoveScaled(6,1,28,4)
+    Text = ("Vaillant")
+  }
+  { Button1 Button
+    MoveScaled(12,7,15,3)
+    Text = ("Chiudi")
+    Picture = Picture["icon:/16/close"]
+  }
+  { Button2 Button
+    MoveScaled(34,1,4,4)
+    Text = ("")
+    Picture = Picture["icon:/16/earth"]
+  }
+}

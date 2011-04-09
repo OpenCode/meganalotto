@@ -12,10 +12,10 @@
     Alignment = Align.Center
   }
   { Frame1 Frame
-    MoveScaled(1,16,62,21)
+    MoveScaled(1,20,62,17)
     Text = ("Ringraziamenti")
     { TextArea1 TextArea
-      MoveScaled(1,2,60,18)
+      MoveScaled(1,3,60,13)
       Mouse = Mouse.Text
       Text = ("")
       ReadOnly = True
@@ -23,17 +23,17 @@
     }
   }
   { Button1 Button
-    MoveScaled(2,38,18,2)
+    MoveScaled(1,38,18,3)
     Text = ("Licenza")
     Picture = Picture["icon:/16/text"]
   }
   { Button2 Button
-    MoveScaled(23,38,18,2)
+    MoveScaled(23,38,18,3)
     Text = ("Giochi supportati")
     Picture = Picture["icon:/16/info"]
   }
   { Button3 Button
-    MoveScaled(44,38,18,2)
+    MoveScaled(45,38,18,3)
     Text = ("Chiudi")
     Picture = Picture["icon:/16/close"]
   }
@@ -55,5 +55,24 @@
       Text = ("")
       Picture = Picture["icons/blogger.png"]
     }
+  }
+  { btTester Button
+    MoveScaled(5,16,18,3)
+    Text = ("Beta Tester")
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(1,16,3,3)
+    Picture = Picture["icon:/16/people"]
+    Alignment = Align.Center
+  }
+  { btTraduttori Button
+    MoveScaled(25,16,18,3)
+    Enabled = False
+    Text = ("Traduttori")
+  }
+  { btFinanz Button
+    MoveScaled(45,16,18,3)
+    Enabled = False
+    Text = ("Finanziatori")
   }
 }

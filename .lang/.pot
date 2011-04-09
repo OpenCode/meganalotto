@@ -58,46 +58,58 @@ msgstr ""
 msgid "Meganalotto - 10&Lotto"
 msgstr ""
 
-#: FAbout.class:50 FPartner.class:14 FSupport.class:20
+#: FAbout.class:51 FPartner.class:14 FSupport.class:20
 msgid "Nessun Browser trovato"
 msgstr ""
 
-#: FAbout.class:50
+#: FAbout.class:51
 msgid "Il link è stato copiato in memoria. Incollarlo nel proprio browser."
 msgstr ""
 
-#: FAbout.class:50 FMain.class:933 FMoneyManagerAdd.class:194
+#: FAbout.class:51 FMain.class:933 FMoneyManagerAdd.class:194
 #: FPartner.class:14 FPersonalSystem.class:25 FSuper.class:93
-#: FSupport.class:20
+#: FSupport.class:20 FTester.class:46
 msgid "Chiudi"
 msgstr ""
 
-#: FAbout.class:84
+#: FAbout.class:95
 msgid "Meganalotto - About"
 msgstr ""
 
-#: FAbout.class:91 FMain.class:664
+#: FAbout.class:102 FMain.class:664
 msgid "Meganalotto"
 msgstr ""
 
-#: FAbout.class:97 FMain.class:784
+#: FAbout.class:108 FMain.class:784
 msgid "Ringraziamenti"
 msgstr ""
 
-#: FAbout.class:110
+#: FAbout.class:121
 msgid "Licenza"
 msgstr ""
 
-#: FAbout.class:116
+#: FAbout.class:127
 msgid "Giochi supportati"
 msgstr ""
 
-#: FAbout.class:128
+#: FAbout.class:139
 msgid "Autore"
 msgstr ""
 
-#: FAbout.class:132
+#: FAbout.class:143
 msgid "Francesco \"Ceskho OpenCode\" Apruzzese"
+msgstr ""
+
+#: FAbout.class:162
+msgid "Beta Tester"
+msgstr ""
+
+#: FAbout.class:174
+msgid "Traduttori"
+msgstr ""
+
+#: FAbout.class:180
+msgid "Finanziatori"
 msgstr ""
 
 #: FGame.class:31
@@ -574,6 +586,14 @@ msgid ""
 "su grandi aziende o nomi celebri per continuare lo sviluppo e pertanto "
 "chiediamo a chiunque ne avesse voglia di sostenere il nostro lavoro con "
 "piccolissime donazione se ciò viene ritenuto giusto."
+msgstr ""
+
+#: FTester.class:29
+msgid "Meganalotto - Beta Tester"
+msgstr ""
+
+#: FTester.class:41
+msgid "Vaillant"
 msgstr ""
 
 #: FWin4Life.class:22

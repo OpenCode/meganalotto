@@ -17,6 +17,7 @@ PUBLIC SUB Form_Open()
   TextArea1.Text &= "\t- La comunità italiana di Gambas per il semplice fatto di esistere;  \n\n"
   TextArea1.Text &= "\t- Voi utenti che scaricate ed usate il programma rendendomi fiero del mio \"lavoro\";  \n\n"
   TextArea1.Text &= "\t- Tangoku (http://gaetanolonigro.wordpress.com/) per la magnifica icona;  \n\n"
+  TextArea1.Text &= "\t- F.Surfing (http://www.tutto-opensource.org/) per la classe linegraf;  \n\n"
   TextArea1.Text &= "\t- Wikipedia da cui ho tratto i termini de La Smorfia;  \n\n"
   TextArea1.Text &= "\t- GitHub per il nuovo hosting gratuito del progetto;  \n\n"
   TextArea1.Text &= "\t- Google Traslate per la traduzione in inglese e francese;  \n\n"
@@ -59,5 +60,11 @@ PUBLIC SUB btBlog_Click()
     Clipboard.Copy("http://www.soluzionisoftware.blogspot.com")
     Message.Info(("Nessun Browser trovato") & "\n" & ("Il link è stato copiato in memoria. Incollarlo nel proprio browser."), ("Chiudi"))
   END IF
+
+END
+
+PUBLIC SUB btTester_Click()
+
+  FTester.ShowDialog()
 
 END

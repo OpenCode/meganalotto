@@ -1,0 +1,14 @@
+' Gambas class file
+
+
+PUBLIC SUB Button1_Click()
+
+  ME.Close
+
+END
+
+PUBLIC SUB Button2_Click()
+
+  Desktop.Open("http://daenox.blogspot.com/")
+
+END
