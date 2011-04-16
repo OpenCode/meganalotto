@@ -1,0 +1,24 @@
+' Gambas class file
+
+
+PUBLIC SUB Form_Open()
+
+  cbNote.Value = Settings["Interface/vbNote.visible", TRUE]
+  cbFeed.Value = Settings["Interface/vbFeed.visible", TRUE]
+
+END
+
+PUBLIC SUB Button1_Click()
+
+  Settings["Interface/vbNote.visible"] = cbNote.Value
+  Settings["Interface/vbFeed.visible"] = cbFeed.Value
+  FMain.SetFormObject()
+  ME.Close
+
+END
+
+PUBLIC SUB Button2_Click()
+
+  ME.Close
+
+END

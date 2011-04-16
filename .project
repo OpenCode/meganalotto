@@ -3,7 +3,7 @@
 Title=meganalotto
 Startup=FMain
 Icon=icona.png
-Version=0.3.12
+Version=0.3.13
 Library=gb.gui
 Library=gb.form
 Library=gb.db
@@ -11,6 +11,7 @@ Library=gb.db.form
 Library=gb.desktop
 Library=gb.net
 Library=gb.net.curl
+Library=gb.settings
 Library=gb.xml
 Description=Programma per calcolare diverse combinazioni di numeri dei diversi giochi italiani. Lotto, SuperEnalotto Win4Life e 10eLotto.
 Authors=Francesco "Ceskho OpenCode" Apruzzese

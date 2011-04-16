@@ -68,9 +68,7 @@ PUBLIC SUB Form_Open()
     picNet.ToolTip = ("Connessione OK")
   END IF
 
-  '-- controlla versione disponibile
-  'picVersion.Picture = SoftVersion.VersionColor()
-  'picVersion.ToolTip = SoftVersion.RelativeToolTip()
+  SetFormObject()
 
 END
 
@@ -566,6 +564,20 @@ PRIVATE SUB EditExtractedNumber()
   TextBox8.Text = Split(Listex.Text, "\t")[7]
   TextBox9.Text = Split(Listex.Text, "\t")[8]
   TextBox10.Text = Split(Listex.Text, "\t")[9]
+  
+END
+
+PUBLIC SUB menu_interfaccia_Click()
+
+  FInterface.ShowDialog()
+
+END
+
+PUBLIC FUNCTION SetFormObject()
+  
+  '-- set form object values
+  vbNote.Visible = Settings["Interface/vbNote.visible", TRUE]
+  vbFeed.Visible = Settings["Interface/vbFeed.visible", TRUE]
   
 END
 

@@ -1,0 +1,26 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,34,35)
+  Text = ("Meganalotto - Impostazioni personalizzazione")
+  Icon = Picture["icona.png"]
+  Border = Window.Fixed
+  { Button1 Button
+    MoveScaled(3,31,11,3)
+    Text = ("Salva")
+    Picture = Picture["icon:/16/save"]
+  }
+  { Button2 Button
+    MoveScaled(20,31,11,3)
+    Text = ("Annulla")
+    Picture = Picture["icon:/16/cancel"]
+  }
+  { cbNote CheckBox
+    MoveScaled(1,1,29,2)
+    Text = ("Mostra colonna delle Note")
+  }
+  { cbFeed CheckBox
+    MoveScaled(1,4,29,2)
+    Text = ("Mostra colonna dei Feed del progetto")
+  }
+}

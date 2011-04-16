@@ -7,6 +7,13 @@
   Arrangement = Arrange.Vertical
   Spacing = 5
   Padding = 5
+  { menu_modify Menu
+    Text = ("Modifica")
+    { menu_interfaccia Menu
+      Text = ("Interfaccia")
+      Picture = Picture["icon:/16/options"]
+    }
+  }
   { estraz Menu
     Text = ("Archivio Estrazioni")
     { extrax Menu
@@ -119,7 +126,7 @@
     MoveScaled(1,1,87,49)
     Expand = True
     Spacing = 5
-    { VBox3 VBox
+    { vbNote VBox
       MoveScaled(1,1,20,46)
       Spacing = 5
       { HBox4 HBox
@@ -325,8 +332,8 @@
         ReadOnly = True
       }
     }
-    { VBox2 VBox
-      MoveScaled(73,3,21,47)
+    { vbFeed VBox
+      MoveScaled(74,2,21,47)
       Spacing = 5
       { HBox1 HBox
         MoveScaled(1,1,12,4)
