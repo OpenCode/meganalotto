@@ -12,11 +12,11 @@ SearchComment=False
 SearchString=True
 
 [OpenFile]
-File[1]="FMoneyManager.form"
-File[2]="FMoneyManager.class:242.83"
-File[3]="SoftVersion.module:0.0"
-File[4]="extract.module:0.0"
-Active=4
+File[1]="FMain.form"
+Active=1
+File[2]="FInterface.form"
+File[3]="FMain.class:436.2"
+File[4]="FInterface.class:21.2"
 Count=4
 
 [Watches]
