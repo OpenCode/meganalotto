@@ -12,3 +12,9 @@ PUBLIC SUB Button2_Click()
   Desktop.Open("http://daenox.blogspot.com/")
 
 END
+
+PUBLIC SUB Button3_Click()
+
+  Desktop.Open("https://launchpad.net/~brainhell")
+
+END

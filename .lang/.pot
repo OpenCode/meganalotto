@@ -68,7 +68,7 @@ msgstr ""
 
 #: FAbout.class:51 FMain.class:956 FMoneyManagerAdd.class:194
 #: FPartner.class:14 FPersonalSystem.class:25 FSuper.class:93
-#: FSupport.class:20 FTester.class:46
+#: FSupport.class:20 FTester.class:55
 msgid "Chiudi"
 msgstr ""
 
@@ -620,12 +620,16 @@ msgid ""
 "piccolissime donazione se ciò viene ritenuto giusto."
 msgstr ""
 
-#: FTester.class:29
+#: FTester.class:38
 msgid "Meganalotto - Beta Tester"
 msgstr ""
 
-#: FTester.class:41
+#: FTester.class:50
 msgid "Vaillant"
+msgstr ""
+
+#: FTester.class:73
+msgid "BrainHell"
 msgstr ""
 
 #: FWin4Life.class:22

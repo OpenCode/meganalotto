@@ -14,15 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FTester.class:29
+#: FTester.class:38
 msgid "Meganalotto - Beta Tester"
 msgstr ""
 
-#: FTester.class:41
+#: FTester.class:50
 msgid "Vaillant"
 msgstr ""
 
-#: FTester.class:46
+#: FTester.class:55
 msgid "Chiudi"
+msgstr ""
+
+#: FTester.class:73
+msgid "BrainHell"
 msgstr ""
 
