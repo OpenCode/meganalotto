@@ -27,12 +27,13 @@ PUBLIC SUB btAdd_Click()
   END IF
   
   FOR i = 0 TO Split(TextBox1.text, ",").Count - 1
+    'IF Split(TextBox1.text, ",")[i] = "" THEN NumberTooBig = TRUE
     IF CInt(Split(TextBox1.text, ",")[i]) > 90 THEN NumberTooBig = TRUE
     IF CInt(Split(TextBox1.text, ",")[i]) = 0 THEN NumberTooBig = TRUE
   NEXT 
 
   IF NumberTooBig THEN 
-    Message.Error(("Inserire solo valori da 1 a 90"), ("Chiudi"))
+    Message.Error(("Inserire solo valori da 1 a 90 o formattare adeguatamente la stringa!"), ("Chiudi"))
     RETURN 
   END IF
 

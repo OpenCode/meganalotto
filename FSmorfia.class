@@ -35,6 +35,8 @@ PUBLIC SUB cerca_Click()
   '-- not run the sub if the first char in textarea isn't a letter
   IF NOT (LCase$(Left$(txtcerca.Text)) LIKE "[a-z]") THEN RETURN 
 
+  IF NOT Exist(Application.Path &/ "smorfia/" & LCase$(Left$(txtcerca.Text))) THEN RETURN 
+
   testo = File.Load(Application.Path &/ "smorfia/" & LCase$(Left$(txtcerca.Text)))
   '-- scorre tutto il resto riga per riga
   FOR i = 0 TO Split(testo, "\n").Length - 1

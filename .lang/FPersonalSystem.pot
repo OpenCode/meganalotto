@@ -22,19 +22,19 @@ msgstr ""
 msgid "Chiudi"
 msgstr ""
 
-#: FPersonalSystem.class:35
-msgid "Inserire solo valori da 1 a 90"
+#: FPersonalSystem.class:36
+msgid "Inserire solo valori da 1 a 90 o formattare adeguatamente la stringa!"
 msgstr ""
 
-#: FPersonalSystem.class:71
+#: FPersonalSystem.class:72
 msgid "Meganalotto - Aggiungi valori"
 msgstr ""
 
-#: FPersonalSystem.class:77
+#: FPersonalSystem.class:78
 msgid "Aggiungi la massimo 10 valori separati da una virgola"
 msgstr ""
 
-#: FPersonalSystem.class:82
+#: FPersonalSystem.class:83
 msgid "Aggiungi"
 msgstr ""
 
