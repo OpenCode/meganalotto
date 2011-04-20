@@ -543,19 +543,19 @@ msgstr ""
 msgid "Inserire al massimo 10 valori"
 msgstr ""
 
-#: FPersonalSystem.class:36
+#: FPersonalSystem.class:40
 msgid "Inserire solo valori da 1 a 90 o formattare adeguatamente la stringa!"
 msgstr ""
 
-#: FPersonalSystem.class:72
+#: FPersonalSystem.class:76
 msgid "Meganalotto - Aggiungi valori"
 msgstr ""
 
-#: FPersonalSystem.class:78
+#: FPersonalSystem.class:82
 msgid "Aggiungi la massimo 10 valori separati da una virgola"
 msgstr ""
 
-#: FPersonalSystem.class:83
+#: FPersonalSystem.class:87
 msgid "Aggiungi"
 msgstr ""
 
@@ -575,11 +575,11 @@ msgstr ""
 msgid "Ritardo"
 msgstr ""
 
-#: FSmorfia.class:69
+#: FSmorfia.class:66
 msgid "Meganalotto - Smorfia"
 msgstr ""
 
-#: FSmorfia.class:90
+#: FSmorfia.class:87
 msgid "Cerca vocabolo"
 msgstr ""
 

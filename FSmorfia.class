@@ -30,11 +30,8 @@ PUBLIC SUB cerca_Click()
   '-- pulisce la gridview
   GridView1.Rows.Count = 0
 
-  '-- not run the sub if textarea in empty or if is a number
-  IF (txtcerca.Text = "" OR IsDigit(txtcerca.Text)) THEN RETURN
-  '-- not run the sub if the first char in textarea isn't a letter
-  IF NOT (LCase$(Left$(txtcerca.Text)) LIKE "[a-z]") THEN RETURN 
-
+  '-- not run the sub if textarea in empty or if relative file not exists
+  IF (txtcerca.Text = "") THEN RETURN
   IF NOT Exist(Application.Path &/ "smorfia/" & LCase$(Left$(txtcerca.Text))) THEN RETURN 
 
   testo = File.Load(Application.Path &/ "smorfia/" & LCase$(Left$(txtcerca.Text)))
