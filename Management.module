@@ -18,6 +18,7 @@ PUBLIC $Value AS String = "€"
 PUBLIC FUNCTION MoveDatabase()
 
   IF NOT Exist(DatabasePath &/ DatabaseName) THEN 
+    IF NOT Exist(DatabasePath) THEN MKDIR DatabasePath
     COPY Application.Path &/ "other" &/ DatabaseName TO DatabasePath &/ DatabaseName
     PRINT "New DataBase created in " & DatabasePath
   END IF
