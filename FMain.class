@@ -234,7 +234,11 @@ END
 
 PUBLIC SUB smorfia_Click()
 
-  FSmorfia.ShowModal()
+  DIM frmSmorfia AS Form
+
+  '-- save the file
+  frmSmorfia = NEW FSmorfia("", FALSE)
+  frmSmorfia.Show()
 
 END
 
@@ -581,3 +585,14 @@ PUBLIC FUNCTION SetFormObject()
   
 END
 
+
+PUBLIC SUB txtSmorfia_KeyRelease()
+
+  DIM frmSmorfia AS Form
+
+  IF (key.Code = key.Enter OR key.Code = key.Return) THEN 
+    frmSmorfia = NEW FSmorfia(txtSmorfia.Text, TRUE)
+    frmSmorfia.Show()
+  END IF
+
+END

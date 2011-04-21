@@ -14,15 +14,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FSmorfia.class:56
+#: FSmorfia.class:78
 msgid "Nessuna corrispondenza trovata"
 msgstr ""
 
-#: FSmorfia.class:75
+#: FSmorfia.class:98
 msgid "Meganalotto - Smorfia"
 msgstr ""
 
-#: FSmorfia.class:96
+#: FSmorfia.class:119
 msgid "Cerca vocabolo"
 msgstr ""
 
