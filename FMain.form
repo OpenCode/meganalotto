@@ -377,7 +377,7 @@
       Text = ("")
     }
     { picNet PictureBox
-      MoveScaled(75,0,2,2)
+      MoveScaled(80,0,2,2)
       Picture = Picture["icon:/24/disconnect"]
       Alignment = Align.Center
     }

@@ -17,6 +17,7 @@ PUBLIC SUB Form_Open()
   GridView1.Columns[0].Text = "Parola"
   GridView1.Columns[0].W = 2 * (GridView1.w / 3)
   GridView1.Columns[1].Text = "Numero"
+  GridView1.Header = GridView.None
 
 END
 
@@ -46,5 +47,13 @@ PUBLIC SUB cerca_Click()
       INC j
     END IF
   NEXT
+  
+  GridView1.Header = GridView.Horizontal
+  '-- if didn't found anything show a message in a line 
+  IF GridView1.Rows.Count = 0 THEN 
+    GridView1.Header = GridView.None
+    GridView1.Rows.Count = 1
+    GridView1[0, 0].Text = ("Nessuna corrispondenza trovata")
+  END IF
 
 END

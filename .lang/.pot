@@ -575,11 +575,15 @@ msgstr ""
 msgid "Ritardo"
 msgstr ""
 
-#: FSmorfia.class:66
+#: FSmorfia.class:56
+msgid "Nessuna corrispondenza trovata"
+msgstr ""
+
+#: FSmorfia.class:75
 msgid "Meganalotto - Smorfia"
 msgstr ""
 
-#: FSmorfia.class:87
+#: FSmorfia.class:96
 msgid "Cerca vocabolo"
 msgstr ""
 
