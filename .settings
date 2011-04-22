@@ -12,17 +12,12 @@ SearchComment=False
 SearchString=True
 
 [OpenFile]
-File[1]="FMain.class:31.2"
-File[2]="FInterface.class:21.2"
-File[3]="FMoneyManager.form"
-File[4]="Management.module:18.0"
-File[5]="FSmorfia.form"
-File[6]="FSmorfia.class:32.73"
-File[7]="FPersonalSystem.class:28.50"
-File[8]="FTester.form"
-File[9]="FTester.class:13.3"
-Active=9
-Count=9
+File[1]="FMain.form"
+File[2]="FSmorfia.form"
+File[3]="FSmorfia.class:33.26"
+Active=3
+File[4]="FMain.class:592.41"
+Count=4
 
 [Watches]
 Count=0

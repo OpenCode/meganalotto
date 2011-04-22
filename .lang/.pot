@@ -579,15 +579,23 @@ msgstr ""
 msgid "Ritardo"
 msgstr ""
 
-#: FSmorfia.class:78
+#: FSmorfia.class:58
+msgid "Nessun vocabolo impostato"
+msgstr ""
+
+#: FSmorfia.class:65
+msgid "Sintassi errata"
+msgstr ""
+
+#: FSmorfia.class:87
 msgid "Nessuna corrispondenza trovata"
 msgstr ""
 
-#: FSmorfia.class:98
+#: FSmorfia.class:107
 msgid "Meganalotto - Smorfia"
 msgstr ""
 
-#: FSmorfia.class:119
+#: FSmorfia.class:128
 msgid "Cerca vocabolo"
 msgstr ""
 

@@ -13,9 +13,7 @@ MyCalled AS Boolean
 
 PUBLIC SUB _new($search AS String, called AS Boolean)
 
-  PRINT "search "; $search
   MySearch = $search
-  PRINT "Mysearch "; MySearch
   MyCalled = called 
 
 END 
@@ -54,8 +52,19 @@ PRIVATE SUB Research()
   GridView1.Rows.Count = 0
 
   '-- not run the sub if textarea in empty or if relative file not exists
-  IF (txtcerca.Text = "") THEN RETURN
-  IF NOT Exist(Application.Path &/ "smorfia/" & LCase$(Left$(txtcerca.Text))) THEN RETURN 
+  IF (txtcerca.Text = "") THEN 
+    GridView1.Header = GridView.None
+    GridView1.Rows.Count = 1
+    GridView1[0, 0].Text = ("Nessun vocabolo impostato")
+    RETURN 
+  END IF
+  
+  IF NOT Exist(Application.Path &/ "smorfia/" & LCase$(Left$(txtcerca.Text))) THEN 
+    GridView1.Header = GridView.None
+    GridView1.Rows.Count = 1
+    GridView1[0, 0].Text = ("Sintassi errata")
+    RETURN 
+  END IF
 
   testo = File.Load(Application.Path &/ "smorfia/" & LCase$(Left$(txtcerca.Text)))
   '-- scorre tutto il resto riga per riga
