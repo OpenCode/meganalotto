@@ -12,12 +12,10 @@ SearchComment=False
 SearchString=True
 
 [OpenFile]
-File[1]="FMain.form"
-File[2]="FSmorfia.form"
-File[3]="FSmorfia.class:33.26"
-Active=3
-File[4]="FMain.class:592.41"
-Count=4
+File[1]="FMoneyManager.form"
+File[2]="FMoneyManager.class:80.38"
+Active=2
+Count=2
 
 [Watches]
 Count=0
