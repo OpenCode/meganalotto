@@ -1,0 +1,40 @@
+' Gambas class file
+
+
+PUBLIC SUB Button1_Click()
+
+  DIM $hConn AS NEW Connection
+  DIM sql AS String
+  DIM hres AS Result
+  DIM frmLotto AS Form
+  DIM $formatteddata AS String
+
+  $formatteddata = Format(DateChooser1.Year, "####") & Format(DateChooser1.Month, "00") & Format(DateChooser1.Day, "00")
+
+  WITH $hConn
+    .Type = Management.DatabaseType
+    .Host = Management.DatabasePath
+  END WITH
+
+  $hConn.Name = Management.LottoDatabaseName
+  $hConn.Open
+
+  sql = "SELECT * FROM " & Management.LottoDatabaseTableName & " WHERE date LIKE " & $formatteddata
+
+  hres = $hconn.Exec(sql)  ' esegue la query
+
+  IF hres.Available = FALSE THEN
+    Message.Error("Nessuna estrazione trovata in questa data")
+    RETURN 
+  END IF
+
+  frmLotto = NEW FLotto($formatteddata)
+  frmLotto.ShowDialog()
+
+END
+
+PUBLIC SUB Form_Open()
+
+  ME.Center
+
+END

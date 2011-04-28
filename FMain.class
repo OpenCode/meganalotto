@@ -605,3 +605,16 @@ PUBLIC SUB menu_lotto_last_Click()
   END IF
 
 END
+
+PUBLIC SUB menu_lotto_choose_Click()
+
+    '-- se trova la rete visualizza estrazioni del lotto
+  Label2.Text = "Apertura visualizzatore estrazioni del lotto in corso..."
+  WAIT 0.1
+  IF Konnection.vKonnection = TRUE THEN 
+    FChooseDate.Show()
+  ELSE 
+    Label2.Text = ("Impossibile connettersi alla rete")
+  END IF
+
+END

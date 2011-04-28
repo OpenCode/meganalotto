@@ -1,0 +1,14 @@
+# Gambas Form File 2.0
+
+{ Form Form
+  MoveScaled(0,0,48,34)
+  Text = ("")
+  Border = Window.Fixed
+  { DateChooser1 DateChooser
+    MoveScaled(1,1,46,25)
+  }
+  { Button1 Button
+    MoveScaled(17,28,14,4)
+    Text = ("Mostra")
+  }
+}

@@ -49,9 +49,4 @@
     Expand = True
     Scrollbar = Scroll.None
   }
-  { Label1 Label
-    MoveScaled(9,15,38,2)
-    Text = ("Aggiornamento dei dati in corso...attendere....")
-    Alignment = Align.Center
-  }
 }

@@ -10,6 +10,8 @@
 
 PUBLIC CONST DatabaseName AS String = "moneymanager"
 PUBLIC CONST DatabaseTableName AS String = "money"
+PUBLIC CONST LottoDatabaseName AS String = "old_extrac"
+PUBLIC CONST LottoDatabaseTableName AS String = "old"
 PUBLIC DatabasePath AS String = User.Home &/ ".meganalotto"
 PUBLIC CONST DatabaseType AS String = "sqlite3"
 
@@ -20,7 +22,13 @@ PUBLIC FUNCTION MoveDatabase()
   IF NOT Exist(DatabasePath &/ DatabaseName) THEN 
     IF NOT Exist(DatabasePath) THEN MKDIR DatabasePath
     COPY Application.Path &/ "other" &/ DatabaseName TO DatabasePath &/ DatabaseName
-    PRINT "New DataBase created in " & DatabasePath
+    PRINT "New Money Manager DataBase created in " & DatabasePath
+  END IF
+  
+  IF NOT Exist(DatabasePath &/ LottoDatabaseName) THEN 
+    IF NOT Exist(DatabasePath) THEN MKDIR DatabasePath
+    COPY Application.Path &/ "other" &/ LottoDatabaseName TO DatabasePath &/ LottoDatabaseName
+    PRINT "New Lotto DataBase created in " & DatabasePath
   END IF
   
 END

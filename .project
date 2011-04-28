@@ -3,7 +3,7 @@
 Title=meganalotto
 Startup=FMain
 Icon=icona.png
-Version=0.3.13
+Version=0.3.15
 Library=gb.gui
 Library=gb.form
 Library=gb.db

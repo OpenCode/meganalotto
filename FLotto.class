@@ -62,6 +62,8 @@ PRIVATE SUB PopolateWithLast()
   
   DIM i AS Integer
   
+  GridView1.Rows.Count = 11
+
     '-- if file exists the software didn't download it again.
   IF Exist("/tmp/estrazioni_ultime.do") = FALSE THEN
       SHELL "wget --directory-prefix=/tmp " & "http://www.lottomaticaitalia.it/lotto/estrazioni/estrazioni_ultime.do" WAIT
@@ -72,10 +74,50 @@ PRIVATE SUB PopolateWithLast()
   
 END
 
-PRIVATE SUB PopolateWithChoose(ChhoseDate AS String)
+PRIVATE SUB PopolateWithChoose(ChooseDate AS String)
+
+  DIM $hConn AS NEW Connection
+  DIM sql AS String
+  DIM hres AS Result
+  DIM i AS Integer
+
+  WITH $hConn
+    .Type = Management.DatabaseType
+    .Host = Management.DatabasePath
+  END WITH
+
+  $hConn.Name = Management.LottoDatabaseName
+  $hConn.Open
+
+  sql = "SELECT * FROM " & Management.LottoDatabaseTableName & " WHERE date LIKE " & ChooseDate
+
+  hres = $hconn.Exec(sql)  ' esegue la query
+
+  IF hres.Available = FALSE THEN
+    Message.Error("No data found")
+    RETURN 
+  END IF
+   
+  i = 0
+  FOR EACH hres
+    IF i MOD 2 <> 0 THEN 
+      GridView1[i, 1].Background = Color.LightGray
+      GridView1[i, 2].Background = Color.LightGray
+      GridView1[i, 3].Background = Color.LightGray
+      GridView1[i, 4].Background = Color.LightGray
+      GridView1[i, 5].Background = Color.LightGray
+    END IF
+    GridView1[i, 1].Text = Split(hres!numbs, "-")[0]
+    GridView1[i, 2].Text = Split(hres!numbs, "-")[1]
+    GridView1[i, 3].Text = Split(hres!numbs, "-")[2]
+    GridView1[i, 4].Text = Split(hres!numbs, "-")[3]
+    GridView1[i, 5].Text = Split(hres!numbs, "-")[4]
+    INC i
+  NEXT
+  
+  $hconn.Close()
   
 END
-
 
 PRIVATE SUB extract_number(ruota AS Integer)
 
@@ -92,7 +134,6 @@ PRIVATE SUB extract_number(ruota AS Integer)
   numeri[4] = Split(File.Load("/tmp/estrazioni_ultime.do"), "\n")[ruota]
   WAIT
   PopolaGridView((ruota - 4), numeri)
-  Label1.Visible = FALSE
 
 END
 
@@ -153,8 +194,5 @@ PUBLIC SUB Form_Resize()
   FOR i = 0 TO 5
       GridView1.Columns[i].Width = GridView1.w / 6
   NEXT
-
-  Label1.x = (ME.w / 2) - (Label1.w / 2)
-  Label1.y = (ME.h / 2) - (Label1.h / 2)
 
 END
