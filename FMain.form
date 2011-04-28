@@ -19,6 +19,12 @@
     { extrax Menu
       Text = ("Lotto")
       Picture = Picture["icona_menu.png"]
+      { menu_lotto_last Menu
+        Text = ("Ultima estrazione")
+      }
+      { menu_lotto_choose Menu
+        Text = ("Seleziona un'estrazione")
+      }
     }
     { Menu1 Menu
       Text = ("SuperEnalotto")

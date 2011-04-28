@@ -14,35 +14,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FLotto.class:166
+#: FLotto.class:180
 msgid "Meganalotto - Lotto"
 msgstr ""
 
-#: FLotto.class:176
+#: FLotto.class:190
 msgid "Ruota"
 msgstr ""
 
-#: FLotto.class:183
+#: FLotto.class:197
 msgid "1°"
 msgstr ""
 
-#: FLotto.class:190
+#: FLotto.class:204
 msgid "2°"
 msgstr ""
 
-#: FLotto.class:197
+#: FLotto.class:211
 msgid "3°"
 msgstr ""
 
-#: FLotto.class:204
+#: FLotto.class:218
 msgid "4°"
 msgstr ""
 
-#: FLotto.class:211
+#: FLotto.class:225
 msgid "5°"
 msgstr ""
 
-#: FLotto.class:224
+#: FLotto.class:238
 msgid "Aggiornamento dei dati in corso...attendere...."
 msgstr ""
 

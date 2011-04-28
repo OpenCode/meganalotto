@@ -163,14 +163,6 @@ END
 
 PUBLIC SUB extrax_Click()
 
-  '-- se trova la rete visualizza estrazioni del lotto
-  Label2.Text = "Apertura visualizzatore estrazioni del lotto in corso..."
-  WAIT 0.1
-  IF Konnection.vKonnection = TRUE THEN 
-    FLotto.Show()
-  ELSE 
-    Label2.Text = ("Impossibile connettersi alla rete")
-  END IF
 
 END
 
@@ -593,6 +585,23 @@ PUBLIC SUB txtSmorfia_KeyRelease()
   IF (key.Code = key.Enter OR key.Code = key.Return) THEN 
     frmSmorfia = NEW FSmorfia(txtSmorfia.Text, TRUE)
     frmSmorfia.Show()
+  END IF
+
+END
+
+PUBLIC SUB menu_lotto_last_Click()
+
+  DIM frmLotto AS Form
+
+  frmLotto = NEW FLotto("")
+
+    '-- se trova la rete visualizza estrazioni del lotto
+  Label2.Text = "Apertura visualizzatore estrazioni del lotto in corso..."
+  WAIT 0.1
+  IF Konnection.vKonnection = TRUE THEN 
+    frmLotto.Show()
+  ELSE 
+    Label2.Text = ("Impossibile connettersi alla rete")
   END IF
 
 END

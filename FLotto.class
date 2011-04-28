@@ -11,9 +11,15 @@
 '-- page ritardatari
 '-- http://www.lottomaticaitalia.it/lotto/statistiche/numeriRitardatariTop10.html
 
-PUBLIC SUB Form_Open()
+MyDate AS String
 
-  DIM i AS Integer
+PUBLIC SUB _new($Date AS String)
+  
+  MyDate = $Date
+  
+END
+
+PUBLIC SUB Form_Open()
 
   ME.Center
 
@@ -41,25 +47,39 @@ PUBLIC SUB Form_Open()
   GridView1[9, 0].Text = "Venezia"
   GridView1[9, 0].Background = Color.LightGray
   GridView1[10, 0].Text = "Nazionale"
-  '-- if file exists the software didn't download it again.
+  
+  IF MyDate = "" THEN 
+    PopolateWithLast()
+  ELSE 
+    PopolateWithChoose(MyDate)
+  END IF
+
+  FMain.Label2.Text = "Visualizzatore caricato"
+
+END
+
+PRIVATE SUB PopolateWithLast()
+  
+  DIM i AS Integer
+  
+    '-- if file exists the software didn't download it again.
   IF Exist("/tmp/estrazioni_ultime.do") = FALSE THEN
       SHELL "wget --directory-prefix=/tmp " & "http://www.lottomaticaitalia.it/lotto/estrazioni/estrazioni_ultime.do" WAIT
   END IF
   FOR i = 0 TO 10
       extract_number(45 + (13 * i))
   NEXT
-
-  FMain.Label2.Text = "Visualizzatore caricato"
-
+  
 END
 
-PRIVATE FUNCTION extract_number(ruota AS Integer)
+PRIVATE SUB PopolateWithChoose(ChhoseDate AS String)
+  
+END
+
+
+PRIVATE SUB extract_number(ruota AS Integer)
 
   DIM numeri AS String[5]
-
-  '-- QUI STRANAMENTE IL CICLO FOR NON FUNZIONA: POPOLA LA PRIMA RIGA
-  '-- CON I NUMERI RELATIVI ALL'ULTIMA
-  '-- CONTROLLARE
 
   numeri[0] = Split(File.Load("/tmp/estrazioni_ultime.do"), "\n")[ruota]
   INC ruota
@@ -136,11 +156,5 @@ PUBLIC SUB Form_Resize()
 
   Label1.x = (ME.w / 2) - (Label1.w / 2)
   Label1.y = (ME.h / 2) - (Label1.h / 2)
-
-END
-
-PUBLIC SUB Label6_MouseDown()
-
-  
 
 END
