@@ -76,6 +76,8 @@ PUBLIC SUB Button1_Click()
 
   DIM i AS Integer
 
+  IF ValueBox1.Value = "" THEN RETURN 
+
 '  Label1.Alignment = Align.left
   IF lotto.Checked THEN
     IF menu_extract.Checked THEN 
@@ -156,6 +158,7 @@ END
 
 PUBLIC SUB ValueBox1_Change()
 
+  IF ValueBox1.Value = "" THEN RETURN 
   IF ValueBox1.Value < 1 THEN ValueBox1.Value = 1
   IF ValueBox1.Value > 45 THEN ValueBox1.Value = 45
 
@@ -334,6 +337,7 @@ END
 
 PUBLIC SUB btMinus_Click()
 
+  IF ValueBox1.Value = "" THEN RETURN 
   DEC ValueBox1.Value
   IF ValueBox1.Value < 1 THEN ValueBox1.Value = 1
 
@@ -341,6 +345,7 @@ END
 
 PUBLIC SUB btPlus_Click()
 
+  IF ValueBox1.Value = "" THEN RETURN 
   INC ValueBox1.Value
   IF ValueBox1.Value > 45 THEN ValueBox1.Value = 45
 

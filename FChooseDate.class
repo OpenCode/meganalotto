@@ -1,5 +1,12 @@
 ' Gambas class file
 
+'#################################################
+' Software sotto licenza GPL v3 o superiore
+' Software under GPL v3 o more licence
+' Francesco "Ceskho OpenCode" Apruzzese
+' per info o segnalazioni scrivere a :
+' cescoap@gmail.com
+'#################################################
 
 PUBLIC SUB Button1_Click()
 
