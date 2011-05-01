@@ -219,23 +219,23 @@ msgstr ""
 msgid "Ruota"
 msgstr ""
 
-#: FLotto.class:233 FWin4Life.class:116
+#: FLotto.class:233 FWin4Life.class:117
 msgid "1°"
 msgstr ""
 
-#: FLotto.class:240 FWin4Life.class:123
+#: FLotto.class:240 FWin4Life.class:124
 msgid "2°"
 msgstr ""
 
-#: FLotto.class:247 FWin4Life.class:130
+#: FLotto.class:247 FWin4Life.class:131
 msgid "3°"
 msgstr ""
 
-#: FLotto.class:254 FWin4Life.class:137
+#: FLotto.class:254 FWin4Life.class:138
 msgid "4°"
 msgstr ""
 
-#: FLotto.class:261 FWin4Life.class:144
+#: FLotto.class:261 FWin4Life.class:145
 msgid "5°"
 msgstr ""
 
@@ -668,32 +668,40 @@ msgstr ""
 msgid "Meganalotto - Win4Life"
 msgstr ""
 
-#: FWin4Life.class:102
+#: FWin4Life.class:101
 msgid "Estrazione"
 msgstr ""
 
-#: FWin4Life.class:151
+#: FWin4Life.class:103
+msgid "Estr."
+msgstr ""
+
+#: FWin4Life.class:152
 msgid "6°"
 msgstr ""
 
-#: FWin4Life.class:158
+#: FWin4Life.class:159
 msgid "7°"
 msgstr ""
 
-#: FWin4Life.class:165
+#: FWin4Life.class:166
 msgid "8°"
 msgstr ""
 
-#: FWin4Life.class:172
+#: FWin4Life.class:173
 msgid "9°"
 msgstr ""
 
-#: FWin4Life.class:179
+#: FWin4Life.class:180
 msgid "10°"
 msgstr ""
 
 #: FWin4Life.class:186
 msgid "Numerone"
+msgstr ""
+
+#: FWin4Life.class:188
+msgid "Num"
 msgstr ""
 
 #: FWinning.class:138

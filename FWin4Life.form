@@ -9,8 +9,9 @@
     MoveScaled(1,2,63,4)
     { Label1 Label
       MoveScaled(1,0,8,4)
+      ToolTip = ("Estrazione")
       Expand = True
-      Text = ("Estrazione")
+      Text = ("Estr.")
       Alignment = Align.Center
     }
     { Label2 Label
@@ -81,8 +82,9 @@
     }
     { Label13 Label
       MoveScaled(51,0,9,4)
+      ToolTip = ("Numerone")
       Expand = True
-      Text = ("Numerone")
+      Text = ("Num.")
       Alignment = Align.Center
     }
   }
